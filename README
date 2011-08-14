@@ -1,0 +1,11 @@
+	              __ _ _           
+	    __/\__   / _(_) | ___  ___ 
+	    \    /  | |_| | |/ _ \/ __|
+	 _  /_  _\  |  _| | |  __/\__ \
+	(_)   \/    |_| |_|_|\___||___/
+---------------------------------------------
+Config files for use in the linux terminal.
+
+	- bin/ keeps scripts
+	- profile.d/ is for automatically sourced files
+	- vim/ is for vim config, filetypes are loaded from ftplugin
