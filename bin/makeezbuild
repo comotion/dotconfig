@@ -9,7 +9,7 @@ then
 
     source ~/.profile 
 
-    sites $1
+    site $1
 
     if [[ $? != 0 ]]
     then
@@ -42,8 +42,8 @@ then
     fi
 fi;
 
-
 TARGET="${BUILDSTORAGE}${BUILD}/${BUILD}-build-"`date +%d-%m-%Y`".tar.bz2"
+
 if [[ -e ${TARGET} ]]
 then
 	TARGET=`echo ${TARGET} | awk -F. '{print $1}'`
@@ -52,7 +52,11 @@ then
 	echo "Allready did a build today, prefixing with ${PREFIX}" 
 fi
 
-tar cjf ${TARGET} settings/siteaccess settings/override extension var/${BUILD}/storage
+FILES="settings/siteaccess settings/override extension var/ .htaccess"
+SIZE=`du -skc ${FILES} | tail -n 1 | cut -f 1`
+
+tar cf - $FILES | pv -p -s ${SIZE}k | bzip2 -c > $TARGET
+#tar cjf ${TARGET} settings/siteaccess settings/override extension var/ .htaccess
 if [[ 0 != $? ]]
 then
     echo "Could not save  ${BUILD} to ${TARGET}"
