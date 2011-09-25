@@ -1,0 +1,23 @@
+#!/bin/sh
+getinidbinfo ()
+{
+dbinfo=`php -r "require 'autoload.php';
+\\$script = eZScript::instance( array( 'debug-message' => '', 'use-session' => true, 'use-modules' => true, 'use-extensions' => true ) );
+\\$script->startup();
+\\$script->setUseSiteAccess( '${1}' );
+\\$script->initialize();
+\\$ini = eZINI::instance();
+\\$database=\\$ini->variable( 'DatabaseSettings', 'Database' );
+\\$user=\\$ini->variable( 'DatabaseSettings', 'User' );
+\\$password=\\$ini->variable( 'DatabaseSettings', 'Password' );
+\\$host=\\$ini->variable( 'DatabaseSettings', 'Server' );
+\\$script->shutdown();
+echo \\$user . ':' . \\$password . '@' . \\$host . '/' . \\$database;"`
+remote_db_host=`echo $dbinfo | cut -f 1 -d :`
+remote_db=`echo $dbinfo | cut -f 2 -d :`
+remote_db_user=`echo $dbinfo | cut -f 3 -d :`
+remote_db_passwd=`echo $dbinfo | cut -f 4 -d :`
+}
+getinidbinfo $*
+echo $remote_db_host $remote_db $remote_db_user $remote_db_passwd
+
