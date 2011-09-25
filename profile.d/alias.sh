@@ -18,3 +18,5 @@ sites() {
     site
     return $?
 }
+
+alias netbeans="netbeans --jdkhome $JAVA_HOME"
