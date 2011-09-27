@@ -26,7 +26,7 @@ plugins=(git vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/home/olavf/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games:/usr/lib64/jvm/jre/bin:/usr/lib/mit/bin:.
+export PATH=$PATH:/home/olavf/bin:usr/lib/mit/bin
 export DEVSTORAGE=/mnt/storage/
 export DEVSOURCE=${DEVSTORAGE}src/
 export BUILDSTORAGE=${DEVSTORAGE}builds/
