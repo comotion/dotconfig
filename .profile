@@ -1,14 +1,4 @@
-export DEVSTORAGE=/mnt/storage/
-export DEVSOURCE=${DEVSTORAGE}src/
-export BUILDSTORAGE=${DEVSTORAGE}builds/
-PATH=$PATH:${DEVSOURCE}share/bin
-for application in $(find ${DEVSTORAGE}applications -maxdepth 2 -mindepth 2 -name 'bin'); do PATH=$PATH:${application}; done
-
-#if [ "$BASH" ]; then
-#  if [ -f ~/.bashrc ]; then
-#    . ~/.bashrc
-#  fi
-#fi
+PATH=$PATH:~/bin
 
 mesg n
 
@@ -20,9 +10,9 @@ else
 	export TERM="xterm-color"
 fi
 
-for file in `ls ${DEVSOURCE}/share/profile.d/*.sh`
+for file in $(find .profile.d -type f -name '*.sh')
 do
-    source $file
+    . $file
 done
 
 

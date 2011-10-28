@@ -4,3 +4,4 @@ tags
 # Ignore Vim swap files
 .*.swp
 .*.swo
+!*
