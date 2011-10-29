@@ -7,13 +7,16 @@
 #
 #
 
-BUNDLES="git://github.com/pangloss/vim-javascript.git
-         git://github.com/tpope/vim-git.git
-         git://github.com/tpope/vim-markdown.git
-         git://github.com/vim-scripts/Gist.vim.git
-         git://github.com/derekwyatt/vim-scala.git
-         git://git.wincent.com/command-t.git
-         git://github.com/scrooloose/nerdtree.git
+BUNDLES="
+	git://github.com/pangloss/vim-javascript.git
+	git://github.com/tpope/vim-git.git
+	git://github.com/tpope/vim-markdown.git
+	git://github.com/vim-scripts/Gist.vim.git
+	git://github.com/derekwyatt/vim-scala.git
+	git://git.wincent.com/command-t.git
+	git://github.com/scrooloose/nerdtree.git
+	git://github.com/altercation/vim-colors-solarized
+	git://github.com/oscarh/vimerl.git
         "
 TARGETDIR=`dir -d ~/ | awk '{print $NF}'`.vim/bundle/
 
@@ -35,28 +38,4 @@ do
 		git clone $repo $TARGETDIR/$bundle 
 	fi
 done
-
-#
-#bundles_dir = File.join(File.dirname(__FILE__), "bundle")
-#
-#FileUtils.cd(bundles_dir)
-#
-#puts "trashing everything (lookout!)"
-#Dir["*"].each {|d| FileUtils.rm_rf d }
-#
-#git_bundles.each do |url|
-#  dir = url.split('/').last.sub(/\.git$/, '')
-#  puts "unpacking #{url} into #{dir}"
-#  `git clone #{url} #{dir}`
-#  FileUtils.rm_rf(File.join(dir, ".git"))
-#end
-#
-#vim_org_scripts.each do |name, script_id, script_type|
-#  puts "downloading #{name}"
-#  local_file = File.join(name, script_type, "#{name}.vim")
-#  FileUtils.mkdir_p(File.dirname(local_file))
-#  File.open(local_file, "w") do |file|
-#    file << open("http://www.vim.org/scripts/download_script.php?src_id=#{script_id}").read
-#  end
-#end
 

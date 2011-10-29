@@ -38,5 +38,5 @@ set backspace=indent,eol,start
 filetype on
 filetype plugin on
 
-" Fix .tpl files
-au BufRead,BufNewFile *.tpl set filetype=xml
+call pathogen#infect()
+call pathogen#helptags()
