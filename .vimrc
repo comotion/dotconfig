@@ -40,3 +40,9 @@ filetype plugin on
 
 call pathogen#infect()
 call pathogen#helptags()
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
+let NERDTreeDirArrows=1
+
