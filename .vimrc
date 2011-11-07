@@ -1,6 +1,7 @@
 " Aaaaaaahhhh colors
 let g:solarized_termcolors=256
-colorscheme elflord
+let g:solarized_termtrans=1
+colorscheme solarized
 set background=dark
 syntax on
 " Keep buffers
