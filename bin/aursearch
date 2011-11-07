@@ -1,0 +1,2 @@
+#!/bin/sh
+yaourt -Ss $* | grep -P '^[^\s]'
