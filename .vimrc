@@ -1,7 +1,8 @@
 " Aaaaaaahhhh colors
+let g:solarized_termcolors=256
 colorscheme elflord
 set background=dark
-
+syntax on
 " Keep buffers
 set hidden
 
@@ -23,6 +24,7 @@ set wildmode=list:longest
 " Fix case-insensitive search unless you have a capital letter
 set ignorecase
 set smartcase
+
 " And highlighting, also when they are typed
 set hlsearch
 set incsearch
@@ -35,14 +37,20 @@ set scrolloff=3
 
 set backspace=indent,eol,start
 
+" highlight matching brackets and so on
+set showmatch 
+
 filetype on
 filetype plugin on
 
 call pathogen#infect()
 call pathogen#helptags()
 
+" initiate nerdtree
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
-
 let NERDTreeDirArrows=1
+
+" Restore to previous position
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 

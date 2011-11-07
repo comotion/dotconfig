@@ -15,4 +15,6 @@ do
     . $file
 done
 
+export EDITOR=vim
 
+export TERM='xterm-256color'
