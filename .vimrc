@@ -1,9 +1,3 @@
-" Aaaaaaahhhh colors
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-colorscheme solarized
-set background=dark
-syntax on
 " Keep buffers
 set hidden
 
@@ -46,6 +40,13 @@ filetype plugin on
 
 call pathogen#infect()
 call pathogen#helptags()
+
+" Aaaaaaahhhh colors
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+colorscheme solarized
+set background=dark
+syntax on
 
 " initiate nerdtree
 autocmd VimEnter * NERDTree
