@@ -1,19 +1,12 @@
+!------------------------------------------------------------------------------
+! Term windo specifics
+!------------------------------------------------------------------------------
+
 URxvt*termName:            rxvt-unicode-256colors
 
 URxvt.scrollBar:           off
 
-Urxvt.perl-ext-common:     default,matcher
-URxvt.urlLauncher:         /usr/bin/chromium
-URxvt.matcher.button:      1
-
-URxvt.cursorColor:         #002177
-
-URxvt.foreground:          #cccccc
-URxvt.background:          #040404
-
-URxvt*font:                xft:DejaVu Sans Mono:style=Regular:pixelsize=12:antialias=true
-
-URxvt*fading:              50
+URxvt*fading:              20
 URxvt*fadeColor:           black
 URxvt*tinyColor:           white
 URxvt*shading:             30
@@ -21,3 +14,85 @@ URxvt*blurRadius:          5
 
 URxvt.selection.pattern-0: ([[:word:]]+)
 
+URxvt.urgentOnBell:         false
+URxvt.visualBell:           false 
+URxvt.loginShell:           true
+URxvt.saveLines:            50
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+
+!-------------------------------------------------------------------------------
+! Font setting
+!-------------------------------------------------------------------------------
+
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+URxvt*font:                 xft:DejaVu Sans Mono:pixelsize=13
+URxvt.allow_bold:           true
+
+! Fix font space
+URxvt*letterSpace:          -1
+
+!------------------------------------------------------------------------------
+! Perl extensions
+!------------------------------------------------------------------------------
+URxvt.perl-ext-common:      default,matcher
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          chromium 
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+
+!------------------------------------------------------------------------------
+! Colors
+!------------------------------------------------------------------------------
+
+*background: #002b36
+*foreground: #657b83
+!!*fading: 40
+*fadeColor: #002b36
+*cursorColor: #93a1a1
+*pointerColorBackground: #586e75
+*pointerColorForeground: #93a1a1
+
+!! black dark/light
+*color0: #073642
+*color8: #002b36
+
+!! red dark/light
+*color1: #dc322f
+*color9: #cb4b16
+
+!! green dark/light
+*color2: #859900
+*color10: #586e75
+
+!! yellow dark/light
+*color3: #b58900
+*color11: #657b83
+
+!! blue dark/light
+*color4: #268bd2
+*color12: #839496
+
+!! magenta dark/light
+*color5: #d33682
+*color13: #6c71c4
+
+!! cyan dark/light
+*color6: #2aa198
+*color14: #93a1a1
+
+!! white dark/light
+*color7: #eee8d5
+*color15: #fdf6e3
