@@ -1,7 +1,11 @@
-.*
+*
+!.profile.d/
 !.vim
 !.gitignore
 !.vimrc
 !.profile
 !.bashrc
 !.oh-my-zsh
+!.Xdefaults
+!.xinitrc
+!.wmii/

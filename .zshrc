@@ -12,8 +12,8 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.profile.d/term.sh
 
 export PATH=~/bin:$PATH
 export EDITOR="vim"
-export TERM='xterm-256color'
 

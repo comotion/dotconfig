@@ -1,0 +1,43 @@
+#!/bin/bash 
+wmiiscript=wmiirc
+. wmii.sh
+
+# Configuration Variables
+MODKEY=Mod4
+
+export WMII_FOCUSCOLORS='#7daa3d #2c2c2c #396609'
+export WMII_NORMCOLORS='#EEEEEE #000000 #222222'
+
+export WMII_BACKGROUND='null'
+export WMII_FONT='xft:Sans-8'
+
+export WMII_TERM='/usr/bin/urxvt'
+
+local_events() {
+	cat <<EOL
+Key Control-Alt-l # Lock screen
+	xscreensaver-command -lock
+Key XF86AudioMute
+	amixer sset Master toggle
+Key XF86AudioRaiseVolume
+	amixer set Master 1%+ unmute
+Key XF86AudioLowerVolume
+	amixer set Master 1%- unmute
+Key XF86AudioNext
+	DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next > /dev/null
+Key XF86AudioPrev
+	DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous > /dev/null
+Key XF86AudioPlay
+	DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause > /dev/null
+
+
+Key $MODKEY-Control-$UP
+	wmiir write /tag/sel/ctl grow sel sel down -1
+Key $MODKEY-Control-$RIGHT
+	wmiir write /tag/sel/ctl grow sel sel right 1
+Key $MODKEY-Control-$DOWN
+	wmiir write /tag/sel/ctl grow sel sel down 1
+Key $MODKEY-Control-$LEFT
+	wmiir write /tag/sel/ctl grow sel sel right -1
+EOL
+}
