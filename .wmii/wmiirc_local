@@ -13,6 +13,27 @@ export WMII_FONT='xft:Sans-8'
 
 export WMII_TERM='/usr/bin/urxvt'
 
+status() {
+	power=""
+	if [ -e ~/.laptop ]
+	then
+		power=$([[ "Discharging" == $(cat /sys/class/power_supply/BAT1/status) ]] && echo '~')$(($(cat /sys/class/power_supply/BAT1/charge_now) / $(($(cat /sys/class/power_supply/BAT1/charge_full) / 100))))"%"
+	fi
+
+	wireless=$(iwconfig 2> /dev/null | awk -F\" '/ESSID/{print $--NF}')
+
+	if [ ! -z "${wireless}" ]
+	then
+		rssi=$(iwconfig 2> /dev/null | awk '/Bit Rate/{sub("[^=]+=", "", $2); print $2" "$3;}')
+		q=$(iwconfig 2>/dev/null | awk '/Link Quality/{sub("[^=]+=", "", $2);sub("/", " / ", $2);print $2}')
+		wireless="${rssi} @${wireless} <- "$((100 * $q))"%"
+	fi
+
+	audio=""
+
+	echo -n $wireless '|' $power '|' $(uptime | sed 's/.*://; s/,//ig') '|' $(date)
+}
+
 local_events() {
 	cat <<EOL
 Key Control-Alt-l # Lock screen
