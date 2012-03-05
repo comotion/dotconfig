@@ -11,6 +11,6 @@ man() {
 				man "$@"
 }
 
-# Give grep colors
-export GREP_OPTIONS="--color=auto"
-
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias grep='grep --colour=auto'
