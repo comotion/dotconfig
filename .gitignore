@@ -1,4 +1,5 @@
 *
+!bin/
 !.profile.d/
 !.vim
 !.gitignore
