@@ -1,0 +1,3 @@
+#!/bin/sh
+sudo chown $(id -nu).users /dev/$1
+stty -F /dev/$1 ignbrk -brkint -icrnl -imaxbel -onlcr -icanon -echo -isig echoe echok
