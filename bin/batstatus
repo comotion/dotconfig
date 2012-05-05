@@ -1,0 +1,5 @@
+#!/bin/sh
+full=$(</sys/class/power_supply/BAT1/charge_full)
+now=$(</sys/class/power_supply/BAT1/charge_now)
+
+echo $(($now*100/$full))% $(</sys/class/power_supply/BAT1/status)
