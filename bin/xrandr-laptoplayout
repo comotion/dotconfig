@@ -1,0 +1,6 @@
+ #!/bin/sh
+echo $1 | grep -P "[0-9]+x[0-9]+$" && mode=$1
+
+mode=${mode:="1920x1200"}
+echo "Enabling mode: ${mode} on VGA-0"
+xrandr --output VGA-0 --mode $mode --pos 1280x0 --rotate normal --output LVDS --mode 1280x800 --pos 0x0 --rotate normal --output DVI-0 --off
