@@ -1,3 +1,9 @@
 #!/bin/sh
+baud=${2:-19200}
+dev=/dev/${1:-ttyUSB0}
+
+[[ ! -e $dev ]] && echo "You need to specify device (no such device $dev)" && exit
+
 sudo chown $(id -nu).users /dev/$1
-stty -F /dev/$1 ignbrk -brkint -icrnl -imaxbel -onlcr -icanon -echo -isig echoe echok
+stty -F $dev $baud ignbrk -brkint -icrnl -imaxbel -onlcr -icanon -echo -isig echoe echok
+stty -F $dev
