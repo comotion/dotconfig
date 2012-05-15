@@ -66,12 +66,6 @@ for exc in ${args["exclude"]}; do
 	exclude="--exclude ${exc} $exclude"
 done
 
-if [[ 1 == ${args["env"]} ]]; then
-	args["env"]=stage
-else
-	args["env"]=prod
-fi
-
 echo ${args["target"]} | grep -P '^[^/]' && args["target"]="$deptarget${args[env]}/${args["target"]}"
 
 for server in ${args["server"]}; do
