@@ -1,0 +1,60 @@
+#!/bin/bash
+[[ -z "$1" ]] && echo "usage: $0 <sitename> <ez-branch> [<site-branch/commit>]" && exit 1
+[[ -z "$2" ]] && echo "usage: $0 <sitename> <ez-branch> [<site-branch/commit>]" && exit 1
+
+site=$1
+envbranch=$2
+subcheckout=${3:-stage}
+
+echo "Building $site on $envbranch using $subcheckout";
+
+echo "clone: git://git/ez/${site}.git@$subcheckout" 
+git clone git://git/ez/${site}.git --recursive || (echo "error: could not clone site ${site}";exit 2)
+
+cd $site
+
+git checkout $subcheckout || (cd ..; echo "error: could not checkout '${subcheckout}' in ${site}..."; exit 3)
+git submodule update
+
+cd ..
+
+echo "clone: git://git/ez/ezpublish.git@$envbranch" 
+git clone git://git/ez/ezpublish.git --branch $envbranch build || (echo "error: could not clone ezpublish repo..."; exit 4)
+echo "clone: git://git/ez/ezpublish.git@$envbranch" 
+git clone git://git/ez/ezextensions.git --branch $envbranch --recursive || (echo "error: could not clone ext repo...";exit 8)
+
+mkdir build/extension
+mkdir build/settings/{siteaccess,override}
+
+ext=$(find $(pwd)/ezextensions -mindepth 2 -maxdepth 2 -type d ! -wholename '*/.*')
+
+echo "Symlinking extensions"
+
+for f in $ext; do 
+	ln -s $f  build/extension
+done
+
+ln -s $(pwd)/$site/extension/* build/extension
+
+echo "Setting up config"
+ln -s $(pwd)/$site/siteaccess/* build/settings/siteaccess/
+
+echo "<?php /* #?ini charset="utf-8"?
+[SiteAccessSettings]
+CheckValidity=false
+MatchOrder=host_uri
+HostUriMatchMethodDefault=part
+HostUriMatchMapItems[]
+" > build/settings/override/site.ini.append.php
+
+[ ! -e $site/config/override.site.ini ] && (echo "error: could not find config file '$site/config/override.site.ini'"; exit 16) 
+
+cat $site/config/override.site.ini >> build/settings/override/site.ini.append.php
+
+echo "Setting config enviroment"
+# in placement don't understand this :(
+#find -L build/{extension,settings}/ -name '*.ini.append.php' | xargs sed -inE '/#env=(pre-production|stage|local)/q;'
+for f in $(find -L build/{extension,settings}/ -name '*.ini.append.php'); do
+	sed -E '/#env=(pre-production|stage|local)/q' $f > .cfg.tmp
+	cp .cfg.tmp $f
+done 
