@@ -7,7 +7,7 @@ import XMonad.Util.EZConfig (additionalKeysP)
 
 main = do
 	xmonad $ defaultConfig
-		{	terminal           = "urxvt",
+		{	terminal           = "urxvtc",
 			modMask            = mod4Mask,
 			borderWidth        = 1,
 			handleEventHook    = fullscreenEventHook,
