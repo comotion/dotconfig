@@ -18,4 +18,6 @@ fi
 PATH=~/bin:${PATH}
 xscreensaver -no-splash &
 /usr/lib/notification-daemon-1.0/notification-daemon &
-exec wmii 
+
+urxvtd -q -f -o
+ck-launch-session xmonad

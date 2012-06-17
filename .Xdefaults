@@ -17,7 +17,6 @@ URxvt.selection.pattern-0: ([[:word:]]+)
 URxvt.urgentOnBell:         false
 URxvt.visualBell:           false 
 URxvt.loginShell:           true
-URxvt.saveLines:            50
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 

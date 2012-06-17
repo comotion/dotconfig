@@ -21,7 +21,7 @@ myManageHook = composeAll [] <+> manageScratchPads scratchPadList
 myWorkspaces = ["1:view", "2:code", "3:x", "4:y", "5:z", "6:w", "7:z", "8:media", "9:communicate"]
 
 myKeys :: [(String, X())]
-myKeys = [ ("M-d"                        , spawn "dmenu"                         ),
+myKeys = [ ("M-d"                        , spawn "dmenu_run"                         ),
            ("M-S-d"                      , spawn "gmrun"                         ),
 
            ("<XF86AudioMute>"            , spawn "amixer sset Master toggle"     ),
