@@ -1,7 +1,7 @@
 #!/bin/bash
 
 help=$(echo $* | grep -P '(-h|--help)')
-test=
+rsyncopts="-cavh "
 
 if [ ! -z "$help" ]; then
 	echo "FWT mini deployment"
@@ -20,8 +20,6 @@ fi
 
 declare -A args
 
-deptarget=${FWTDEPTARGET:-'./deploy/'}
-
 file=.deploy.conf
 if [ ! -e $file ]; then
 	 echo "Sorry no $file, difficult to have any fun...";
@@ -34,8 +32,13 @@ fi
 while [ ! -z "$1" ]; do
 	arg=$(echo $1 | grep -P '^--[a-zA-Z0-9_.-]+' | sed 's/--//')
 	shift
-	[[ $arg == "test" ]] && test="--dry-run" && continue
-	[ -z "$arg" ] && (continue)
+	[[ $arg == "test" ]] && rsyncopts="${rsyncopts}--dry-run " && continue
+	if [[ $arg == "rsh" ]]; then
+		export RSYNC_RSH=$1	
+	elif [ -z "$arg" ]; then
+		continue
+	fi
+
 	args[$arg]=$([ ! -z ${args[$arg]}] && echo ${args[$arg]})$1
 	shift
 done
@@ -51,7 +54,6 @@ done
 
 [[ $fail == 1 ]] && exit
 
-
 echo "Deploying with following settings:"
 echo "----------------------------------"
 echo ""
@@ -66,11 +68,19 @@ for exc in ${args["exclude"]}; do
 	exclude="--exclude ${exc} $exclude"
 done
 
-echo ${args["target"]} | grep -P '^[^/]' && args["target"]="$deptarget${args[env]}/${args["target"]}"
+echo ${args["target"]} | grep -P '^[^/]' && args["target"]="${args[env]}/${args["target"]}"
 
 for server in ${args["server"]}; do
 	echo "Deploying to server: $server"
-	echo "rsync -avh $test $exclude * $server:${args[target]}"
+	shell=${args["rsh"]:-ssh}
+	deptarget=${FWTDEPTARGET:-$($shell $server '[ -e .profile ] && . .profile; echo $FWTDEPTARGET')}
+
+	if [ ! -z "$deptarget" ]; then
+		deptarget="$deptarget/"
+	fi
+
+	args["target"]=$deptarget${args["target"]}
+	echo "rsync $rsyncopts $exclude --delete-after * $server:${args[target]}"
 	echo ""
-	rsync -avh $test $exclude --delete-after * $server:${args["target"]}
+	rsync $rsyncopts $exclude --delete-after * $server:${args[target]}
 done
