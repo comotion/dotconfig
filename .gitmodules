@@ -4,3 +4,9 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule ".config/solarized-irssi"]
+	path = .config/solarized-irssi
+	url = https://github.com/huyz/irssi-colors-solarized
+[submodule ".config/solarized"]
+	path = .config/solarized
+	url = https://github.com/altercation/solarized

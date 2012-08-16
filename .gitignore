@@ -11,3 +11,6 @@
 !.xinitrc
 !.wmii/
 !.xmonad/
+!.mutt/
+!.irssi/
+!.config/
