@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[[ -z "$1" ]] && echo "usage: $0 <module> [<src-dir> [<outputdir>]]" && exit 1 
+
+module=$1
+srcdir=${2:-"src"}
+bindir=${3:-"ebin"}
+
+
+erlc -I include -o ${bindir} ${srcdir}/${module}.erl && erl -noshell -pa ${bindir} -s eunit test ${module} -run init stop
+
