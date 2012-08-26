@@ -73,7 +73,7 @@ echo ${args["target"]} | grep -P '^[^/]' && args["target"]="${args[env]}/${args[
 for server in ${args["server"]}; do
 	echo "Deploying to server: $server"
 	shell=${args["rsh"]:-ssh}
-	deptarget=${FWTDEPTARGET:-$($shell $server '[ -e .profile ] && . .profile; echo $FWTDEPTARGET')}
+	deptarget=${FWTDEPTARGET:-$($shell $server "[ -e .profile ] && . .profile; echo \$FWTDEPTARGET")}
 
 	if [ ! -z "$deptarget" ]; then
 		deptarget="$deptarget/"
