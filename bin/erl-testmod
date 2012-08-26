@@ -1,0 +1,19 @@
+#!/usr/bin/env escript
+-define(TEST, true).
+main(Modules) ->
+	application:start(eunit),
+	Paths = lists:foldl(fun (X, Acc) ->
+		{ok, Y} = file:list_dir(X),
+		Acc ++ lists:map(fun(Z) -> X ++ Z ++ "/ebin" end, Y)
+	end, [], ["./deps/", "./apps/"]),
+
+	io:format("Added ~B new code paths: ~p~n", [length(Paths), Paths]),
+	ok = code:add_paths(Paths),
+	lists:foreach(fun(Mod) ->
+		ModAtom = list_to_atom(Mod),
+			case code:load_file(ModAtom) of
+				{module, ModAtom} -> io:format("~nLoading module ~s~n", [ModAtom]),
+				                     ok = eunit:test(ModAtom, [verbose]);
+				{error, Err}      -> io:format("~nModule ~s not found: ~p~n", [ModAtom, Err])
+			end
+	end, Modules).

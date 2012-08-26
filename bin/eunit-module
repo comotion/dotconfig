@@ -1,11 +1,19 @@
 #!/bin/sh
 
-[[ -z "$1" ]] && echo "usage: $0 <module> [<src-dir> [<outputdir>]]" && exit 1 
-
-module=$1
-srcdir=${2:-"src"}
-bindir=${3:-"ebin"}
+[[ -z "$1" ]] && echo "usage: $0 <module> [<src-dir> [<outputdir>,<include-path>,...]]" && exit 1 
 
 
-erlc -I include -o ${bindir} ${srcdir}/${module}.erl && erl -noshell -pa ${bindir} -s eunit test ${module} -run init stop
+module=$1; shift
+srcdir=${1:-"src"}; shift
+bindir=${1:-"src"}; 
+paths="-pa "${1:-"ebin"}; shift
+
+
+while [ ! -z "$1" ]; do
+	paths=$paths" -pa $1"
+	shift
+done
+
+
+erlc -I include -o ${bindir} ${srcdir}/${module}.erl && erl -noshell $paths -s eunit test ${module} -run init stop
 
