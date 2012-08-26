@@ -55,4 +55,4 @@ let NERDTreeDirArrows=1
 
 " Restore to previous position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
+au BufNewFile,BufRead rebar.config,reltool.config,*.app.src set filetype=erlang
