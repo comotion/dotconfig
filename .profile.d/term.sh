@@ -11,3 +11,5 @@ then
 else
 	export TERM="xterm-color"
 fi
+
+alias ssh="TERM=xterm ssh"
