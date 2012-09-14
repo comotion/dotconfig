@@ -1,19 +1,26 @@
 #!/bin/sh
 
-[[ -z "$1" ]] && echo "usage: $0 <module> [<src-dir> [<outputdir>,<include-path>,...]]" && exit 1 
+[[ -z "$1" ]] && echo "usage: $0 <module> [<src-dir> [<outputdir> [<include-path> | -I <lib-include-dir> .. ]]]" && exit 1 
 
 
 module=$1; shift
 srcdir=${1:-"src"}; shift
 bindir=${1:-"src"}; 
 paths="-pa "${1:-"ebin"}; shift
-
+include="-I include"
 
 while [ ! -z "$1" ]; do
-	paths=$paths" -pa $1"
+	if [ '-I' == "$1" ]; then
+		shift
+		paths="${paths} -pa $1/*/ebin"
+		include="${include} -I $1"
+	else
+		paths=$paths" -pa $1"
+	fi
 	shift
 done
 
+erlc ${include} -o ${bindir} ${srcdir}/${module}.erl ${paths} && erl -noshell $paths \
+	-eval "eunit:test(${module}, [verbose])." -run init stop
 
-erlc -I include -o ${bindir} ${srcdir}/${module}.erl && erl -noshell $paths -s eunit test ${module} -run init stop
 
