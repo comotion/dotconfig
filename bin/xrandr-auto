@@ -1,0 +1,7 @@
+#!/bin/sh
+prev="";
+for display in $(xrandr | awk '/\sconnected\s/{print $1}'); do
+	xrandr --output $display --auto
+	[ ! -z "$prev" ] && xrandr --output $display --right-of $prev
+	prev=$display
+done
