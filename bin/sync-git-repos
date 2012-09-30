@@ -12,6 +12,7 @@ for r in $SOURCE/*; do
     if [ -d $(basename $r) ]; then 
         cd $(basename $r);
         git fetch -q --all;
+		git reset --soft refs/remotes/origin/master
         cd ..   
     else    
         git clone $r --bare
