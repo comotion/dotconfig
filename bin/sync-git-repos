@@ -5,6 +5,9 @@ SOURCE=/var/git
 mountpoint $SOURCE > /dev/null
 [ ! $? -eq 0 ] && echo "${0}: ${SOURCE} is not mounted" && exit 0
 
+OLDPWD=$(pwd)
+cd $TARGET
+
 for r in $SOURCE/*; do 
     if [ -d $(basename $r) ]; then 
         cd $(basename $r);
@@ -21,3 +24,4 @@ for r in $TARGET/*; do
     [ ! -d $SOURCE/$(basename $r) ] && rm -r $r
 done
 
+cd $OLDPWD
