@@ -15,7 +15,7 @@ while [ ! -z "$1" ]; do
 		shift
 		paths="${paths} -pa $1/*/ebin"
 		include="${include} -I $1"
-	elif [ "$1" -eq "--" ]; then
+	elif [ "$1" == "--" ]; then
 		args=$@
 	else
 		shift
