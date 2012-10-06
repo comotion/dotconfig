@@ -8,19 +8,26 @@ srcdir=${1:-"src"}; shift
 bindir=${1:-"src"}; 
 paths="-pa "${1:-"ebin"}; shift
 include="-I include"
+args=""
 
 while [ ! -z "$1" ]; do
 	if [ '-I' == "$1" ]; then
 		shift
 		paths="${paths} -pa $1/*/ebin"
 		include="${include} -I $1"
+	elif [ "$1" == "--" ]; then
+		args=$@
 	else
+		shift
 		paths=$paths" -pa $1"
+		break
 	fi
 	shift
 done
 
-erlc ${include} -o ${bindir} ${srcdir}/${module}.erl ${paths} && erl -noshell $paths \
-	-eval "eunit:test(${module}, [verbose])." -run init stop
-
+echo "> erlc ${include} -DTEST -o ${bindir} ${srcdir}/${module}.erl ${paths} && \\" 
+echo "> erl $args -noshell $paths \ -eval \"eunit:test(${module}, [verbose]).\" -run init stop"
+echo ----------------------------------------------------------------------
+erlc ${include} -DTEST -o ${bindir} ${srcdir}/${module}.erl ${paths} && \
+erl $args -noshell $paths -eval "eunit:test(${module}, [verbose])." -run init stop
 

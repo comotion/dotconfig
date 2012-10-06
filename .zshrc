@@ -15,6 +15,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/.profile.d/term.sh
 source ~/.profile.d/java.sh
 source ~/.profile.d/lesspipe.sh
+source ~/.profile.d/tmux.sh
+source ~/.profile.d/erlang.sh
 
 export PATH=~/bin:$PATH
 export EDITOR="vim"

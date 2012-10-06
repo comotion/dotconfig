@@ -5,24 +5,20 @@ SOURCE=/var/git
 mountpoint $SOURCE > /dev/null
 [ ! $? -eq 0 ] && echo "${0}: ${SOURCE} is not mounted" && exit 0
 
-OLDPWD=$(pwd)
 cd $TARGET
 
-for r in $SOURCE/*; do 
-    if [ -d $(basename $r) ]; then 
+for r in $SOURCE/*; do
+    if [ -d $(basename $r) ]; then
         cd $(basename $r);
         git fetch -q --all;
-		git reset --soft refs/remotes/origin/master
-        cd ..   
-    else    
+        git reset --soft
+        cd ..
+    else
         git clone $r --bare
     fi
-done
-
+	done
 
 # Cleanup non existing repos
 for r in $TARGET/*; do
     [ ! -d $SOURCE/$(basename $r) ] && rm -r $r
 done
-
-cd $OLDPWD
