@@ -2,6 +2,8 @@ import XMonad
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.EwmhDesktops
 
+import XMonad.Actions.PhysicalScreens
+
 import ScratchPadKeys (scratchPadList, manageScratchPads, scratchPadKeys)
 import XMonad.Util.EZConfig (additionalKeysP)
 
@@ -30,6 +32,12 @@ myKeys = [
 	, ("<XF86AudioNext>"            , spawn "DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"          )
 	, ("<XF86AudioPrev>"            , spawn "DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"      )
 	, ("<XF86AudioPlay>"            , spawn "DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"     )
+	, ("M-w"                        , viewScreen 0)
+	, ("M-e"                        , viewScreen 1)
+	, ("M-r"                        , viewScreen 2)
+	, ("M-S-w"                      , sendToScreen 0)
+	, ("M-S-e"                      , sendToScreen 1)
+	, ("M-S-r"                      , sendToScreen 2)
 	] ++ scratchPadKeys scratchPadList
  
 
