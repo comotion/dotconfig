@@ -13,3 +13,7 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
+
+set textwidth=80
+" Disable text wrapping 
+set formatoptions-=t
