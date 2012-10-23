@@ -1,0 +1,10 @@
+{ok, Cwd} = file:get_cwd(),
+file:set_cwd(os:getenv("HOME") ++ "/.erl/ebin/"),
+lists:foreach(fun(X) ->
+	case string:sub_word(X, 2, $.) of 
+		"erl" ->
+			shell_default:c("../src/" ++ string:sub_word(X, 1, $.));
+		_ -> ok
+	end
+end, element(2, file:list_dir("../src"))),
+file:set_cwd(Cwd).
