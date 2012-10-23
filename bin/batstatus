@@ -1,5 +1,6 @@
 #!/bin/sh
-full=$(</sys/class/power_supply/BAT1/charge_full)
-now=$(</sys/class/power_supply/BAT1/charge_now)
 
-echo $(($now*100/$full))% $(</sys/class/power_supply/BAT1/status)
+source /sys/class/power_supply/BAT0/uevent
+
+echo "${POWER_SUPPLY_CAPACITY}% (${POWER_SUPPLY_STATUS})"
+
