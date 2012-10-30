@@ -2,26 +2,24 @@
 
 -export([help/0]).
 -export([mm/0]).
--export([rl/0, rl/1]).
+-export([re/0, re/1]).
 
 help() ->
 	shell_default:help(),
 	io:format("** user commands **~n"),
 	io:format("mm()   -- Find modified modules\n"),
-	io:format("rl()   -- Reload all modules under current dir\n"),
-	io:format("rl(Dir)-- Reload all modules under dir\n").
+	io:format("re()   -- Reload all modules under current dir\n"),
+	io:format("re(Dir)-- Reload all modules under dir\n").
 
 mm() -> modified_modules().
 
-rl() -> reload().
-rl(Dir) -> reload(Dir).
+re() ->
+ 	{ok, Cwd} = file:get_cwd(),
+	reload(Cwd).
+re(Dir) -> reload(Dir).
 
 modified_modules() ->
   [M || {M, _} <-  code:all_loaded(), module_modified(M) == true].
-
-reload() ->
- 	{ok, Cwd} = file:get_cwd(),
-	reload(Cwd).
 
 reload(Dir) ->
 	[{code:purge(M), code:soft_purge(M), code:load_file(M)} || {M, P}
