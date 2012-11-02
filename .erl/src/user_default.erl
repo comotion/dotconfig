@@ -3,13 +3,17 @@
 -export([help/0]).
 -export([mm/0]).
 -export([re/0, re/1]).
+-export([make/0, make/1]).
 
 help() ->
 	shell_default:help(),
 	io:format("** user commands **~n"),
-	io:format("mm()   -- Find modified modules\n"),
-	io:format("re()   -- Reload all modules under current dir\n"),
-	io:format("re(Dir)-- Reload all modules under dir\n").
+	io:format("mm()        -- Find modified modules\n"),
+	io:format("re()        -- Reload all modules under current dir\n"),
+	io:format("re(Dir)     -- Reload all modules under dir\n"),
+	io:format("make()      -- Same as make(false).\n"),
+	io:format("make(true)  -- Call make and and reload everything, clear shell\n"),
+	io:format("make(false) -- Call make and and reload everything, clear shell\n").
 
 mm() -> modified_modules().
 
@@ -17,6 +21,10 @@ re() ->
  	{ok, Cwd} = file:get_cwd(),
 	reload(Cwd).
 re(Dir) -> reload(Dir).
+
+make() -> make(false).
+make(true)  -> io:format("make:~n=====~s~n~n", [os:cmd(make)]), re(), shell_default:f();
+make(false) -> io:format("make:~n=====~s~n~n", [os:cmd(make)]), re(), shell_default:f().
 
 modified_modules() ->
   [M || {M, _} <-  code:all_loaded(), module_modified(M) == true].
