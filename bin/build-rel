@@ -18,7 +18,7 @@ set -e
 
 stage="/tmp"
 
-if [[ "-t" == $1 ]]; then
+if [ "-t" = $1 ]; then
 	stage=$2
 	shift 2
 fi
@@ -28,7 +28,7 @@ fi
 
 target_append_name=false
 
-[ "-b" == $1 ] && { target_append_name=true; shift }
+[ "-b" == $1 ] && { target_append_name=true; shift; }
 
 target=$1
 source=$2
@@ -52,8 +52,9 @@ if [ ! -d $target ]; then
 fi
 
 name=$(basename $source)
-ref=$(command -v git > /dev/null && git rev-parse --short HEAD 2> /dev/null)
-root="${stage}/${name}-${ref}"
+ref=""
+[ command -v git > /dev/null ] && ref="-$(git rev-parse --short HEAD 2> /dev/null)"
+root="${stage}/${name}${ref}"
 
 echo "Building $name-$ref"
 echo "=============================="
@@ -66,7 +67,9 @@ echo "[info] copying source ${source} -> ${root}"
 rsync -a --copy-links --exclude '.*' ${source}/ $root
 cd $root
 echo "excecute make rel ($(pwd))"
-if ! make rel; then
+echo "[info] cleaning old release"
+APP=$name make relclean
+if ! APP=$name make rel; then
 	echo "error: make reported failure"
 	cd - > /dev/null
 	rm -r $root
