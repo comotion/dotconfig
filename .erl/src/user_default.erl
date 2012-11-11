@@ -23,8 +23,8 @@ re() ->
 re(Dir) -> reload(Dir).
 
 make() -> make(false).
-make(true)  -> io:format("make:~n=====~s~n~n", [os:cmd(make)]), re(), shell_default:f();
-make(false) -> io:format("make:~n=====~s~n~n", [os:cmd(make)]), re(), shell_default:f().
+make(true)  -> io:format("make:~n=====~s~n~n", [os:cmd(make)]), re();
+make(false) -> io:format("make:~n=====~s~n~n", [os:cmd(make)]), re().
 
 modified_modules() ->
   [M || {M, _} <-  code:all_loaded(), module_modified(M) == true].

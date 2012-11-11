@@ -16,3 +16,5 @@
 !.irssi/
 !.config/
 !.moc/
+!.erl/
+!.erlang
