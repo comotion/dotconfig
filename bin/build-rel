@@ -77,7 +77,7 @@ if ! APP=$name make rel; then
 else
 	rel="${root}/rel/${name}/"
 	echo "[info] moving release ${rel} -> ${target}"
-	cp -r "${root}/rel/${name}/" $target
+	cp -r $root/rel/$name/* $target
 fi
 
 echo "[info] cleaning up"
