@@ -1,0 +1,13 @@
+#!/usr/bin/php
+<?php
+
+$file = isset($argv[1]) ? $argv[1] : "php://stdin";
+
+if (!is_readable($file) && 'php://' !== substr($file, 0, 6)) {
+	echo "file not found: ${file}\r\n";
+	exit(1);
+}
+
+$json = json_decode(file_get_contents($file));
+echo json_encode($json, JSON_PRETTY_PRINT);
+?>
