@@ -2,12 +2,13 @@
 set hidden
 
 " Set line numbers
-set number
+" set number
+set foldcolumn=1
 
 " tab size
 set tabstop=4
 set shiftwidth=4
-set hlsearch 
+set hlsearch
 
 " Automatically refresh vim config changes
 autocmd! bufwritepost vimrc source ~/.vimrc
@@ -57,9 +58,9 @@ let g:Powerline_colorscheme='solarized256'
 "let g:Powerline_symbols = 'fancy'
 
 " initiate nerdtree
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-let NERDTreeDirArrows=1
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
+"let NERDTreeDirArrows=1
 
 " Restore to previous position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
