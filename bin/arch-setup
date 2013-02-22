@@ -1,0 +1,44 @@
+#!/bin/sh
+
+_PWD=$(pwd)
+
+apps=" \
+	zsh rxvt-unicode \
+	gvim \
+	slim xmonad xmonad-contrib thunar dmenu \
+	xfce4-power-manager xfce4-session \
+	ttf-dejavu ttf-liberation \
+	socat aria2 transmission-gtk
+	atop ntop \
+	mutt chromium opera firefox \
+	dnsmasq \
+	base-devel \
+	vlc feh moc \
+	gimp \
+	xorg-server xorg-utils xf86-input-evdev \
+	"
+
+aurapps=""
+
+sudo pacman -S $apps
+
+# Install AUR toolkit
+pkgquery="https://aur.archlinux.org/packages/pa/package-query/PKGBUILD"
+yaourt="https://aur.archlinux.org/packages/ya/yaourt/PKGBUILD"
+
+mkdir -p /tmp/{yaourt,pkgquery}
+cd /tmp/pkgquery
+wget $pkgquery
+makepkg -i
+
+cd /tmp/yaourt
+wget $yaourt
+makepkg -i
+
+cd $_PWD
+
+yaourt -S $aurapps
+
+# Fix vim stuff
+~/bin/updatevimbundles
+
