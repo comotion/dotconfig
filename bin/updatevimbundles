@@ -11,13 +11,14 @@ BUNDLES="
 	git://github.com/pangloss/vim-javascript.git
 	git://github.com/tpope/vim-git.git
 	git://github.com/tpope/vim-markdown.git
-	git://github.com/vim-scripts/Gist.vim.git
-	git://github.com/derekwyatt/vim-scala.git
-	git://git.wincent.com/command-t.git
 	git://github.com/scrooloose/nerdtree.git
+	git://github.com/kien/ctrlp.vim.git
 	git://github.com/altercation/vim-colors-solarized
-	git://github.com/oscarh/vimerl.git
-        "
+	https://github.com/Lokaltog/vim-powerline
+	git://github.com/stephenmckinney/vim-solarized-powerline.git
+	https://github.com/vim-scripts/taglist.vim
+	git://github.com/jimenezrick/vimerl.git"
+
 TARGETDIR=`dir -d ~/ | awk '{print $NF}'`.vim/bundle/
 
 for repo in $BUNDLES

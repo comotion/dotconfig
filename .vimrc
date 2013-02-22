@@ -48,6 +48,14 @@ colorscheme solarized
 set background=dark
 syntax on
 
+" ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" powerline statusbar
+set laststatus=2
+let g:Powerline_colorscheme='solarized256'
+"let g:Powerline_symbols = 'fancy'
+
 " initiate nerdtree
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
