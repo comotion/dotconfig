@@ -62,6 +62,8 @@ let g:Powerline_colorscheme='solarized256'
 "autocmd VimEnter * wincmd p
 "let NERDTreeDirArrows=1
 
+set mouse=a
+
 " Restore to previous position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 au BufNewFile,BufRead rebar.config,reltool.config,*.app.src set filetype=erlang
