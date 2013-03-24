@@ -1,12 +1,6 @@
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+autocmd vimenter * if !argc() | NERDTree | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Close all open buffers if only nerd tree is left
-function! s:CloseIfOnlyNerdTreeLeft()
-	if exists("t:NERDTreeBufName")
-		if bufwinnr(t:NERDTreeBufName) != -1
-			if winnr("$") == 1
-				q
-			endif
-		endif
-	endif
-endfunction 
+let NERDTreeWinPos="right"
+
+map <F6> :NERDTreeToggle<CR>
