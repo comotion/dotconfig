@@ -6,9 +6,10 @@ apps=" \
 	zsh rxvt-unicode \
 	gvim \
 	slim xmonad xmonad-contrib thunar dmenu \
+	tumbler ffmpegthumbnailer \
 	xfce4-power-manager xfce4-session \
 	ttf-dejavu ttf-liberation \
-	socat aria2 transmission-gtk
+	socat aria2 transmission-gtk \
 	atop ntop \
 	mutt chromium opera firefox \
 	dnsmasq \
