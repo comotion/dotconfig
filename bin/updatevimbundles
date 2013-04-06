@@ -18,7 +18,8 @@ BUNDLES="
 	git://github.com/stephenmckinney/vim-solarized-powerline.git
 	https://github.com/vim-scripts/taglist.vim
 	git://github.com/scrooloose/syntastic.git
-	git://github.com/jimenezrick/vimerl.git"
+	git://github.com/jimenezrick/vimerl.git
+	git://github.com/Valloric/YouCompleteMe.git"
 
 TARGETDIR=`dir -d ~/ | awk '{print $NF}'`.vim/bundle/
 
