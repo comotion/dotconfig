@@ -18,3 +18,6 @@ set textwidth=70
 " Disable text wrapping
 set nowrap
 set formatoptions-=at
+
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.

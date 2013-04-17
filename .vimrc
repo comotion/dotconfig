@@ -9,6 +9,10 @@ set foldcolumn=1
 set tabstop=4
 set shiftwidth=4
 set hlsearch
+set copyindent
+
+set nobackup
+set noswapfile
 
 " Automatically refresh vim config changes
 autocmd! bufwritepost vimrc source ~/.vimrc
