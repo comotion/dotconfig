@@ -7,3 +7,5 @@ for display in $(xrandr | awk '/\sconnected\s/{print $1}'); do
 	[ ! -z "$prev" ] && xrandr --output $display --$dir-of $prev
 	prev=$display
 done
+
+[ -e "~/.fehbg" ] && ~/.fehbg
