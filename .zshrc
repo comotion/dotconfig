@@ -18,6 +18,12 @@ source ~/.profile.d/lesspipe.sh
 source ~/.profile.d/tmux.sh
 source ~/.profile.d/erlang.sh
 
-export PATH=~/bin:$PATH
+export PATH=~/bin:$PATH:~/.gem/ruby/1.9.1/bin
 export EDITOR="vim"
+export ENV=dev
 
+# http://paulgraham.com/todo.html
+echo "Don't ignore your dreams; don't work too much; say what you think; \
+cultivate friendships; be happy."
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
