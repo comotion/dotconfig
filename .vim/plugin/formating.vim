@@ -19,5 +19,4 @@ set textwidth=70
 set nowrap
 set formatoptions-=at
 
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=trail:.,extends:#,nbsp:.
