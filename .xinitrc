@@ -19,5 +19,9 @@ PATH=~/bin:${PATH}
 xscreensaver -no-splash &
 /usr/lib/notification-daemon-1.0/notification-daemon &
 
+xrdb -merge ~/.Xresources
 urxvtd -q -f -o
-ck-launch-session xmonad
+xmonad &
+xrandr-auto; ~/.fehbg
+xcompmgr -cCfF -r7 -o.35 -l-10 -t-8 -D7 &
+exec xfce4-session --disable-tcp
