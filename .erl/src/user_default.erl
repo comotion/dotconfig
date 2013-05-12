@@ -22,13 +22,12 @@ help() ->
 mm() -> modified_modules().
 
 re() ->
- 	{ok, Cwd} = file:get_cwd(),
+	{ok, Cwd} = file:get_cwd(),
 	reload(Cwd).
 re(Dir) -> reload(Dir).
 
-make() -> make(false).
-make(true)  -> io:format("make:~n=====~s~n~n", [os:cmd(make)]), re();
-make(false) -> io:format("make:~n=====~s~n~n", [os:cmd(make)]), re().
+make() -> make("").
+make(Arg)  -> io:format("make:~n=====~s~n~n", [os:cmd("make " ++ Arg)]), re().
 
 tc_call(M, F, A, N) -> Arity = length(A), tc_call(fun M:F/Arity, A, N).
 tc_call(Fun, A, N) when is_function(Fun, length(A)) -> calc_avg(test_loop(Fun, A, N, [])).
