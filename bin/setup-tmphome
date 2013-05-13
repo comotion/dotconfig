@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if [ -z "$(ls /home)" ]; then
+	# sync .dotfiles from /var/cache and all other args
+	rsync -ah /var/cache/home/ $@ /home/
+fi
