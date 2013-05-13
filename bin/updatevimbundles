@@ -21,7 +21,7 @@ BUNDLES="
 	git://github.com/jimenezrick/vimerl.git
 	git://github.com/Valloric/YouCompleteMe.git"
 
-TARGETDIR=`dir -d ~/ | awk '{print $NF}'`.vim/bundle/
+TARGETDIR=$HOME.vim/bundle/
 
 for repo in $BUNDLES
 do
