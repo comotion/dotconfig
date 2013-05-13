@@ -38,6 +38,5 @@ myKeys = [
 	, ("M-S-w"                      , sendToScreen 0)
 	, ("M-S-e"                      , sendToScreen 1)
 	, ("M-S-r"                      , sendToScreen 2)
+	, ("M-S-q"                      , spawn "xfce4-session-logout")
 	] ++ scratchPadKeys scratchPadList
- 
-
