@@ -1,10 +1,15 @@
 {ok, Cwd} = file:get_cwd(),
-file:set_cwd(os:getenv("HOME") ++ "/.erl/ebin/"),
+
+EbinDir = filename:join(os:getenv("HOME"), ".erl/ebin"),
+io:format("dir: ~p, ~p", [os:getenv("HOME"), EbinDir]),
+ok = filelib:ensure_dir(EbinDir),
+ok = file:set_cwd(EbinDir),
+
 lists:foreach(fun(X) ->
 	case string:sub_word(X, 2, $.) of 
 		"erl" ->
 			shell_default:c("../src/" ++ string:sub_word(X, 1, $.));
 		_ -> ok
 	end
-end, element(2, file:list_dir("../src"))),
+end, filelib:wildcard[filename:join(EbinDir, "../src/*"])),
 file:set_cwd(Cwd).
