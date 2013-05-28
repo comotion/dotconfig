@@ -5,9 +5,8 @@ ok = filelib:ensure_dir(EbinDir ++ "/"),
 ok = file:set_cwd(EbinDir),
 
 lists:foreach(fun(X) ->
-	case string:sub_word(X, 2, $.) of
-		"erl" ->
-			{ok, _} = shell_default:c("../src/" ++ string:sub_word(X, 1, $.));
+	case filename:extension(X) of
+		".erl" -> {ok, _} = shell_default:c(X);
 		_ -> ok
 	end
 end, filelib:wildcard(filename:join([EbinDir, "../src/*"]))),
