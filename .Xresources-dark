@@ -1,3 +1,55 @@
+URxvt*termName:            rxvt-unicode-256color
+URxvt*scrollBar:           off
+
+URxvt*blurRadius:          5
+
+URxvt*selection.pattern-0: ([[:word:]]+)
+
+URxvt*urgentOnBell:         false
+URxvt*visualBell:           false
+URxvt*loginShell:           true
+URxvt*internalBorder:       3
+URxvt*lineSpace:            0
+
+!-------------------------------------------------------------------------------
+! Font setting
+!-------------------------------------------------------------------------------
+
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+URxvt*font:                 xft:DejaVu Sans Mono:pixelsize=13
+URxvt*allow_bold:           true
+
+! Fix font space
+URxvt*letterSpace:          -1
+
+!------------------------------------------------------------------------------
+! Perl extensions
+!------------------------------------------------------------------------------
+URxvt*perl-ext-common:      default,matcher,tabbed
+URxvt*matcher.button:       1
+URxvt*url-launcher:         chromium
+URxvt*colorUL:              #b58900
+
+! Cursor
+URxvt*cursorBlink:          true
+URxvt*cursorUnderline:      false
+
+! Pointer
+URxvt*pointerBlank:         true
+
+!------------------------------------------------------------------------------
+! Movement keys
+!------------------------------------------------------------------------------
+URxvt*keysym.C-Down:        \033[1;5B
+URxvt*keysym.C-Up:          \033[1;5A
+URxvt*keysym.C-Left:        \033[1;5D
+URxvt*keysym.C-Right:       \033[1;5C
+
 ! Solarized color scheme for the X Window System
 !
 ! http://ethanschoonover.com/solarized
