@@ -16,5 +16,7 @@ end, filelib:wildcard(filename:join([EbinDir, "../src/*.erl"]))),
 ok = file:set_cwd(Cwd),
 
 filelib:is_dir(EbinDir) andalso code:add_path(EbinDir),
-is_list(catch escript:script_name()) orelse user_default:load(),
-{ok, _} = mreloader:start().
+is_list(catch escript:script_name()) orelse begin
+	user_default:load(),
+	{ok, _} = mreloader:start()
+end.
