@@ -16,7 +16,11 @@ end, filelib:wildcard(filename:join([EbinDir, "../src/*.erl"]))),
 ok = file:set_cwd(Cwd),
 
 filelib:is_dir(EbinDir) andalso code:add_path(EbinDir),
-is_list(catch escript:script_name()) orelse begin
+
+P = [X || {X,_} <- init:get_arguments(), X == mode orelse X == noshell],
+
+([] =/= P) orelse begin
+	io:format("Loading modules and starting mreloader, have fun :)~n"),
 	user_default:load(),
 	{ok, _} = mreloader:start()
 end.
