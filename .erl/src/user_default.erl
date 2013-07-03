@@ -1,10 +1,13 @@
 -module(user_default).
 
--export([help/0]).
--export([mm/0]).
--export([re/0, re/1]).
--export([make/0, make/1]).
--export([tc_call/3, tc_call/4]).
+-export([
+	  help/0
+	, mm/0
+	, re/0, re/1
+	, load/0, load/1
+	, make/0, make/1
+	, tc_call/3, tc_call/4
+]).
 
 help() ->
 	shell_default:help(),
@@ -12,6 +15,8 @@ help() ->
 	io:format("mm()        -- Find modified modules\n"),
 	io:format("re()        -- Reload all modules under current dir\n"),
 	io:format("re(Dir)     -- Reload all modules under dir\n"),
+	io:format("load()      -- Load all modules in codepath\n"),
+	io:format("load(WC)    -- Load all modules found by wildcard\n"),
 	io:format("make()      -- Same as make(false).\n"),
 	io:format("make(true)  -- Call make and and reload everything, clear shell\n"),
 	io:format("make(false) -- Call make and and reload everything, clear shell\n"),
@@ -25,6 +30,22 @@ re() ->
 	{ok, Cwd} = file:get_cwd(),
 	reload(Cwd).
 re(Dir) -> reload(Dir).
+
+load() ->
+	[load(P) || P <- code:get_path()].
+
+load(Wildcard) ->
+	spawn(
+	fun() -> lists:foreach(fun(Path) ->
+		case filelib:is_dir(Path) of
+			true ->
+				load(filename:join([Path, "*.beam"]));
+			false ->
+				Mod = list_to_atom(filename:basename(Path, ".beam")),
+				code:ensure_loaded(Mod)
+		end
+	end, filelib:wildcard(Wildcard))
+	end).
 
 make() -> make("").
 make(Arg)  -> io:format("make:~n=====~s~n~n", [os:cmd("make " ++ Arg)]), re().

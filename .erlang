@@ -10,4 +10,6 @@ lists:foreach(fun(X) ->
 		_ -> ok
 	end
 end, filelib:wildcard(filename:join([EbinDir, "../src/*"]))),
-ok = file:set_cwd(Cwd).
+ok = file:set_cwd(Cwd),
+
+user_default:load().
