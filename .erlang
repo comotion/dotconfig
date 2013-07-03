@@ -4,12 +4,17 @@ EbinDir = filename:join(os:getenv("HOME"), ".erl/ebin"),
 ok = filelib:ensure_dir(EbinDir ++ "/"),
 ok = file:set_cwd(EbinDir),
 
-lists:foreach(fun(X) ->
-	case filename:extension(X) of
-		".erl" -> {ok, _} = shell_default:c(X);
+lists:foreach(fun(Src) ->
+	Target = filename:join([EbinDir, filename:basename(Src, ".erl") ++ ".beam"]),
+
+	[SMod, TMod] = [filelib:last_modified(X) || X <- [Src, Target]],
+	case filename:extension(Target) of
+		".erl" when SMod > TMod -> {ok, _} = shell_default:c(Src);
 		_ -> ok
 	end
-end, filelib:wildcard(filename:join([EbinDir, "../src/*"]))),
+end, filelib:wildcard(filename:join([EbinDir, "../src/*.erl"]))),
 ok = file:set_cwd(Cwd),
 
-user_default:load().
+filelib:is_dir(EbinDir) andalso code:add_path(EbinDir),
+user_default:load(),
+{ok, _} = mreloader:start().
