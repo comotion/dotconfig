@@ -19,9 +19,10 @@ BUNDLES="
 	https://github.com/vim-scripts/taglist.vim
 	git://github.com/scrooloose/syntastic.git
 	git://github.com/jimenezrick/vimerl.git
-	git://github.com/Valloric/YouCompleteMe.git"
+	git://github.com/Valloric/YouCompleteMe.git
+	git://github.com/elixir-lang/vim-elixir.git"
 
-TARGETDIR=$HOME.vim/bundle/
+TARGETDIR=$HOME/.vim/bundle/
 
 for repo in $BUNDLES
 do
