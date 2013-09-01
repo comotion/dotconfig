@@ -17,7 +17,6 @@ apps=" \
 	vlc feh moc \
 	gimp \
 	xorg-server xorg-utils xf86-input-evdev \
-	rlwrap \
 	"
 
 aurapps=""
