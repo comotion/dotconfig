@@ -25,4 +25,6 @@ export ENV=dev
 echo "Don't ignore your dreams; don't work too much; say what you think; \
 cultivate friendships; be happy."
 
+setopt AUTO_PUSHD
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
