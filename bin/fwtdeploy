@@ -15,10 +15,13 @@ if [ ! -z "$help" ]; then
 	echo "	--server	List of servers to deploy to"
 	echo "	--target	The name to deploy to, otherwise the name of current directory will be used"
 	echo "	--exclude	List of files to exclude from rsync"
+	echo "  --source    The source directory to sync (default: *)"
 	exit
 fi
 
 declare -A args
+
+args[source]=*
 
 file=.deploy.conf
 if [ ! -e $file ]; then
@@ -80,7 +83,7 @@ for server in ${args["server"]}; do
 	fi
 
 	args["target"]=$deptarget${args["target"]}
-	echo "rsync $rsyncopts $exclude --delete-after * $server:${args[target]}"
+	echo "rsync $rsyncopts $exclude --delete-after ${args[source]} $server:${args[target]}"
 	echo ""
-	rsync $rsyncopts $exclude --delete-after * $server:${args[target]}
+	rsync $rsyncopts $exclude --delete-after ${args[source]} $server:${args[target]}
 done
