@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+[ $# -lt 2 ] && { echo "usage: $0 <disk> <name> [mountpoint]"; exit 1; }
+
+[ -e /dev/mapper/$2 ] \
+	&& echo "warn: /dev/mapper/$2 allready exists, skipping cryptsetup"  \
+	|| cryptsetup open --type luks $1 $2 || { echo "error: failed to decrypt $1"; exit 1; }
+mount /dev/mapper/$2 $3 || { echo "error: failed to mount /dev/mapper/$2"; exit 1; }
