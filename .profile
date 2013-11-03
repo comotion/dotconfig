@@ -14,3 +14,4 @@ echo "Don't ignore your dreams; don't work too much; say what you think; \
 cultivate friendships; be happy."
 
 eval $(keychain --eval -Q --quiet)
+. $(kerl list installations | sort | awk 'END{print $NF}')/activate
