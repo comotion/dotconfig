@@ -69,10 +69,10 @@ URxvt*keysym.C-Right:       \033[1;5C
 
 ! Dark
 
-#define S_base03        #002b36
-#define S_base02        #073642
-#define S_base01        #586e75
-#define S_base00        #657b83
+#define S_base03        #000924
+#define S_base02        #051420
+#define S_base01        #364c53
+#define S_base00        #235971
 #define S_base0         #839496
 #define S_base1         #93a1a1
 #define S_base2         #eee8d5
@@ -83,7 +83,10 @@ URxvt*keysym.C-Right:       \033[1;5C
 !
 ! URxvt*background:            S_base03
 
-URxvt*background:              S_base03
+URxvt*depth: 32
+
+
+URxvt*background:              [75]#000914
 URxvt*foreground:              S_base0
 URxvt*fading:                  40
 URxvt*fadeColor:               S_base03
