@@ -4,12 +4,16 @@ import XMonad.Hooks.EwmhDesktops
 
 import XMonad.Actions.PhysicalScreens
 
+import XMonad.Layout.NoBorders
+import XMonad.Layout.GridVariants
+
 import ScratchPadKeys (scratchPadList, manageScratchPads, scratchPadKeys)
 import XMonad.Util.EZConfig (additionalKeysP)
 
 main = do
 	xmonad $ defaultConfig
-		{ terminal           = "urxvtc"
+		{ layoutHook         = smartBorders Full ||| SplitGrid L 2 3 (2/3) (16/10) (5/100)
+		, terminal           = "urxvtc"
 		, modMask            = mod4Mask
 		, borderWidth        = 1
 		, handleEventHook    = fullscreenEventHook
@@ -25,7 +29,6 @@ myWorkspaces = ["1:view", "2:code", "3:x", "4:y", "5:z", "6:w", "7:z", "8:media"
 myKeys :: [(String, X())]
 myKeys = [
 	  ("M-d"                        , spawn "dmenu_run"                         )
-	, ("M-S-d"                      , spawn "gmrun"                         )
 	, ("<XF86AudioMute>"            , spawn "amixer sset Master toggle"     )
 	, ("<XF86AudioRaiseVolume>"     , spawn "amixer sset Master 1%+ unmute" )
 	, ("<XF86AudioLowerVolume>"     , spawn "amixer sset Master 1%- unmute" )
@@ -35,6 +38,10 @@ myKeys = [
 	, ("M-w"                        , viewScreen 0)
 	, ("M-e"                        , viewScreen 1)
 	, ("M-r"                        , viewScreen 2)
+	, ("M-="                        , sendMessage $ IncMasterCols 1)
+	, ("M--"                        , sendMessage $ IncMasterCols (-1))
+	, ("M-S-="                      , sendMessage $ IncMasterRows 1)
+	, ("M-S--"                      , sendMessage $ IncMasterRows (-1))
 	, ("M-S-w"                      , sendToScreen 0)
 	, ("M-S-e"                      , sendToScreen 1)
 	, ("M-S-r"                      , sendToScreen 2)
