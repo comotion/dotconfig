@@ -1,45 +1,77 @@
 #!/bin/sh
 
-_PWD=$(pwd)
-
 apps=" \
 	zsh rxvt-unicode \
-	gvim \
-	slim xmonad xmonad-contrib thunar dmenu \
+	gvim bc \
+	slim xmonad xmonad-contrib thunar \
 	tumbler ffmpegthumbnailer \
-	xfce4-power-manager xfce4-session \
+	xfce4-power-manager xfce4-session xscreensaver \
 	ttf-dejavu ttf-liberation \
 	socat aria2 transmission-gtk \
 	atop ntop \
 	mutt chromium opera firefox \
+	jre7-openjdk icedtea-web-java7 jdk7-openjdk flashplugin \
 	dnsmasq \
-	base-devel \
+	base-devel cmake schroot \
 	vlc feh moc \
 	gimp \
 	xorg-server xorg-utils xf86-input-evdev \
+	libvirt virt-manager qemu \
+	keychain \
 	"
 
-aurapps=""
+aurapps="udhcp"
 
-sudo pacman -S $apps
+sudo pacman -S --needed --force $apps || { echo "Failed to install packages...."; exit 1; }
 
 # Install AUR toolkit
 pkgquery="https://aur.archlinux.org/packages/pa/package-query/PKGBUILD"
 yaourt="https://aur.archlinux.org/packages/ya/yaourt/PKGBUILD"
 
-mkdir -p /tmp/{yaourt,pkgquery}
-cd /tmp/pkgquery
-wget $pkgquery
-makepkg -i
+if [ ! pacman -Q package-query > /dev/null ]; then
+	mkdir -p /tmp/{yaourt,pkgquery}
+	cd /tmp/pkgquery
+	wget $pkgquery
+	makepkg -i
+	cd -
+fi
 
-cd /tmp/yaourt
-wget $yaourt
-makepkg -i
-
-cd $_PWD
+if [ ! pacman -Q yaourt > /dev/null ]; then
+	cd /tmp/yaourt
+	wget $yaourt
+	makepkg -i
+	cd -
+fi
 
 yaourt -S $aurapps
 
 # Fix vim stuff
 ~/bin/updatevimbundles
 
+polkitlibvirt=/etc/polkit-1/rules.d/50-org.libvirt.unix.manage.rules
+if [ ! -e  $polkitlibvirt ]; then
+	echo <<EOF
+	polkit.addRule(function(action, subject) {
+		if (action.id == "org.libvirt.unix.manage" &&
+			subject.isInGroup("libvirt")) {
+				return polkit.Result.YES;
+		}
+	});
+EOF
+fi
+
+getent group libvirt || sudo groupadd libvirt
+getent group libvirt | grep -qP "[:,]$USER(,|$)" || sudo usermod -aG libvirt $USER
+
+# Fix libvirt config
+libvirtcfg=/etc/libvirt/libvirtd.conf
+[ -e $libvirtcfg ] || sudo cp $libvirtcfg ${libvirtcfg}.conf.org
+sudo sed -i -E 's/#(unix_sock_(group|ro_perms|rw_perms))/\1/' /etc/libvirt/libvirtd.conf
+sudo sed -i -E 's/#(auth_unix_r[ow])/\1/' /etc/libvirt/libvirtd.conf
+
+sudo systemctl enable libvirtd
+sudo systemctl start libvirtd
+
+sudo mkdir -p /data/virt /data/src
+sudo ln -sf /virt /data/virt
+sudo ln -sf /src /data/src
