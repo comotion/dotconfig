@@ -1,0 +1,38 @@
+#!/bin/sh
+
+if [ -z "$1" ]
+then
+	echo "usage: $0 -n <dirs>"
+	exit 1
+fi
+
+nosleep="false"
+if [ "-n" == "$1" ]
+then
+	nosleep="true"
+	shift
+fi
+
+take_random() {
+	[ 1 -eq $# ] || shift $(($RANDOM % $#))
+	if [ -d $1 ]
+	then
+		find $(cd $1 && pwd) -type f | sort --random-sort | head -1
+	else
+		echo $1
+	fi
+}
+
+set_bg() {
+	[ ! -z "$1" ] && feh --bg-fill $1 && ln -sf $1 ~/.background
+}
+
+set_bg $(take_random $@)
+
+
+while [ "false" == $nosleep ]; do
+	set_bg $(take_random $@)
+	sleep 600
+done
+
+
