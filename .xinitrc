@@ -26,5 +26,6 @@ xrandr-auto; ~/.fehbg
 xcompmgr -cCfF -r7 -o.35 -l-10 -t-8 -D7 &
 setxkbmap -option compose:caps
 compton -cCGfb &
+conky &
 bin/cyclewallpaper ~/Downloads/wallpapers &
 exec xfce4-session --disable-tcp
