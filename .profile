@@ -1,17 +1,9 @@
-foreach() {
-	cmd=$1; shift
-	for i in $@; do $cmd $i || echo "Error executing: $cmd $i"; done
-}
+#!/bin/sh
 
-foreach source ~/.profile.d/*.sh
-
-export PATH=~/bin:$PATH:~/.gem/ruby/1.9.1/bin:~/.rvm/bin
 export EDITOR=vim
-export ENV=dev
 
-# http://paulgraham.com/todo.html
-echo "Don't ignore your dreams; don't work too much; say what you think; \
-cultivate friendships; be happy."
+eval $(keychain --eval -Q --quiet 2> /dev/null) 2> /dev/null
+#source /usr/local/rvm/scripts/rvm
+export LC_NUMERIC="POSIX"
+export DOCKER_HOST=tcp://192.168.59.103:2375
 
-eval $(keychain --eval -Q --quiet)
-. $(kerl list installations | sort | awk 'END{print $NF}')/activate
