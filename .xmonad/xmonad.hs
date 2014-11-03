@@ -50,11 +50,12 @@ myKeys = [
 	, ("<XF86AudioMute>"            , spawn "amixer sset Master toggle"     )
 	, ("<XF86AudioRaiseVolume>"     , spawn "amixer sset Master 1%+ unmute" )
 	, ("<XF86AudioLowerVolume>"     , spawn "amixer sset Master 1%- unmute" )
+	, ("<XF86AudioMicMute>"         , spawn "amixer sset Mic toggle" )
 	, ("<XF86AudioNext>"            , spawn "DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"          )
 	, ("<XF86AudioPrev>"            , spawn "DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"      )
 	, ("<XF86AudioPlay>"            , spawn "DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"     )
 
-	, ("<XF86Launch1>"              , spawn "xrandr -q")
+	, ("M-<F7>"                     , spawn "xrandr --auto")
 
 	, ("M-="                        , sendMessage $ IncMasterCols 1)
 	, ("M--"                        , sendMessage $ IncMasterCols (-1))

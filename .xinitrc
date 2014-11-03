@@ -17,6 +17,8 @@ fi
 # ...or the Window Manager of your choice
 PATH=~/bin:${PATH}
 export LANG=en_GB.UTF-8
+alias c=chromium
+alias chro=chromium
 
 /usr/lib/notification-daemon-1.0/notification-daemon &
 
