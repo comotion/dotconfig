@@ -9,6 +9,7 @@
 
 BUNDLES="
 	git://github.com/pangloss/vim-javascript.git
+	git://github.com/kchmck/vim-coffee-script.git
 	git://github.com/tpope/vim-git.git
 	git://github.com/tpope/vim-markdown.git
 	git://github.com/scrooloose/nerdtree.git
@@ -20,7 +21,11 @@ BUNDLES="
 	git://github.com/scrooloose/syntastic.git
 	git://github.com/jimenezrick/vimerl.git
 	git://github.com/Valloric/YouCompleteMe.git
-	git://github.com/elixir-lang/vim-elixir.git"
+	git://github.com/mikewest/vimroom.git
+	git://github.com/elixir-lang/vim-elixir.git
+	git://github.com/elixir-lang/vim-elixir.git
+	git://github.com/vim-scripts/SyntaxRange
+	git://github.com/mattonrails/vim-mix.git"
 
 TARGETDIR=$HOME/.vim/bundle/
 

@@ -16,6 +16,7 @@ set noswapfile
 
 " Automatically refresh vim config changes
 autocmd! bufwritepost vimrc source ~/.vimrc
+autocmd! bufwritepost *.ex :Mcompile
 
 " Fix  tabbing
 set wildmenu
@@ -38,7 +39,7 @@ set scrolloff=3
 set backspace=indent,eol,start
 
 " highlight matching brackets and so on
-set showmatch 
+set showmatch
 
 filetype on
 filetype plugin on
