@@ -86,7 +86,7 @@ URxvt*keysym.C-Right:       \033[1;5C
 URxvt*depth: 32
 
 
-URxvt*background:              [75]#000914
+URxvt*background:              [65]#000914
 URxvt*foreground:              S_base0
 URxvt*fading:                  40
 URxvt*fadeColor:               S_base03

@@ -31,7 +31,7 @@ set_bg $(take_random $@)
 
 
 while [ "false" == $nosleep ]; do
-	set_bg $(take_random $@)
+	set_bg "$(take_random $@)"
 	sleep 600
 done
 

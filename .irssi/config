@@ -1,27 +1,104 @@
 servers = (
-  { chatnet = "Freenode"; address = "irc.freenode.net";      password = "-ssl_cert"; use_ssl = "yes"; ssl_verify = "yes"; autoconnect = "yes"; },
-  { chatnet = "EFNet";    address = "irc.servercentral.net"; port = "9999"; use_ssl = "yes"; ssl_verify = "no"; autoconnect = "yes"; },
-  { chatnet = "EFNet";    address = "irc.paraphysics.net";   port = "6697"; use_ssl = "yes"; ssl_verify = "no"; autoconnect = "yes"; },
-  { chatnet = "EFNet";    address = "efnet.eversible.com";   port = "9999"; use_ssl = "yes"; ssl_verify = "no"; autoconnect = "yes"; },
-  { chatnet = "EFNet";    address = "irc.blessed.net";       port = "9999"; use_ssl = "yes"; ssl_verify = "no"; autoconnect = "yes"; },
-  { chatnet = "EFNet";    address = "irc.he.net";            port = "9999"; use_ssl = "yes"; ssl_verify = "no"; autoconnect = "yes"; },
-  { chatnet = "EFNet";    address = "irc.shoutcast.com";     port = "8000"; use_ssl = "yes"; ssl_verify = "no"; autoconnect = "yes"; },
-  { chatnet = "EFNet";    address = "irc.umich.edu";         port = "9999"; use_ssl = "yes"; ssl_verify = "no"; autoconnect = "yes"; },
-  { chatnet = "EFNet";    address = "irc2.choopa.net";       port = "9999"; use_ssl = "yes"; ssl_verify = "no"; autoconnect = "yes"; }
+  {
+    chatnet = "Freenode";
+    address = "irc.freenode.net";
+    password = "-ssl_cert";
+    use_ssl = "yes";
+    ssl_verify = "yes";
+    autoconnect = "yes";
+  },
+  {
+    chatnet = "EFNet";
+    address = "irc.servercentral.net";
+    port = "9999";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    chatnet = "EFNet";
+    address = "irc.paraphysics.net";
+    port = "6697";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    chatnet = "EFNet";
+    address = "efnet.eversible.com";
+    port = "9999";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    chatnet = "EFNet";
+    address = "irc.blessed.net";
+    port = "9999";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    chatnet = "EFNet";
+    address = "irc.he.net";
+    port = "9999";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    chatnet = "EFNet";
+    address = "irc.shoutcast.com";
+    port = "8000";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    chatnet = "EFNet";
+    address = "irc.umich.edu";
+    port = "9999";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    chatnet = "EFNet";
+    address = "irc2.choopa.net";
+    port = "9999";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  }
 );
 
 chatnets = {
-  EFNet = {    type = "IRC"; max_kicks = "4"; max_msgs = "3"; max_whois = "1"; };
-  Freenode = { type = "IRC"; max_kicks = "1"; max_msgs = "3"; max_whois = "30"; };
+  EFNet = { 
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "3";
+    max_whois = "1";
+  };
+  Freenode = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "3";
+    max_whois = "30";
+  };
 };
 
 channels = (
-  { chatnet = "Freenode"; name = "#oslohackerspace"; autojoin = "Yes"; },
+  { 
+    chatnet = "Freenode";
+    name = "#oslohackerspace";
+    autojoin = "Yes";
+  },
   { chatnet = "Freenode"; name = "#erlang"; autojoin = "Yes"; },
   { chatnet = "Freenode"; name = "#riak"; autojoin = "Yes"; },
-  { chatnet = "EFNet";    name = "#oslobass"; autojoin = "Yes"; },
-  { chatnet = "EFNet";    name = "#hyperboria"; autojoin = "Yes"; },
-  { chatnet = "EFNet";    name = "#projetmeshnet"; autojoin = "Yes"; }
+  { chatnet = "EFNet"; name = "#oslobass"; autojoin = "Yes"; },
+  { chatnet = "EFNet"; name = "#hyperboria"; autojoin = "Yes"; },
+  { chatnet = "EFNet"; name = "#projetmeshnet"; autojoin = "Yes"; }
 );
 
 aliases = {
@@ -102,14 +179,11 @@ statusbar = {
     topic_empty = " Irssi v$J - http://www.irssi.org";
 
     # all of these treated specially, they're only displayed when needed
-    lag = "{sb Lag: $0-}";
-    act = "{sb Act: $0-}";
-    more = "-- more --";
-
-    # Solarized
     lag = "{sb Lag: %m$0-%n}";
     act = "{sb Act: $0-}";
     more = "%k%3-- more --%n";
+
+    # Solarized
   };
 
   # there's two type of statusbars. root statusbars are either at the top
@@ -191,15 +265,15 @@ statusbar = {
   };
 };
 settings = {
-  core = { real_name = ""; user_name = "lafa"; nick = "lafa"; };
+  core = { real_name = "Unknown"; user_name = "lafa"; nick = "lafa"; };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
     # Solarized
     theme = "solarized-universal";
     hilight_color = "= %R";
-  }
+  };
 };
 
-hilights = (
-   { text = "lafa"; color = "%M"; nick = "yes"; word = "yes"; }
+hilights = ( 
+  { text = "lafa"; color = "%M"; nick = "yes"; word = "yes"; }
 );

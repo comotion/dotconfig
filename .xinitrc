@@ -16,16 +16,19 @@ fi
 # exec startxfce4
 # ...or the Window Manager of your choice
 PATH=~/bin:${PATH}
-xscreensaver -no-splash &
+export LANG=en_GB.UTF-8
+
 /usr/lib/notification-daemon-1.0/notification-daemon &
 
 xrdb -merge ~/.Xresources
 urxvtd -q -f -o
 xmonad &
-xrandr-auto; ~/.fehbg
-xcompmgr -cCfF -r7 -o.35 -l-10 -t-8 -D7 &
+#xrandr-auto; ~/.fehbg
 setxkbmap -option compose:caps
 compton -cCGfb &
-conky &
 bin/cyclewallpaper ~/Downloads/wallpapers &
+urxvtc &
+
+#exec openbox
+gnome-keyring-daemon
 exec xfce4-session --disable-tcp

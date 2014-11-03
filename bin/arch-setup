@@ -12,15 +12,15 @@ apps=" \
 	mutt chromium opera firefox \
 	jre7-openjdk icedtea-web-java7 jdk7-openjdk flashplugin \
 	dnsmasq \
-	base-devel cmake schroot \
-	vlc feh moc \
+	base-devel cmake \
+	vlc feh moc ffmpeg-compat \
 	gimp \
 	xorg-server xorg-utils xf86-input-evdev \
 	libvirt virt-manager qemu \
-	keychain \
+	keychain envoy \
 	"
 
-aurapps="udhcp"
+aurapps="udhcp dmenu-xft spotify qemu-user-static binfmt-support"
 
 sudo pacman -S --needed --force $apps || { echo "Failed to install packages...."; exit 1; }
 
@@ -28,7 +28,7 @@ sudo pacman -S --needed --force $apps || { echo "Failed to install packages...."
 pkgquery="https://aur.archlinux.org/packages/pa/package-query/PKGBUILD"
 yaourt="https://aur.archlinux.org/packages/ya/yaourt/PKGBUILD"
 
-if [ ! pacman -Q package-query > /dev/null ]; then
+if ! pacman -Q package-query > /dev/null; then
 	mkdir -p /tmp/{yaourt,pkgquery}
 	cd /tmp/pkgquery
 	wget $pkgquery
@@ -36,7 +36,7 @@ if [ ! pacman -Q package-query > /dev/null ]; then
 	cd -
 fi
 
-if [ ! pacman -Q yaourt > /dev/null ]; then
+if ! pacman -Q yaourt > /dev/null; then
 	cd /tmp/yaourt
 	wget $yaourt
 	makepkg -i
@@ -73,5 +73,9 @@ sudo systemctl enable libvirtd
 sudo systemctl start libvirtd
 
 sudo mkdir -p /data/virt /data/src
-sudo ln -sf /virt /data/virt
-sudo ln -sf /src /data/src
+[ -L "/virt" ] || sudo ln -sf /data/virt /virt
+[ -L "/src" ] || sudo ln -sf /data/src /src
+
+
+echo "Remember to set MODULES=\"i915\" in /etc/mkinitcpio.conf"
+

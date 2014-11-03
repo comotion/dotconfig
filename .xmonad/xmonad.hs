@@ -9,8 +9,7 @@ import XMonad.Actions.PhysicalScreens
 import XMonad.Actions.DynamicWorkspaces
 import XMonad.Actions.CopyWindow(copy, kill1)
 import XMonad.Actions.CycleWS
-
-
+import XMonad.Actions.GridSelect
 
 import XMonad.Layout.NoBorders
 import XMonad.Layout.GridVariants
@@ -55,11 +54,14 @@ myKeys = [
 	, ("<XF86AudioPrev>"            , spawn "DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"      )
 	, ("<XF86AudioPlay>"            , spawn "DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"     )
 
+	, ("<XF86Launch1>"              , spawn "xrandr -q")
+
 	, ("M-="                        , sendMessage $ IncMasterCols 1)
 	, ("M--"                        , sendMessage $ IncMasterCols (-1))
 	, ("M-S-="                      , sendMessage $ IncMasterRows 1)
 	, ("M-S--"                      , sendMessage $ IncMasterRows (-1))
 
+	, ("C-M-<Backspace>"            , spawn "slock")
 	, ("M-<Backspace>"              , removeWorkspace)
 	, ("M-v"                        , selectWorkspace defaultXPConfig)
 	, ("M-m"                        , withWorkspace defaultXPConfig (windows . W.shift))
@@ -77,6 +79,8 @@ myKeys = [
 	, ("M-S-w"                      , sendToScreen 0)
 	, ("M-S-e"                      , sendToScreen 1)
 	, ("M-S-r"                      , sendToScreen 2)
+
+	, ("M-g"                        , goToSelected defaultGSConfig)
 
 	, ("M-S-c"                      , kill1)
 	, ("M-S-q"                      , spawn "xfce4-session-logout")
