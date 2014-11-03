@@ -1,40 +1,99 @@
 #!/bin/sh
+# ex: ft=sh expandtab tabstop=2
 
-# Original version by Rob Landley of http://landley.net
+# Unearthly mutation of Rob Landley code (http://landley.net)
+
+# echo "You might be missing some of these: \
+# $(sed -E '/\.so.*=/{s/.*\(".*\/([^"]+)".*=.([-0-9]*).*/\1 \2/;p};d' <trace> | \
+#   sort -u | awk '{print $1}' | uniq -c | \
+#   sed -E '/1 /{s/.*1 (.*)/\1 /;p};d' | tr -d "\n")"
+
+set -e
 
 [ $# -lt 2 ] && { echo "usage: $0 <dest> targets ..."; exit 1; }
 
-dest=$1
+destdir=$1
 shift
 
-[ ! -d "$dest" ] && { echo "error: dir '$dest' does not exists"; exit 1; }
-shift
+run() {
+  [ ! -d "$destdir" ] && { echo "error: dir '$destdir' does not exists"; exit 1; }
 
-mkchroot() {
-  for i in "$@"
+  for src in "$@"
   do
-    echo $i | grep -qP '^\.?/' || i=$(which $i)
-
-    # Skip if target already exist
-    [ -e "$dest/$i" ] && continue
-
-    echo "f: $i -> $dest/$i"
-
-    if [ -e "$i" ]
+    if [ -e "$destdir/$src" ]
     then
-      # Create destination path
-      d=`echo "$i" | grep -o '.*/'` &&
-      mkdir -p "$dest/$d" &&
-      # Copy file
-      cat "$i" > "$dest/$i" &&
-      chmod +x "$dest/$i"
-    else
-      echo "Not found: $i"
+      continue
     fi
 
-    # Recursively copy shared libraries'
-    mkchroot "$dest" $(ldd "$i" | egrep -o '/.* ')
+    src=$(echo $src | sed '/^[^/]/s~^~./~')
+    echo "#> $src"
+    run $(ldd $(rsync --devices -vakR $src $destdir 2> /dev/null | head -n -3 | tail -n +2 | grep -v '/$') 2> /dev/null \
+      | sed -E 's~.*=>~~;s~^[^/]*([^ :]*).*~\1~')
   done
 }
 
-mkchroot "$@"
+run "$@"
+echo "Done, fixing missing symlinks!"
+
+# Dereference all links
+run $(find $destdir -type l ! -wholename '*/proc/*' -and ! -wholename '*/sys/*' 2> /dev/null | xargs readlink -f | sed 's~^'$destdir'~~')
+
+## Recreate the exact structure of links and directories
+#recreatepath() {
+#  _src=$1
+#
+#  if ! stat "$destdir" > /dev/null 2>&1
+#  then
+#    mkdir "$destdir" || { echo "Failed to create target: $destdir"; exit 1; }
+#  fi
+#
+#  recreatepath_ "/" $(echo $_src | sed 's~/~ ~g')
+#}
+#
+#recreatepath_() {
+#  n=$#;
+#  _src=$(echo "$1/$2" | sed 's~/$~~');
+#  dest="$destdir/$_src"
+#  shift 2 || shift # set -e ;)
+#
+#  if [ -L "$_src" ]; then
+#    (cd $(dirname $_src); recreatepath $(dirname $(readlink $_src)))
+#    [ -L "$dest" ] || (
+#      cp -P "$_src" "$dest")
+#  elif [ -d "$_src" ] && [ ! -e "$dest" ] && [ ! -L "$dest" ]; then
+#    mkdir "$dest"
+#  fi
+#
+#  [ $n == 1 ] && return
+#
+#  recreatepath_ $_src $@
+#}
+#
+
+#find $1 -print | cpio -pvdm $destdir
+
+#
+#    # Skip if target already exist
+#    rtarget=$([ -L "$target" ] && echo "$destdir/$(readlink $target)" || echo "$target")
+#    [ -f "$rtarget" ] && continue
+#
+#    recreatepath $src
+#
+#    stat $src > /dev/null || exit 1
+#
+#    if [ -L "$src" ]
+#    then
+#      # Copy the link, later copy will dereference and get the linked
+#      # resource
+#      (cd $(dirname $src);
+#       cp -fP $src "$destdir/$(dirname $src)")
+#      recreatepath $src
+#    fi
+#
+#    rpath=$(readlink -f $src)
+#    recreatepath $rpath
+#    cd "$destdir/$(dirname $src)"
+#
+#    [ -d "$rpath" ] &&
+#      syncdir $rpath ||
+#      ([ -L "$destdir/$rpath" ] || cp -fL $rpath "$destdir/$rpath")
