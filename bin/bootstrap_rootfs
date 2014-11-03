@@ -1,0 +1,15 @@
+#!/bin/sh
+dest=$1
+shift
+mkdir -p $dest/usr/bin
+ln -sf usr/bin $dest/bin
+ln -sf usr/lib $dest/lib
+ln -sf usr/lib $dest/lib64
+for bin in "$@"; do
+		mkdir -p $dest/$(dirname $bin) && cp -f $bin $dest/$(dirname $bin)
+		for lib in $(ldd $bin | sed 's/.* => //;s/ .*//' | grep -P '^\s?/'); do
+				target=$dest/$(dirname $lib)
+				mkdir -p $target && cp -f $lib $target
+		done
+done
+
