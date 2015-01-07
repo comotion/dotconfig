@@ -25,7 +25,8 @@ BUNDLES="
 	git://github.com/elixir-lang/vim-elixir.git
 	git://github.com/elixir-lang/vim-elixir.git
 	git://github.com/vim-scripts/SyntaxRange
-	git://github.com/mattonrails/vim-mix.git"
+	git://github.com/mattonrails/vim-mix.git
+	git://github.com/wting/rust.vim.git"
 
 TARGETDIR=$HOME/.vim/bundle/
 

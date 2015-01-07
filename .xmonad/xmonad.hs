@@ -55,7 +55,7 @@ myKeys = [
 	, ("<XF86AudioPrev>"            , spawn "DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"      )
 	, ("<XF86AudioPlay>"            , spawn "DISPLAY=:0 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"     )
 
-	, ("M-<F7>"                     , spawn "xrandr --auto")
+	, ("M-s>"                     , spawn "xrandr --auto")
 
 	, ("M-="                        , sendMessage $ IncMasterCols 1)
 	, ("M--"                        , sendMessage $ IncMasterCols (-1))

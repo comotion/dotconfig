@@ -6,8 +6,8 @@ set hidden
 set foldcolumn=1
 
 " tab size
-set tabstop=4
-set shiftwidth=4
+set tabstop=3
+set shiftwidth=3
 set hlsearch
 set copyindent
 
@@ -71,7 +71,13 @@ set mouse=a
 
 " Restore to previous position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Erlang
 au BufNewFile,BufRead rebar.config,reltool.config,*.app.src set filetype=erlang
+
+" We would never need to highlight lines that's longer than 120 since
+" they are usually just minifed css/js
+set synmaxcol=120
 
 " Autocompleted buffer selection (Thanks to Agathoklis D.  Hatzimanikas)
 " http://vim.1045645.n5.nabble.com/Sort-the-buffer-list-td1184351.html

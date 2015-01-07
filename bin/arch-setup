@@ -18,6 +18,7 @@ apps=" \
 	xorg-server xorg-utils xf86-input-evdev \
 	libvirt virt-manager qemu \
 	keychain envoy \
+	electrum zbar \
 	"
 
 aurapps="udhcp dmenu-xft spotify qemu-user-static binfmt-support"
