@@ -25,14 +25,14 @@ my own preferences and Clay's vi-like spatial bindings -->
        mouse into it, also raise the window -->
   </focus>
   <placement>
-    <policy>Smart</policy>
+    <policy>UnderMouse</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>no</center>
     <!-- whether to place windows in the center of the free area found or
        the top left corner -->
   </placement>
   <theme>
-    <name>Onyx-Citrus</name>
+    <name>Clearlooks</name>
     <titleLayout>NLDIMC</titleLayout>
     <!--
       avaible characters are NDSLIMC, each can occur at most once.
@@ -181,9 +181,6 @@ my own preferences and Clay's vi-like spatial bindings -->
     <keybind key="W-KP_4">
       <action name="DirectionalFocusWest"/>
     </keybind>
-    <keybind key="W-H">
-      <action name="DirectionalFocusWest"/>
-    </keybind>
     <keybind key="W-KP_5">
       <action name="NextWindow"/>
     </keybind>
@@ -197,6 +194,18 @@ my own preferences and Clay's vi-like spatial bindings -->
       <action name="DesktopPrevious">
         <wrap>yes</wrap>
       </action>
+    </keybind>
+    <keybind key="W-h">
+      <action name="DirectionalFocusWest"/>
+    </keybind>
+    <keybind key="W-j">
+      <action name="DirectionalFocusSouth"/>
+    </keybind>
+    <keybind key="W-k">
+      <action name="DirectionalFocusNorth"/>
+    </keybind>
+    <keybind key="W-l">
+      <action name="DirectionalFocusEast"/>
     </keybind>
     <!--
     <keybind key="W-KP_Decimal">
@@ -455,65 +464,6 @@ my own preferences and Clay's vi-like spatial bindings -->
         <menu>client-list-combined-menu</menu>
       </action>
     </keybind>
-    <!--END of Show Menu Bindings-->
-    <keybind key="W-Print">
-      <action name="ShowMenu">
-        <menu>root-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="W-Scroll_Lock">
-      <action name="ShowMenu">
-        <menu>client-list-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="C-Print">
-      <action name="Execute">
-        <execute>scrot -m ~/archive/shots/%Y-%m-%d_%wx$h.png</execute>
-      </action>
-    </keybind>
-    <keybind key="W-l">
-      <action name="Execute">
-        <execute>xscreensaver-command -l</execute>
-      </action>
-    </keybind>
-    <keybind key="W-Pause">
-      <action name="Execute">
-        <execute>xscreensaver-command -l</execute>
-      </action>
-    </keybind>
-    <!-- multimedia keys -->
-
-    <keybind key="XF86Back">
-      <action name="Execute">
-        <execute>mpc prev</execute>
-      </action>
-    </keybind>
-    <keybind key="XF86Forward">
-      <action name="Execute">
-        <execute>mpc next</execute>
-      </action>
-    </keybind>
-    <!-- got to see what to use these buttons for -->
-    <keybind key="XF86Reload">
-      <action name="Execute">
-        <execute>mpcplay</execute>
-      </action>
-    </keybind>
-    <keybind key="XF86HomePage">
-      <action name="Execute">
-        <execute>google-chrome</execute>
-      </action>
-    </keybind>
-    <keybind key="XF86Search">
-      <action name="Execute">
-        <execute>google-chrome</execute>
-      </action>
-    </keybind>
-    <keybind key="XF86Mail">
-      <action name="Execute">
-        <execute>google-chrome</execute>
-      </action>
-    </keybind>
     <!--
     <keybind key="XF86Go">
       <action name="ShowMenu">
@@ -525,101 +475,162 @@ my own preferences and Clay's vi-like spatial bindings -->
         <menu>client-list-menu</menu>
       </action>
     </keybind>
+    -->
+    <!--END of Show Menu Bindings-->
+    <keybind key="W-Print">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
+    <keybind key="W-Scroll_Lock">
+      <action name="ShowMenu">
+        <menu>client-list-menu</menu>
+      </action>
+    </keybind>
+    <keybind key="S-W-l">
+      <action name="Execute">
+        <execute>xtrlock</execute>
+      </action>
+	</keybind>
+    <keybind key="Scroll_Lock">
+      <action name="Execute">
+        <execute>xtrlock</execute>
+      </action>
+    </keybind>
+    <keybind key="S-Scroll_Lock">
+      <action name="Execute">
+        <execute>~/bin/ilock</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+      <execute>xbacklight +10</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+      <execute>xbacklight -10</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86Battery">
+      <action name="Execute">
+      <execute>~/bin/batforce</execute>
+      </action>
+    </keybind>
+    <keybind key="W-Pause">
+      <action name="Execute">
+        <execute>xscreensaver-command -l</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+      <execute>~/bin/volume -5</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+      <execute>~/bin/volume 5</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+		  <execute>~/bin/volume mute</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86WLAN">
+      <action name="Execute">
+      <execute>sudo bin/wifi</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86Display">
+      <action name="Execute">
+      <execute>dualscreen</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86Suspend">
+      <action name="Execute">
+      <execute>hiber</execute>
+      </action>
+    </keybind>
     <keybind key="XF86UserPB">
       <action name="Execute">
         <execute>xscreensaver-command -l</execute>
       </action>
     </keybind>
-    <keybind key="XF86AudioRaiseVolume">
-          <action name="DesktopNext">
-            <wrap>yes</wrap>
-          </action>
-        </keybind>
-        <keybind key="XF86AudioLowerVolume">
-          <action name="DesktopPrevious">
-            <wrap>yes</wrap>
-          </action>
-        </keybind>
-        -->
-        <keybind key="W-r">
-          <action name="Execute">
-            <execute>rox</execute>
-          </action>
-        </keybind>
-        <keybind key="W-t">
-          <action name="Execute">
-            <execute>rxvt-unicode -bg black -fg white +sb -sl 1024</execute>
-          </action>
-        </keybind>
-        <!-- Keybindings for windows 1 through 9
-      this particular coolness requires the irssi-focus app
-      http://icculus.org/openbox/index.php/Help:IrssiStyleFocus
-      -->
-        <keybind key="W-1">
-          <action name="execute">
-            <execute>irssi-focus 0</execute>
-          </action>
-        </keybind>
-        <keybind key="W-2">
-          <action name="execute">
-            <execute>irssi-focus 1</execute>
-          </action>
-        </keybind>
-        <keybind key="W-3">
-          <action name="execute">
-            <execute>irssi-focus 2</execute>
-          </action>
-        </keybind>
-        <keybind key="W-4">
-          <action name="execute">
-            <execute>irssi-focus 3</execute>
-          </action>
-        </keybind>
-        <keybind key="W-5">
-          <action name="execute">
-            <execute>irssi-focus 4</execute>
-          </action>
-        </keybind>
-        <keybind key="W-6">
-          <action name="execute">
-            <execute>irssi-focus 5</execute>
-          </action>
-        </keybind>
-        <keybind key="W-7">
-          <action name="execute">
-            <execute>irssi-focus 6</execute>
-          </action>
-        </keybind>
-        <keybind key="W-8">
-          <action name="execute">
-            <execute>irssi-focus 7</execute>
-          </action>
-        </keybind>
-        <keybind key="W-9">
-          <action name="execute">
-            <execute>irssi-focus 8</execute>
-          </action>
-        </keybind>
-        <!-- Keybindings for commands -->
-        <keybind key="C-A-e">
-          <action name="Execute">
-            <execute>transset-df -a</execute>
-          </action>
-        </keybind>
-        <keybind key="C-A-r">
-          <action name="Execute">
-            <execute>tile-all </execute>
-          </action>
-        </keybind>
-        <!-- which keys are these now?
-        <keybind key="0xDF">
-          <action name="Execute">
-            <execute>xset dpms force off</execute>
-          </action>
-        </keybind>
-        <keybind key="0xA4">
-          <action name="Execute">
-            <execute>mpc stop</execute>
+    <keybind key="W-r">
+      <action name="Execute">
+        <execute>rox</execute>
+      </action>
+    </keybind>
+    <!-- Keybindings for windows 1 through 9
+  this particular coolness requires the irssi-focus app
+  http://icculus.org/openbox/index.php/Help:IrssiStyleFocus
+  -->
+    <keybind key="W-1">
+      <action name="execute">
+        <execute>irssi-focus 0</execute>
+      </action>
+    </keybind>
+    <keybind key="W-2">
+      <action name="execute">
+        <execute>irssi-focus 1</execute>
+      </action>
+    </keybind>
+    <keybind key="W-3">
+      <action name="execute">
+        <execute>irssi-focus 2</execute>
+      </action>
+    </keybind>
+    <keybind key="W-4">
+      <action name="execute">
+        <execute>irssi-focus 3</execute>
+      </action>
+    </keybind>
+    <keybind key="W-5">
+      <action name="execute">
+        <execute>irssi-focus 4</execute>
+      </action>
+    </keybind>
+    <keybind key="W-6">
+      <action name="execute">
+        <execute>irssi-focus 5</execute>
+      </action>
+    </keybind>
+    <keybind key="W-7">
+      <action name="execute">
+        <execute>irssi-focus 6</execute>
+      </action>
+    </keybind>
+    <keybind key="W-8">
+      <action name="execute">
+        <execute>irssi-focus 7</execute>
+      </action>
+    </keybind>
+    <keybind key="W-9">
+      <action name="execute">
+        <execute>irssi-focus 8</execute>
+      </action>
+    </keybind>
+    <!-- Keybindings for commands -->
+    <keybind key="C-A-l">
+      <action name="Execute">
+        <execute>~/bin/ilock</execute>
+      </action>
+    </keybind>
+    <keybind key="C-A-e">
+      <action name="Execute">
+        <execute>transset-df -a</execute>
+      </action>
+    </keybind>
+    <!-- which keys are these now?
+    <keybind key="0xDF">
+      <action name="Execute">
+        <execute>xset dpms force off</execute>
+      </action>
+    </keybind>
+    <keybind key="0xA4">
+      <action name="Execute">
+        <execute>mpc stop</execute>
       </action>
     </keybind>
     <keybind key="0xA2">
@@ -654,7 +665,7 @@ my own preferences and Clay's vi-like spatial bindings -->
     </keybind>
     <keybind key="0x82">
       <action name="Execute">
-        <execute>/home/comotion/downloads/ROX-All-0.8/ROX-Filer/AppRun</execute>
+        <execute>rox</execute>
       </action>
     </keybind>
     <keybind key="0xE8">
@@ -717,24 +728,55 @@ my own preferences and Clay's vi-like spatial bindings -->
     </keybind>
     <keybind key="C-A-s">
       <action name="Execute">
-        <execute>rxvt-unicode -sl 600 -bw 0 -bg black -fg green -cr darkgreen</execute>
+		  <execute>urxvt -bg white -fg black -fn "xft:Bitstream Vera Sans Mono:pixelsize=28"</execute>
       </action>
     </keybind>
-    <keybind key="C-A-S-T">
-    <!-- a.k.a S-C-A-T or "make a blimp terminal for me blinde harties" -->
+    <keybind key="C-A-u">
       <action name="Execute">
-        <execute>gnome-terminal --zoom 3.4</execute>
+		  <execute>blueshift darkdoom</execute>
+	  </action>
+	  </keybind>
+    <keybind key="C-A-i">
+      <action name="Execute">
+		  <execute>blueshift darkroom</execute>
+	  </action>
+    </keybind>
+    <keybind key="C-A-o">
+      <action name="Execute">
+		  <execute>blueshift -r</execute>
+	  </action>
+    </keybind>
+    <keybind key="S-C-A-R">
+      <action name="Execute">
+        <execute>tile-all</execute>
+      </action>
+    </keybind>
+	<keybind key="C-A-r">
+      <action name="Execute">
+		  <execute>openbox --reconfigure</execute>
       </action>
     </keybind>
     <keybind key="C-A-t">
       <action name="Execute">
-        <!---<execute>rxvt-unicode -sl 600 -bw 0 -bg black -fg green -cr darkgreen</execute>-->
-        <execute>gnome-terminal</execute>
+          <execute>tabbed -c urxvt -sl 600 -bw 0 -bg black -fg green -cr darkgreen  -fn "9x15bold,xft:Bitstream Vera Sans Mono" -embed
+        </execute>
+      </action>
+    </keybind>
+    <keybind key="C-A-p">
+      <action name="Execute">
+          <execute>tabbed -c urxvt -sl 600 -bw 0 -bg white -fg black -cr black -fn "9x15bold,xft:Bitstream Vera Sans Mono" -embed
+        </execute>
+      </action>
+    </keybind>
+    <keybind key="S-A-T">
+      <action name="Execute">
+      <execute>gnome-terminal
+        </execute>
       </action>
     </keybind>
     <keybind key="C-A-g">
       <action name="Execute">
-        <execute>galeon</execute>
+        <execute>chromium</execute>
       </action>
     </keybind>
     <keybind key="C-A-x">
@@ -936,6 +978,10 @@ my own preferences and Clay's vi-like spatial bindings -->
       </mousebind>
       <mousebind button="A-Right" action="Drag">
         <action name="Resize"/>
+      </mousebind>
+      <!-- mac style fullscreen -->
+      <mousebind button="A-Left" action="DoubleClick">
+         <action name="ToggleMaximizeFull"/>
       </mousebind>
       <!--
     <mousebind button="A-Middle" action="Press">
@@ -1296,6 +1342,17 @@ my own preferences and Clay's vi-like spatial bindings -->
     <applicationIcons>yes</applicationIcons>
   </menu>
   <applications>
+   <application name="rxvt_below">
+      <decor>false</decor>
+      <layer>below</layer>
+      <skip_pager>yes</skip_pager>
+      <skip_taskbar>yes</skip_taskbar>
+      <desktop>all</desktop>
+      <maximized>vertical</maximized>
+   </application>
+   <application name="second_urxvt">
+       <desktop>3</desktop>
+   </application>
     <application name="gkrellm">
       <decor>false</decor>
       <skip_pager>yes</skip_pager>
@@ -1309,8 +1366,12 @@ my own preferences and Clay's vi-like spatial bindings -->
       <skip_taskbar>yes</skip_taskbar>
       <desktop>all</desktop>
     </application>
+
     <application name="dclock">
       <decor>no</decor>
+    </application>
+    <application name="Navigator" class="Iceweasel" role="browser">
+      <focus>no</focus>
     </application>
   </applications>
 </openbox_config>
