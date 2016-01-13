@@ -1,35 +1,37 @@
-<openbox_config xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/rc.xsd">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_config xmlns="http://openbox.org/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://openbox.org/                 file:///home/clay/openbox/rc.xsd">
+<!--  Clay's keybindings: "Collision-Free Commanding"
+A prototype interaction paradigm based off of muscle-memory and vi-style
+bindings, and designed to avoid any key binding collisions with programs,
+all interactions (that could possibly be sent to an application) include
+the Super/Meta4 key (often labled the "Windows Key").
+-->
 <applications>
-    <application name="freefs">
-        <layer>below</layer>
-        <decor>false</decor>
-        <skip_pager>yes</skip_pager>
-        <desktop>0</desktop>
-        <desktop>1</desktop>
-    </application>
-    <application name="dclock">
-        <decor>no</decor>
-    </application>
+  <!-- match all windows, and remove their decorations -->
+  <application class="*">
+    <decor>no</decor>
+  </application>
 </applications>
 
 <resistance>
-  <strength>10</strength>
-  <screen_edge_strength>20</screen_edge_strength>
+  <strength>25</strength>
+  <screen_edge_strength>50</screen_edge_strength>
 </resistance>
 
 <focus>
   <focusNew>yes</focusNew>
   <followMouse>yes</followMouse>
-  <focusDelay>100</focusDelay>
+  <focusLast>yes</focusLast>
+  <focusDelay>0</focusDelay>
   <raiseOnFocus>no</raiseOnFocus>
 </focus>
 
 <theme>
-  <!-- <name>Om4Ob</name> -->
-  <name>oldred</name>
+  <name>Nop</name>
   <titlelayout>NLIMC</titlelayout>
-  <keepBorder>no</keepBorder>
+  <animateIconify>no</animateIconify>
 </theme>
 
 <placement>
@@ -37,193 +39,251 @@
 </placement>
 
 <desktops>
-  <number>4</number>
+  <number>12</number>
+  <firstdesk>1</firstdesk>
   <names>
-    <name>one</name>
-    <name>two</name>
-    <name>three</name>
-    <name>four</name>
+    <name>Alpha (1)</name>
+    <name>Beta (2)</name>
+    <name>Gamma (3)</name>
+    <name>Delta (4)</name>
+    <name>Epsilon (5)</name>
+    <name>Zeta (6)</name>
+    <name>Eta (7)</name>
+    <name>Theta (8)</name>
+    <name>Iota (9)</name>
+    <name>Kappa (10)</name>
+    <name>Lambda (11)</name>
+    <name>Mu (12)</name>
   </names>
 </desktops>
 
 <resize>
-	<fourCorner>no</fourCorner>
   <drawContents>yes</drawContents>
 </resize>
 
 <dock>
-  <position>Left</position>
-  <stacking>Normal</stacking>
+  <position>TopLeft</position>
+  <stacking>Top</stacking>
   <direction>Vertical</direction>
   <floatingX>0</floatingX>
   <floatingY>0</floatingY>
-  <autoHide>no</autoHide>
-  <hideDelay>300</hideDelay>
-  <moveButton>A-Left</moveButton>
+  <autoHide>yes</autoHide>
+  <hideDelay>500</hideDelay>
+  <moveButton>W-Left</moveButton>
 </dock>
 
 <keyboard>
-  <chainQuitKey>C-g</chainQuitKey>
-  <keybind key="0xDF">
-    <action name="Execute"><execute>xset dpms force off</execute></action>
+  <chainQuitKey>W-q</chainQuitKey>
+
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXX              (Almost) One-handed Control Prototype              XXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--Movement Layer-->
+  <keybind key="W-C-KP_7">		<action name="MoveToEdgeNorthWest"/>	</keybind>
+  <keybind key="W-C-KP_9">		<action name="MoveToEdgeNorthEast"/>	</keybind>
+  <keybind key="W-C-KP_1">		<action name="MoveToEdgeSouthWest"/>	</keybind>
+  <keybind key="W-C-KP_3">		<action name="MoveToEdgeSouthEast"/>	</keybind>
+  <keybind key="W-C-U"> 		<action name="MoveToEdgeNorthWest"/>	</keybind>
+  <keybind key="W-C-I"> 		<action name="MoveToEdgeNorthEast"/>	</keybind>
+  <keybind key="W-C-N"> 		<action name="MoveToEdgeSouthWest"/>	</keybind>
+  <keybind key="W-C-M"> 		<action name="MoveToEdgeSouthEast"/>	</keybind>
+
+
+  <keybind key="W-C-KP_8">		<action name="MoveToEdgeNorth"/>	</keybind>
+  <keybind key="W-C-K">			<action name="MoveToEdgeNorth"/>	</keybind>
+  <keybind key="W-C-KP_4">		<action name="MoveToEdgeWest"/>		</keybind>
+  <keybind key="W-C-H">			<action name="MoveToEdgeWest"/>		</keybind>
+  <keybind key="W-C-KP_5">		<action name="MoveToCenter"/>		</keybind>
+  <keybind key="W-C-semicolon">		<action name="MoveToCenter"/>		</keybind>
+  <keybind key="W-C-KP_6">		<action name="MoveToEdgeEast"/>		</keybind>
+  <keybind key="W-C-L">			<action name="MoveToEdgeEast"/>		</keybind>
+  <keybind key="W-C-KP_2">		<action name="MoveToEdgeSouth"/>	</keybind>
+  <keybind key="W-C-J">			<action name="MoveToEdgeSouth"/>	</keybind>
+
+  <keybind key="W-C-KP_0">		<action name="SendToDesktopPrevious"><dialog>no</dialog></action>	</keybind>
+  <keybind key="W-C-comma">		<action name="SendToDesktopPrevious"><dialog>no</dialog></action>	</keybind>
+
+  <keybind key="W-C-KP_Decimal">	<action name="SendToDesktopNext"><dialog>no</dialog></action>	</keybind>
+  <keybind key="W-C-period">		<action name="SendToDesktopNext"><dialog>no</dialog></action>	</keybind>
+
+  <keybind key="W-C-KP_Divide">		<action name="MoveRelativeHorz"><delta>-20</delta></action>	</keybind>
+  <keybind key="W-C-O">			<action name="MoveRelativeHorz"><delta>-20</delta></action>	</keybind>
+  <keybind key="W-C-KP_Multiply">	<action name="MoveRelativeHorz"><delta>20</delta></action>	</keybind>
+  <keybind key="W-C-P">			<action name="MoveRelativeHorz"><delta>20</delta></action>	</keybind>
+  <keybind key="W-C-KP_Subtract">	<action name="MoveRelativeVert"><delta>-20</delta></action>	</keybind>
+  <keybind key="W-C-bracketleft">	<action name="MoveRelativeVert"><delta>-20</delta></action>	</keybind>
+  <keybind key="W-C-KP_Add">		<action name="MoveRelativeVert"><delta>20</delta></action>	</keybind>
+  <keybind key="W-C-apostrophe">	<action name="MoveRelativeVert"><delta>20</delta></action>	</keybind>
+
+  <keybind key="W-C-KP_Enter">		<action name="Iconify"/>		</keybind>
+  <keybind key="W-C-slash">		<action name="Iconify"/>		</keybind>
+<!--END of Movement Layer-->
+
+<!--Focus Layer-->
+  <keybind key="W-KP_7">	<action name="DirectionalFocusNorthWest"/>	</keybind>
+  <keybind key="W-KP_9">	<action name="DirectionalFocusNorthEast"/>	</keybind>
+  <keybind key="W-KP_1">	<action name="DirectionalFocusSouthWest"/>	</keybind>
+  <keybind key="W-KP_3">	<action name="DirectionalFocusSouthEast"/>	</keybind>
+  <keybind key="W-U">   	<action name="DirectionalFocusNorthWest"/>	</keybind>
+  <keybind key="W-I">   	<action name="DirectionalFocusNorthEast"/>	</keybind>
+  <keybind key="W-N">   	<action name="DirectionalFocusSouthWest"/>	</keybind>
+  <keybind key="W-M">   	<action name="DirectionalFocusSouthEast"/>	</keybind>
+  <keybind key="W-S-KP_5">	<action name="PreviousWindow"/>			</keybind>
+
+  <keybind key="W-KP_8">	<action name="DirectionalFocusNorth"/>		</keybind>
+  <keybind key="W-K">		<action name="DirectionalFocusNorth"/>		</keybind>
+  <keybind key="W-KP_4">	<action name="DirectionalFocusWest"/>		</keybind>
+  <keybind key="W-H">		<action name="DirectionalFocusWest"/>		</keybind>
+  <keybind key="W-KP_5">	<action name="NextWindow"/>			</keybind>
+  <keybind key="W-semicolon">	<action name="NextWindow"/>			</keybind>
+  <keybind key="W-S-KP_5">	<action name="PreviousWindow"/>			</keybind>
+  <keybind key="W-S-semicolon">	<action name="PreviousWindow"/>			</keybind>
+  <keybind key="W-KP_6">	<action name="DirectionalFocusEast"/>		</keybind>
+  <keybind key="W-L">		<action name="DirectionalFocusEast"/>		</keybind>
+  <keybind key="W-KP_2">	<action name="DirectionalFocusSouth"/>		</keybind>
+  <keybind key="W-J">		<action name="DirectionalFocusSouth"/>		</keybind>
+
+  <keybind key="W-KP_0">	<action name="DesktopPrevious"><dialog>no</dialog></action>		</keybind>
+  <keybind key="W-comma">	<action name="DesktopPrevious"><dialog>no</dialog></action>		</keybind>
+  <keybind key="W-KP_Decimal">	<action name="DesktopNext"><dialog>no</dialog></action>			</keybind>
+  <keybind key="W-period">	<action name="DesktopNext"><dialog>no</dialog></action>			</keybind>
+
+  <keybind key="W-KP_Divide">	<action name="Execute"><execute>gmrun</execute></action>	</keybind>
+  <keybind key="W-O">		<action name="Execute"><execute>gmrun</execute></action>	</keybind>
+
+  <keybind key="W-KP_Multiply">	<action name="ToggleOmnipresent"/>		</keybind>
+  <keybind key="W-P">		<action name="ToggleOmnipresent"/>		</keybind>
+
+  <keybind key="W-KP_Subtract">	<action name="Raise"/>				</keybind>
+  <keybind key="W-bracketleft">	<action name="Raise"/>				</keybind>
+  <keybind key="W-KP_Add">	<action name="Lower"/>				</keybind>
+  <keybind key="W-apostrophe">	<action name="Lower"/>				</keybind>
+
+  <keybind key="W-KP_Enter">	<action name="ToggleDecorations"/>		</keybind>
+  <keybind key="W-slash">	<action name="ToggleDecorations"/>		</keybind>
+
+<!--END Focus Layer-->
+
+<!--Size Layer-->
+  <keybind key="W-A-KP_7">	<action name="GrowToEdgeNorthWest"/>		</keybind>
+  <keybind key="W-A-KP_9">	<action name="GrowToEdgeNorthEast"/>		</keybind>
+  <keybind key="W-A-KP_1">	<action name="GrowToEdgeSouthWest"/>		</keybind>
+  <keybind key="W-A-KP_3">	<action name="GrowToEdgeSouthEast"/>		</keybind>
+  <keybind key="W-A-U"> 	<action name="GrowToEdgeNorthWest"/>		</keybind>
+  <keybind key="W-A-I"> 	<action name="GrowToEdgeNorthEast"/>		</keybind>
+  <keybind key="W-A-N"> 	<action name="GrowToEdgeSouthWest"/>		</keybind>
+  <keybind key="W-A-M"> 	<action name="GrowToEdgeSouthEast"/>		</keybind>
+
+  <keybind key="W-A-KP_8">	<action name="GrowToEdgeNorth"/>		</keybind>
+  <keybind key="W-A-K">		<action name="GrowToEdgeNorth"/>		</keybind>
+  <keybind key="W-A-KP_4">	<action name="GrowToEdgeWest"/>			</keybind>
+  <keybind key="W-A-H">		<action name="GrowToEdgeWest"/>			</keybind>
+  <keybind key="W-A-KP_5">	<action name="Close"/>				</keybind>
+  <keybind key="W-A-semicolon">	<action name="Close"/>				</keybind>
+  <keybind key="W-A-KP_6">	<action name="GrowToEdgeEast"/>			</keybind>
+  <keybind key="W-A-L">		<action name="GrowToEdgeEast"/>			</keybind>
+  <keybind key="W-A-KP_2">	<action name="GrowToEdgeSouth"/>		</keybind>
+  <keybind key="W-A-J">		<action name="GrowToEdgeSouth"/>		</keybind>
+
+  <keybind key="W-A-KP_Divide">		<action name="ResizeRelativeHorz"><delta>-20</delta></action>	</keybind>
+  <keybind key="W-A-O">			<action name="ResizeRelativeHorz"><delta>-20</delta></action>	</keybind>
+  <keybind key="W-A-KP_Multiply">	<action name="ResizeRelativeHorz"><delta>20</delta></action>	</keybind>
+  <keybind key="W-A-P">			<action name="ResizeRelativeHorz"><delta>20</delta></action>	</keybind>
+  <keybind key="W-A-KP_Subtract">	<action name="ResizeRelativeVert"><delta>-20</delta></action>	</keybind>
+  <keybind key="W-A-bracketleft">	<action name="ResizeRelativeVert"><delta>-20</delta></action>	</keybind>
+  <keybind key="W-A-KP_Add">		<action name="ResizeRelativeVert"><delta>20</delta></action>	</keybind>
+  <keybind key="W-A-apostrophe">	<action name="ResizeRelativeVert"><delta>20</delta></action>	</keybind>
+
+  <keybind key="W-A-KP_0">		<action name="ToggleMaximizeHorz"/>	</keybind>
+  <keybind key="W-A-comma">		<action name="ToggleMaximizeHorz"/>	</keybind>
+  <keybind key="W-A-KP_Decimal">	<action name="ToggleShade"/>		</keybind>
+  <keybind key="W-A-period">		<action name="ToggleShade"/>		</keybind>
+  <keybind key="W-A-KP_Enter">		<action name="ToggleMaximizeVert"/>	</keybind>
+  <keybind key="W-A-slash">		<action name="ToggleMaximizeVert"/>	</keybind>
+
+<!--END of Size Layer-->
+
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+
+<!--Workspace Switch Bindings-->
+  <keybind key="W-C-F1">	<action name="SendToDesktop"><desktop>1</desktop><follow>yes</follow></action>	</keybind>
+  <keybind key="W-C-F2">	<action name="SendToDesktop"><desktop>2</desktop><follow>yes</follow></action>	</keybind>
+  <keybind key="W-C-F3">	<action name="SendToDesktop"><desktop>3</desktop><follow>yes</follow></action>	</keybind>
+  <keybind key="W-C-F4">	<action name="SendToDesktop"><desktop>4</desktop><follow>yes</follow></action>	</keybind>
+  <keybind key="W-C-F5">	<action name="SendToDesktop"><desktop>5</desktop><follow>yes</follow></action>	</keybind>
+  <keybind key="W-C-F6">	<action name="SendToDesktop"><desktop>6</desktop><follow>yes</follow></action>	</keybind>
+  <keybind key="W-C-F7">	<action name="SendToDesktop"><desktop>7</desktop><follow>yes</follow></action>	</keybind>
+  <keybind key="W-C-F8">	<action name="SendToDesktop"><desktop>8</desktop><follow>yes</follow></action>	</keybind>
+  <keybind key="W-C-F9">	<action name="SendToDesktop"><desktop>9</desktop><follow>yes</follow></action>	</keybind>
+  <keybind key="W-C-F10">	<action name="SendToDesktop"><desktop>10</desktop><follow>yes</follow></action>	</keybind>
+  <keybind key="W-C-F11">	<action name="SendToDesktop"><desktop>11</desktop><follow>yes</follow></action>	</keybind>
+  <keybind key="W-C-F12">	<action name="SendToDesktop"><desktop>12</desktop><follow>yes</follow></action>	</keybind>
+
+  <keybind key="W-F1">	<action name="Desktop"><desktop>1</desktop><dialog>yes</dialog></action>	</keybind>
+  <keybind key="W-F2">	<action name="Desktop"><desktop>2</desktop><dialog>yes</dialog></action>	</keybind>
+  <keybind key="W-F3">	<action name="Desktop"><desktop>3</desktop><dialog>yes</dialog></action>	</keybind>
+  <keybind key="W-F4">	<action name="Desktop"><desktop>4</desktop><dialog>yes</dialog></action>	</keybind>
+  <keybind key="W-F5">	<action name="Desktop"><desktop>5</desktop><dialog>yes</dialog></action>	</keybind>
+  <keybind key="W-F6">	<action name="Desktop"><desktop>6</desktop><dialog>yes</dialog></action>	</keybind>
+  <keybind key="W-F7">	<action name="Desktop"><desktop>7</desktop><dialog>yes</dialog></action>	</keybind>
+  <keybind key="W-F8">	<action name="Desktop"><desktop>8</desktop><dialog>yes</dialog></action>	</keybind>
+  <keybind key="W-F9">	<action name="Desktop"><desktop>9</desktop><dialog>yes</dialog></action>	</keybind>
+  <keybind key="W-F10">	<action name="Desktop"><desktop>10</desktop><dialog>yes</dialog></action>	</keybind>
+  <keybind key="W-F11">	<action name="Desktop"><desktop>11</desktop><dialog>yes</dialog></action>	</keybind>
+  <keybind key="W-F12">	<action name="Desktop"><desktop>12</desktop><dialog>yes</dialog></action>	</keybind>
+
+  <keybind key="W-A-F1">	<action name="SendToDesktop"><desktop>1</desktop><follow>no</follow></action>	</keybind>
+  <keybind key="W-A-F2">	<action name="SendToDesktop"><desktop>2</desktop><follow>no</follow></action>	</keybind>
+  <keybind key="W-A-F3">	<action name="SendToDesktop"><desktop>3</desktop><follow>no</follow></action>	</keybind>
+  <keybind key="W-A-F4">	<action name="SendToDesktop"><desktop>4</desktop><follow>no</follow></action>	</keybind>
+  <keybind key="W-A-F5">	<action name="SendToDesktop"><desktop>5</desktop><follow>no</follow></action>	</keybind>
+  <keybind key="W-A-F6">	<action name="SendToDesktop"><desktop>6</desktop><follow>no</follow></action>	</keybind>
+  <keybind key="W-A-F7">	<action name="SendToDesktop"><desktop>7</desktop><follow>no</follow></action>	</keybind>
+  <keybind key="W-A-F8">	<action name="SendToDesktop"><desktop>8</desktop><follow>no</follow></action>	</keybind>
+  <keybind key="W-A-F9">	<action name="SendToDesktop"><desktop>9</desktop><follow>no</follow></action>	</keybind>
+  <keybind key="W-A-F10">	<action name="SendToDesktop"><desktop>10</desktop><follow>no</follow></action>	</keybind>
+  <keybind key="W-A-F11">	<action name="SendToDesktop"><desktop>11</desktop><follow>no</follow></action>	</keybind>
+  <keybind key="W-A-F12">	<action name="SendToDesktop"><desktop>12</desktop><follow>no</follow></action>	</keybind>
+
+<!-- Workspace Switch Bindings -->
+  <keybind key="W-backslash">		<action name="DesktopNext"><wrap>yes</wrap><dialog>no</dialog></action>		</keybind>
+  <keybind key="XF86AudioRaiseVolume">	<action name="DesktopNext"><wrap>yes</wrap><dialog>no</dialog></action>		</keybind>
+  <keybind key="W-S-backslash">		<action name="DesktopPrevious"><wrap>yes</wrap><dialog>no</dialog></action>	</keybind>
+  <keybind key="XF86AudioLowerVolume">	<action name="DesktopPrevious"><wrap>yes</wrap><dialog>no</dialog></action>	</keybind>
+<!-- END of Workspace Switch Bindings -->
+
+<!-- Application Switch Bindings -->
+  <keybind key="W-Tab">		<action name="NextWindow"/>		</keybind>
+  <keybind key="W-S-Tab">	<action name="PreviousWindow"/>		</keybind>
+<!-- END of Application Switch Bindings -->
+
+<!--Show Menu Bindings-->
+  <keybind key="W-Menu">	<action name="ShowMenu"><menu>client-menu</menu></action>	</keybind>
+  <keybind key="W-grave">	<action name="ShowMenu"><menu>client-list-menu</menu></action>	</keybind>
+  <keybind key="XF86Go">	<action name="ShowMenu"><menu>root-menu</menu></action>		</keybind>
+  <keybind key="XF86Back">	<action name="ShowMenu"><menu>client-list-menu</menu></action>	</keybind>
+<!--END of Show Menu Bindings-->
+
+  <keybind key="W-Print">
+    <action name="ShowMenu"><menu>root-menu</menu></action>
   </keybind>
-  <keybind key="C-A-r">
-    <action name="Execute"><execute>gmrun</execute></action>
+  <keybind key="W-Scroll_Lock">
+    <action name="ShowMenu"><menu>client-list-menu</menu></action>
   </keybind>
-  <keybind key="0xA4">
-    <action name="Execute"><execute>mpc stop</execute></action>
+  <keybind key="W-Pause">
+    <action name="Execute"><execute>xscreensaver-command -l</execute></action>
   </keybind>
-  <keybind key="0xA2">
-    <action name="Execute"><execute>~/bin/mpcplay</execute></action>
-  </keybind>
-  <keybind key="C-0xA2">
-    <action name="Execute"><execute>mpc pause</execute></action>
-  </keybind>
-  <keybind key="0x90">
-    <action name="Execute"><execute>mpc prev</execute></action>
-  </keybind>
-  <keybind key="C-0x90">
-    <action name="Execute"><execute>mpc seek -1</execute></action>
-  </keybind>
-  <keybind key="0x99">
-    <action name="Execute"><execute>mpc next</execute></action>
-  </keybind>
-  <keybind key="C-0x99">
-    <action name="Execute"><execute>mpc seek +1</execute></action>
+  <keybind key="XF86UserPB">
+    <action name="Execute"><execute>xscreensaver-command -l</execute></action>
   </keybind>
 
-  <keybind key="0x82">
-    <action name="Execute"><execute>/home/comotion/downloads/ROX-All-0.8/ROX-Filer/AppRun</execute></action>
+  <keybind key="W-r">
+    <action name="Execute"><execute>rox</execute></action>
   </keybind>
-  <keybind key="0xE8">
-    <action name="Execute"><execute>qalculate</execute></action>
-  </keybind>
-  <keybind key="0xEC">
-    <action name="Execute"><execute>balsa</execute></action>
-  </keybind>
-  <keybind key="0xAE">
-    <action name="Execute"><execute>aumix -v -2</execute></action>
-  </keybind>
-  <keybind key="0xB0">
-    <action name="Execute"><execute>aumix -v +2</execute></action>
-  </keybind>
-  <keybind key="0xA0">
-    <action name="Execute"><execute>mute</execute></action>
-  </keybind>
-  <keybind key="0x7A">
-    <action name="Execute"><execute>galeon -n http://www.google.ca</execute></action>
-  </keybind>
-  <keybind key="0x6F">
-    <action name="Execute"><execute>scrot '%Y-%m-%d_%T_$wx$h.jpg' -e 'mv $f ~/archive/shots/'</execute>
-    </action>
-  </keybind>
-  <keybind key="0xDE">
-    <action name="Execute">
-      <execute>
-        /uri/0install/rox.sourceforge.net/apps/ROX-Session/AppRun
-      </execute>
-    </action>
+  <keybind key="W-t">
+    <action name="Execute"><execute>urxvt -bg black -fg white +sb -sl 1024</execute></action>
   </keybind>
 
-  <keybind key="C-A-p">
-    <action name="Execute"><execute>setxkbmap pl</execute></action>
-  </keybind>
-  <keybind key="C-A-n">
-    <action name="Execute"><execute>setxkbmap no</execute></action>
-  </keybind>
-  <keybind key="C-A-c">
-    <action name="Execute"><execute>setxkbmap us</execute></action>
-  </keybind>
-  <keybind key="C-A-s">
-    <action name="Execute"><execute>aterm -sl 600 -bw 0 -bg black -fg green -cr darkgreen -fn terminus-20 -e screen -D -R</execute></action>
-  </keybind>
-  <keybind key="C-A-t">
-    <action name="Execute"><execute>aterm -sl 600 -bw 0 -bg black -fg green -cr darkgreen -fn terminus-20</execute></action>
-  </keybind>
-  <keybind key="C-A-g">
-    <action name="Execute"><execute>galeon</execute></action>
-  </keybind>
-  <keybind key="C-A-x">
-    <action name="Execute"><execute>/home/comotion/downloads/cvs/ROXTerm/AppRun</execute></action>
-  </keybind>
-  <keybind key="C-A-f">
-    <action name="Execute"><execute>/home/comotion/downloads/ROX-All-0.8/ROX-Filer/AppRun</execute></action>
-  </keybind>
-  <keybind key="C-A-a">
-    <action name="RaiseLower"><group>yes</group></action>
-  </keybind>
-  <keybind key="W-F10">
-      <action name="ToggleMaximizeVert"/>
-  </keybind>
-  <keybind key="A-F10">
-    <action name="ToggleMaximizeFull"/>
-  </keybind>
-  <keybind key="A-F5">
-    <action name="UnmaximizeFull"/>
-  </keybind>
-<!--  <keybind key="A-F12">
-    <action name="ToggleShade"/>
-  </keybind> -->
-  <keybind key="C-W-Right">
-    <action name="MoveToEdgeEast"/>
-  </keybind>
-  <keybind key="C-W-Up">
-    <action name="MoveToEdgeNorth"/>
-  </keybind>
-  <keybind key="C-W-Down">
-    <action name="MoveToEdgeSouth"/>
-  </keybind>
-  <keybind key="C-W-Left">
-    <action name="MoveToEdgeWest"/>
-  </keybind>
-  <keybind key="C-A-Left">
-    <action name="DesktopLeft"/>
-  </keybind>
-  <keybind key="C-A-Right">
-    <action name="DesktopRight"/>
-  </keybind>
-  <keybind key="C-A-Up">
-    <action name="DesktopUp"/>
-  </keybind>
-  <keybind key="C-A-Down">
-    <action name="DesktopDown"/>
-  </keybind>
-  <keybind key="S-A-Left">
-    <action name="SendToDesktopLeft"/>
-  </keybind>
-  <keybind key="S-A-Right">
-    <action name="SendToDesktopRight"/>
-  </keybind>
-  <keybind key="S-A-Up">
-    <action name="SendToDesktopUp"/>
-  </keybind>
-  <keybind key="S-A-Down">
-    <action name="SendToDesktopDown"/>
-  </keybind>
-  <keybind key="C-A-d">
-    <action name="ToggleShowDesktop"/>
-  </keybind>
-  <keybind key="C-q">
-    <action name="Close"/>
-  </keybind>
-  <keybind key="A-Tab">
-    <action name="NextWindow"/>
-  </keybind>
-  <keybind key="A-S-Tab">
-    <action name="PreviousWindow"/>
-  </keybind>
-  <keybind key="A-F7">
-    <action name="Move"/>
-  </keybind>
-  <keybind key="A-F8">
-    <action name="Resize"/>
-  </keybind>
-  <keybind key="A-F9">
-    <action name="Iconify"/>
-  </keybind>
-  <keybind key="A-space">
-    <action name="ShowMenu"><menu>client-menu</menu></action>
-  </keybind>
 </keyboard>
 
 <mouse>
@@ -231,43 +291,36 @@
   <doubleClickTime>200</doubleClickTime>
 
   <context name="Frame">
-    <mousebind button="A-Left" action="Drag">
+    <mousebind button="W-Left" action="Drag">
       <action name="Move"/>
     </mousebind>
-  <mousebind button="W-Left" action="Click">
-    <action name="Execute">
-        <execute>transset</execute>
-    </action>
-    </mousebind>
-    <mousebind button="A-Left" action="Click">
+    <mousebind button="W-Left" action="Click">
       <action name="Raise"/>
     </mousebind>
-    <mousebind button="A-Left" action="Press">
+    <mousebind button="W-Left" action="Press">
       <action name="Focus"/>
     </mousebind>
-    <mousebind button="A-Middle" action="Drag">
+    <mousebind button="W-Right" action="Drag">
       <action name="Resize"/>
     </mousebind>
-    <mousebind button="A-Middle" action="Click">
+    <mousebind button="W-Middle" action="Click">
       <action name="Lower"/>
     </mousebind>
-    <mousebind button="A-Right" action="Press">
+    <mousebind button="W-Middle" action="Press">
       <action name="ShowMenu"><menu>client-menu</menu></action>
     </mousebind>
-    <!--
-    <mousebind button="A-Up" action="Press">
-      <action name="DesktopNext"/>
+    <mousebind button="W-Up" action="Click">
+      <action name="DesktopNext"><wrap>yes</wrap><dialog>yes</dialog></action>
     </mousebind>
-    <mousebind button="A-Down" action="Press">
-      <action name="DesktopPrevious"/>
+    <mousebind button="W-Down" action="Click">
+      <action name="DesktopPrevious"><wrap>yes</wrap><dialog>yes</dialog></action>
     </mousebind>
-    <mousebind button="C-A-Up" action="Press">
-      <action name="SendToDesktopNext"/>
-    </mousebind>
-    <mousebind button="C-A-Down" action="Press">
+    <mousebind button="W-A-Up" action="Click">
       <action name="SendToDesktopPrevious"/>
     </mousebind>
-    -->
+    <mousebind button="W-A-Down" action="Click">
+      <action name="SendToDesktopNext"/>
+    </mousebind>
   </context>
   <context name="Titlebar">
     <mousebind button="Left" action="Drag">
@@ -344,6 +397,7 @@
   <context name="Client">
     <mousebind button="Left" action="Press">
       <action name="Focus"/>
+      <action name="Raise"/>
     </mousebind>
     <mousebind button="Middle" action="Press">
       <action name="Focus"/>
@@ -416,43 +470,29 @@
     </mousebind>
   </context>
   <context name="Desktop">
-    <!--
-			<mousebind button="Up" action="Click">
-      <action name="DesktopNext"/>
+    <mousebind button="W-Up" action="Press">
+      <action name="DesktopNext"><wrap>yes</wrap><dialog>yes</dialog></action>
     </mousebind>
-    <mousebind button="Down" action="Click">
-      <action name="DesktopPrevious"/>
+    <mousebind button="W-Down" action="Press">
+      <action name="DesktopPrevious"><wrap>yes</wrap><dialog>yes</dialog></action>
     </mousebind>
-    <mousebind button="A-Up" action="Click">
-      <action name="DesktopNext"/>
-    </mousebind>
-    <mousebind button="A-Down" action="Click">
-      <action name="DesktopPrevious"/>
-    </mousebind>
-    -->
     <mousebind button="Left" action="Press">
       <action name="Focus"/>
       <action name="Raise"/>
     </mousebind>
     <mousebind button="Middle" action="Press">
-      <action name="ShowMenu"><menu>client-list-combined-menu</menu></action>
+      <action name="ShowMenu"><menu>client-list-menu</menu></action>
     </mousebind>
     <mousebind button="Right" action="Press">
       <action name="ShowMenu"><menu>root-menu</menu></action>
     </mousebind>
   </context>
-		<context name="MoveResize">
-    <mousebind button="Up" action="Click">
-      <action name="DesktopNext"/>
+  <context name="MoveResize">
+    <mousebind button="Up" action="Press">
+      <action name="DesktopNext"><wrap>yes</wrap><dialog>yes</dialog></action>
     </mousebind>
-    <mousebind button="Down" action="Click">
-      <action name="DesktopPrevious"/>
-    </mousebind>
-    <mousebind button="A-Up" action="Click">
-      <action name="DesktopNext"/>
-    </mousebind>
-    <mousebind button="A-Down" action="Click">
-      <action name="DesktopPrevious"/>
+    <mousebind button="Down" action="Press">
+      <action name="DesktopPrevious"><wrap>yes</wrap><dialog>yes</dialog></action>
     </mousebind>
   </context>
 </mouse>
@@ -460,10 +500,9 @@
 <menu>
   <!-- You can specify more than one menu file in here and they are all loaded,
        just don't make menu ids clash or, well, it'll be kind of pointless -->
- <!-- <warpPointer>no</warpPointer> -->
- <xorStyle>no</xorStyle>
-	<file>/var/lib/openbox/debian-menu.xml</file>
-	<file>menu.xml</file>
+
+  <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
+  <file>$HOME/openbox/menu.xml</file>
 </menu>
 
 </openbox_config>
