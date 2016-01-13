@@ -1,5 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <openbox_config xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/rc.xsd">
+
+<applications>
+    <application name="freefs">
+        <layer>below</layer>
+        <decor>false</decor>
+        <skip_pager>yes</skip_pager>
+        <desktop>0</desktop>
+        <desktop>1</desktop>
+    </application>
+    <application name="dclock">
+        <decor>no</decor>
+    </application>
+</applications>
 
 <resistance>
   <strength>10</strength>
@@ -14,7 +26,8 @@
 </focus>
 
 <theme>
-  <name>Om4Ob</name>
+  <!-- <name>Om4Ob</name> -->
+  <name>oldred</name>
   <titlelayout>NLIMC</titlelayout>
   <keepBorder>no</keepBorder>
 </theme>
@@ -34,6 +47,7 @@
 </desktops>
 
 <resize>
+	<fourCorner>no</fourCorner>
   <drawContents>yes</drawContents>
 </resize>
 
@@ -50,9 +64,36 @@
 
 <keyboard>
   <chainQuitKey>C-g</chainQuitKey>
+  <keybind key="0xDF">
+    <action name="Execute"><execute>xset dpms force off</execute></action>
+  </keybind>
+  <keybind key="C-A-r">
+    <action name="Execute"><execute>gmrun</execute></action>
+  </keybind>
+  <keybind key="0xA4">
+    <action name="Execute"><execute>mpc stop</execute></action>
+  </keybind>
+  <keybind key="0xA2">
+    <action name="Execute"><execute>~/bin/mpcplay</execute></action>
+  </keybind>
+  <keybind key="C-0xA2">
+    <action name="Execute"><execute>mpc pause</execute></action>
+  </keybind>
+  <keybind key="0x90">
+    <action name="Execute"><execute>mpc prev</execute></action>
+  </keybind>
+  <keybind key="C-0x90">
+    <action name="Execute"><execute>mpc seek -1</execute></action>
+  </keybind>
+  <keybind key="0x99">
+    <action name="Execute"><execute>mpc next</execute></action>
+  </keybind>
+  <keybind key="C-0x99">
+    <action name="Execute"><execute>mpc seek +1</execute></action>
+  </keybind>
 
   <keybind key="0x82">
-    <action name="Execute"><execute>rox</execute></action>
+    <action name="Execute"><execute>/home/comotion/downloads/ROX-All-0.8/ROX-Filer/AppRun</execute></action>
   </keybind>
   <keybind key="0xE8">
     <action name="Execute"><execute>qalculate</execute></action>
@@ -83,45 +124,57 @@
       </execute>
     </action>
   </keybind>
-  
-  <keybind key="C-F11">
-    <action name="Execute"><execute>~/bin/ejectdvd</execute></action>
-  </keybind>
+
   <keybind key="C-A-p">
-    <action name="Execute"><execute>~/bin/plkey</execute></action>
+    <action name="Execute"><execute>setxkbmap pl</execute></action>
   </keybind>
   <keybind key="C-A-n">
-    <action name="Execute"><execute>~/bin/nokey</execute></action>
+    <action name="Execute"><execute>setxkbmap no</execute></action>
   </keybind>
   <keybind key="C-A-c">
-    <action name="Execute"><execute>~/bin/uskey</execute></action>
+    <action name="Execute"><execute>setxkbmap us</execute></action>
   </keybind>
-  <keybind key="C-A-e">
-    <action name="Execute"><execute>Eterm -e screen -aRRq</execute></action>
+  <keybind key="C-A-s">
+    <action name="Execute"><execute>aterm -sl 600 -bw 0 -bg black -fg green -cr darkgreen -fn terminus-20 -e screen -D -R</execute></action>
   </keybind>
   <keybind key="C-A-t">
-    <action name="Execute"><execute>aterm -bw 0 -trsb -bg black -fg green
--cr darkgreen -fn 7x14 -tr -sh 50</execute></action>
+    <action name="Execute"><execute>aterm -sl 600 -bw 0 -bg black -fg green -cr darkgreen -fn terminus-20</execute></action>
   </keybind>
   <keybind key="C-A-g">
     <action name="Execute"><execute>galeon</execute></action>
   </keybind>
+  <keybind key="C-A-x">
+    <action name="Execute"><execute>/home/comotion/downloads/cvs/ROXTerm/AppRun</execute></action>
+  </keybind>
   <keybind key="C-A-f">
-    <action name="Execute"><execute>rox</execute></action>
+    <action name="Execute"><execute>/home/comotion/downloads/ROX-All-0.8/ROX-Filer/AppRun</execute></action>
   </keybind>
-
   <keybind key="C-A-a">
-    <action name="RaiseLower"/>
+    <action name="RaiseLower"><group>yes</group></action>
   </keybind>
-
+  <keybind key="W-F10">
+      <action name="ToggleMaximizeVert"/>
+  </keybind>
   <keybind key="A-F10">
-    <action name="MaximizeFull"/>
+    <action name="ToggleMaximizeFull"/>
   </keybind>
   <keybind key="A-F5">
     <action name="UnmaximizeFull"/>
   </keybind>
 <!--  <keybind key="A-F12">
-    <action name="ToggleShade"/> -->
+    <action name="ToggleShade"/>
+  </keybind> -->
+  <keybind key="C-W-Right">
+    <action name="MoveToEdgeEast"/>
+  </keybind>
+  <keybind key="C-W-Up">
+    <action name="MoveToEdgeNorth"/>
+  </keybind>
+  <keybind key="C-W-Down">
+    <action name="MoveToEdgeSouth"/>
+  </keybind>
+  <keybind key="C-W-Left">
+    <action name="MoveToEdgeWest"/>
   </keybind>
   <keybind key="C-A-Left">
     <action name="DesktopLeft"/>
@@ -181,6 +234,11 @@
     <mousebind button="A-Left" action="Drag">
       <action name="Move"/>
     </mousebind>
+  <mousebind button="W-Left" action="Click">
+    <action name="Execute">
+        <execute>transset</execute>
+    </action>
+    </mousebind>
     <mousebind button="A-Left" action="Click">
       <action name="Raise"/>
     </mousebind>
@@ -189,25 +247,27 @@
     </mousebind>
     <mousebind button="A-Middle" action="Drag">
       <action name="Resize"/>
-    </mousebind> 
+    </mousebind>
     <mousebind button="A-Middle" action="Click">
       <action name="Lower"/>
     </mousebind>
     <mousebind button="A-Right" action="Press">
       <action name="ShowMenu"><menu>client-menu</menu></action>
     </mousebind>
-    <mousebind button="A-Up" action="Click">
+    <!--
+    <mousebind button="A-Up" action="Press">
       <action name="DesktopNext"/>
     </mousebind>
-    <mousebind button="A-Down" action="Click">
+    <mousebind button="A-Down" action="Press">
       <action name="DesktopPrevious"/>
     </mousebind>
-    <mousebind button="C-A-Up" action="Click">
+    <mousebind button="C-A-Up" action="Press">
       <action name="SendToDesktopNext"/>
     </mousebind>
-    <mousebind button="C-A-Down" action="Click">
+    <mousebind button="C-A-Down" action="Press">
       <action name="SendToDesktopPrevious"/>
     </mousebind>
+    -->
   </context>
   <context name="Titlebar">
     <mousebind button="Left" action="Drag">
@@ -215,7 +275,7 @@
     </mousebind>
     <mousebind button="Left" action="Click">
       <action name="Raise"/>
-    </mousebind> 
+    </mousebind>
     <mousebind button="Left" action="Press">
       <action name="Focus"/>
     </mousebind>
@@ -356,40 +416,42 @@
     </mousebind>
   </context>
   <context name="Desktop">
-    <mousebind button="Up" action="Press">
+    <!--
+			<mousebind button="Up" action="Click">
       <action name="DesktopNext"/>
     </mousebind>
-    <mousebind button="Down" action="Press">
+    <mousebind button="Down" action="Click">
       <action name="DesktopPrevious"/>
     </mousebind>
-    <mousebind button="A-Up" action="Press">
+    <mousebind button="A-Up" action="Click">
       <action name="DesktopNext"/>
     </mousebind>
-    <mousebind button="A-Down" action="Press">
+    <mousebind button="A-Down" action="Click">
       <action name="DesktopPrevious"/>
     </mousebind>
+    -->
     <mousebind button="Left" action="Press">
       <action name="Focus"/>
       <action name="Raise"/>
-    </mousebind> 
+    </mousebind>
     <mousebind button="Middle" action="Press">
-      <action name="ShowMenu"><menu>client-list-menu</menu></action>
-    </mousebind> 
+      <action name="ShowMenu"><menu>client-list-combined-menu</menu></action>
+    </mousebind>
     <mousebind button="Right" action="Press">
       <action name="ShowMenu"><menu>root-menu</menu></action>
     </mousebind>
   </context>
-  <context name="MoveResize">
-    <mousebind button="Up" action="Press">
+		<context name="MoveResize">
+    <mousebind button="Up" action="Click">
       <action name="DesktopNext"/>
     </mousebind>
-    <mousebind button="Down" action="Press">
+    <mousebind button="Down" action="Click">
       <action name="DesktopPrevious"/>
     </mousebind>
-    <mousebind button="A-Up" action="Press">
+    <mousebind button="A-Up" action="Click">
       <action name="DesktopNext"/>
     </mousebind>
-    <mousebind button="A-Down" action="Press">
+    <mousebind button="A-Down" action="Click">
       <action name="DesktopPrevious"/>
     </mousebind>
   </context>
@@ -398,12 +460,10 @@
 <menu>
   <!-- You can specify more than one menu file in here and they are all loaded,
        just don't make menu ids clash or, well, it'll be kind of pointless -->
-
-  <!-- debian menu file -->
-<!--  <file>/etc/X11/openbox/openbox-menu.xml</file> -->
-
-  <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
-<!--  <file>menu.xml</file> -->
+ <!-- <warpPointer>no</warpPointer> -->
+ <xorStyle>no</xorStyle>
+	<file>/var/lib/openbox/debian-menu.xml</file>
+	<file>menu.xml</file>
 </menu>
 
 </openbox_config>
