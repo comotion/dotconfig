@@ -25,14 +25,14 @@ my own preferences and Clay's vi-like spatial bindings -->
        mouse into it, also raise the window -->
   </focus>
   <placement>
-    <policy>Smart</policy>
+    <policy>UnderMouse</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>no</center>
     <!-- whether to place windows in the center of the free area found or
        the top left corner -->
   </placement>
   <theme>
-    <name>Anchos</name>
+    <name>Onyx-Citrus</name>
     <titleLayout>NLDIMC</titleLayout>
     <!--
       avaible characters are NDSLIMC, each can occur at most once.
@@ -147,7 +147,7 @@ my own preferences and Clay's vi-like spatial bindings -->
     <right>0</right>
   </margins>
   <dock>
-    <position>TopLeft</position>
+    <position>Right</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
@@ -357,11 +357,9 @@ my own preferences and Clay's vi-like spatial bindings -->
     <keybind key="W-KP_6">
       <action name="DirectionalFocusEast"/>
     </keybind>
-    <!-- crashes with "lock"
-    <keybind key="W-L">
+    <keybind key="W-ø">
       <action name="DirectionalFocusEast"/>
     </keybind>
-    -->
     <keybind key="W-KP_2">
       <action name="DirectionalFocusSouth"/>
     </keybind>
@@ -621,6 +619,7 @@ my own preferences and Clay's vi-like spatial bindings -->
       </action>
     </keybind>
       -->
+ <!--
     <keybind key="W-F1">
       <action name="Desktop">
         <desktop>1</desktop>
@@ -657,7 +656,6 @@ my own preferences and Clay's vi-like spatial bindings -->
         <dialog>yes</dialog>
       </action>
     </keybind>
- <!--
     <keybind key="W-F7">
       <action name="Desktop">
         <desktop>7</desktop>
@@ -695,37 +693,37 @@ my own preferences and Clay's vi-like spatial bindings -->
       </action>
     </keybind>
  -->
-    <keybind key="W-A-F1">
+    <keybind key="W-F1">
       <action name="SendToDesktop">
         <desktop>1</desktop>
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="W-A-F2">
+    <keybind key="W-F2">
       <action name="SendToDesktop">
         <desktop>2</desktop>
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="W-A-F3">
+    <keybind key="W-F3">
       <action name="SendToDesktop">
         <desktop>3</desktop>
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="W-A-F4">
+    <keybind key="W-F4">
       <action name="SendToDesktop">
         <desktop>4</desktop>
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="W-A-F5">
+    <keybind key="W-F5">
       <action name="SendToDesktop">
         <desktop>5</desktop>
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="W-A-F6">
+    <keybind key="W-F6">
       <action name="SendToDesktop">
         <desktop>6</desktop>
         <follow>no</follow>
@@ -769,23 +767,83 @@ my own preferences and Clay's vi-like spatial bindings -->
       </action>
     </keybind>
     -->
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+      <execute>bright +</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+      <execute>bright -</execute>
+      </action>
+    </keybind>
+    <!--
+    <keybind key="XF86WakeUp">
+      <action name="Execute">
+      <execute>sudo batforce</execute>
+      </action>
+    </keybind>
+    -->
+    <keybind key="XF86Battery">
+      <action name="Execute">
+      <execute>sudo ~/bin/batforce</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86ScreenSaver">
+      <action name="Execute">
+      <execute>xtrlock</execute>
+      </action>
+    </keybind>
+    <!--
+    <keybind key="XF86Sleep">
+      <action name="Execute">
+      <execute>volume -5</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86Wakeup">
+      <action name="Execute">
+      <execute>volume -5</execute>
+      </action>
+    </keybind>
+    -->
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+      <execute>volume -5</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+      <execute>volume 5</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+      <execute>volume 0</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86WLAN">
+      <action name="Execute">
+      <execute>sudo bin/wifi</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86Display">
+      <action name="Execute">
+      <execute>dualscreen</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86Suspend">
+      <action name="Execute">
+      <execute>hiber</execute>
+      </action>
+    </keybind>
+
     <!-- Workspace Switch Bindings -->
     <keybind key="W-backslash">
       <action name="DesktopNext">
         <wrap>yes</wrap>
       </action>
     </keybind>
-    <keybind key="XF86AudioRaiseVolume">
-      <action name="DesktopNext">
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
     <keybind key="W-S-backslash">
-      <action name="DesktopPrevious">
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioLowerVolume">
       <action name="DesktopPrevious">
         <wrap>yes</wrap>
       </action>
@@ -833,7 +891,7 @@ my own preferences and Clay's vi-like spatial bindings -->
     </keybind>
     <keybind key="W-l">
       <action name="Execute">
-        <execute>xscreensaver-command -l</execute>
+        <execute>xtrlock</execute>
       </action>
     </keybind>
     <keybind key="W-Pause">
@@ -853,7 +911,7 @@ my own preferences and Clay's vi-like spatial bindings -->
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <execute>urxvt -bg black -fg white +sb -sl 1024</execute>
+        <execute>urxvt -tn xterm -bg black -fg white +sb -sl 1024</execute>
       </action>
     </keybind>
     <!-- #### END Clay's bindings #### -->
@@ -907,11 +965,6 @@ my own preferences and Clay's vi-like spatial bindings -->
       </action>
     </keybind>
     <!-- Keybindings for commands -->
-    <keybind key="0xDF">
-      <action name="Execute">
-        <execute>xset dpms force off</execute>
-      </action>
-    </keybind>
     <keybind key="C-A-e">
       <action name="Execute">
         <execute>transset</execute>
@@ -920,6 +973,12 @@ my own preferences and Clay's vi-like spatial bindings -->
     <keybind key="C-A-r">
       <action name="Execute">
         <execute>gmrun</execute>
+      </action>
+    </keybind>
+    <!--
+    <keybind key="0xDF">
+      <action name="Execute">
+        <execute>xset dpms force off</execute>
       </action>
     </keybind>
     <keybind key="0xA4">
@@ -1004,29 +1063,30 @@ my own preferences and Clay's vi-like spatial bindings -->
       </execute>
       </action>
     </keybind>
+    -->
     <keybind key="C-A-p">
       <action name="Execute">
-        <execute>setxkbmap pl</execute>
+        <execute>setxkbmap pl -option compose:caps</execute>
       </action>
     </keybind>
     <keybind key="C-A-n">
       <action name="Execute">
-        <execute>setxkbmap no</execute>
+        <execute>setxkbmap no -option compose:caps</execute>
       </action>
     </keybind>
     <keybind key="C-A-c">
       <action name="Execute">
-        <execute>setxkbmap us</execute>
+        <execute>setxkbmap us -option compose:caps</execute>
       </action>
     </keybind>
     <keybind key="C-A-s">
       <action name="Execute">
-        <execute>aterm -sl 600 -bw 0 -bg black -fg green -cr darkgreen -fn terminus-20 -e screen -D -R</execute>
+        <execute>urxvtcd -tn xterm -sl 600 -bw 0 -bg black -fg green -cr darkgreen -e screen -D -R</execute>
       </action>
     </keybind>
     <keybind key="C-A-t">
       <action name="Execute">
-        <execute>aterm -sl 600 -bw 0 -bg black -fg green -cr darkgreen -fn terminus-20</execute>
+        <execute>urxvtcd -tn xterm -sl 600 -bw 0 -bg black -fg green -cr darkgreen</execute>
       </action>
     </keybind>
     <keybind key="C-A-g">
@@ -1136,24 +1196,34 @@ my own preferences and Clay's vi-like spatial bindings -->
         <wrap>yes</wrap>
       </action>
     </keybind>
-    <keybind key="W-F1">
+    <keybind key="W-1">
       <action name="Desktop">
         <desktop>1</desktop>
       </action>
     </keybind>
-    <keybind key="W-F2">
+    <keybind key="W-2">
       <action name="Desktop">
         <desktop>2</desktop>
       </action>
     </keybind>
-    <keybind key="W-F3">
+    <keybind key="W-3">
       <action name="Desktop">
         <desktop>3</desktop>
       </action>
     </keybind>
-    <keybind key="W-F4">
+    <keybind key="W-4">
       <action name="Desktop">
         <desktop>4</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-5">
+      <action name="Desktop">
+        <desktop>5</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-6">
+      <action name="Desktop">
+        <desktop>6</desktop>
       </action>
     </keybind>
     <keybind key="W-d">
@@ -1209,7 +1279,7 @@ my own preferences and Clay's vi-like spatial bindings -->
     <context name="Frame">
       <mousebind button="W-Left" action="Click">
         <action name="Execute">
-          <execute>transset</execute>
+          <execute>transset-df</execute>
         </action>
       </mousebind>
       <mousebind button="A-Left" action="Press">
@@ -1241,27 +1311,27 @@ my own preferences and Clay's vi-like spatial bindings -->
       <action name="Unfocus"/>
     </mousebind>
     -->
-      <mousebind button="A-Up" action="Click">
+      <mousebind button="A-Up" action="Press">
         <action name="DesktopPrevious"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="A-Down" action="Click">
+      <mousebind button="A-Down" action="Press">
         <action name="DesktopNext"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="C-A-Up" action="Click">
+      <mousebind button="C-A-Up" action="Press">
         <action name="DesktopPrevious"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="C-A-Down" action="Click">
+      <mousebind button="C-A-Down" action="Press">
         <action name="DesktopNext"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="A-S-Up" action="Click">
+      <mousebind button="A-S-Up" action="Press">
         <action name="SendToDesktopPrevious"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="A-S-Down" action="Click">
+      <mousebind button="A-S-Down" action="Press">
         <action name="SendToDesktopNext"/>
         <wrap>yes</wrap>
       </mousebind>
@@ -1493,27 +1563,27 @@ my own preferences and Clay's vi-like spatial bindings -->
       </mousebind>
     </context>
     <context name="Desktop">
-      <mousebind button="Up" action="Click">
+      <mousebind button="Up" action="Press">
         <action name="DesktopPrevious"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="Down" action="Click">
+      <mousebind button="Down" action="Press">
         <action name="DesktopNext"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="A-Up" action="Click">
+      <mousebind button="A-Up" action="Press">
         <action name="DesktopPrevious"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="A-Down" action="Click">
+      <mousebind button="A-Down" action="Press">
         <action name="DesktopNext"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="C-A-Up" action="Click">
+      <mousebind button="C-A-Up" action="Press">
         <action name="DesktopPrevious"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="C-A-Down" action="Click">
+      <mousebind button="C-A-Down" action="Press">
         <action name="DesktopNext"/>
         <wrap>yes</wrap>
       </mousebind>
@@ -1593,6 +1663,17 @@ my own preferences and Clay's vi-like spatial bindings -->
     <applicationIcons>yes</applicationIcons>
   </menu>
   <applications>
+   <application name="rxvt_below">
+      <decor>false</decor>
+      <layer>below</layer>
+      <skip_pager>yes</skip_pager>
+      <skip_taskbar>yes</skip_taskbar>
+      <desktop>all</desktop>
+      <maximized>vertical</maximized>
+   </application>
+   <application name="second_urxvt">
+       <desktop>3</desktop>
+   </application>
     <application name="gkrellm">
       <decor>false</decor>
       <skip_pager>yes</skip_pager>
@@ -1608,6 +1689,9 @@ my own preferences and Clay's vi-like spatial bindings -->
     </application>
     <application name="dclock">
       <decor>no</decor>
+    </application>
+    <application name="Navigator" class="Iceweasel" role="browser">
+      <focus>no</focus>
     </application>
     <!--
   # this is an example with comments through out. use these to make your
