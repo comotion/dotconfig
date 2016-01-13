@@ -1,9 +1,24 @@
-#!/bin/sh
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
 
-export EDITOR=vim
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
 
-eval $(keychain --eval -Q --quiet 2> /dev/null) 2> /dev/null
-#source /usr/local/rvm/scripts/rvm
-export LC_NUMERIC="POSIX"
-export DOCKER_HOST=tcp://192.168.59.103:2375
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+PATH="$PATH:/usr/local/go/bin"
+export PATH
