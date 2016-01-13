@@ -1,36 +1,26 @@
-#!/bin/bash
-#
-# ~/.xinitrc
-#
-# Executed by startx (run your window manager from here)
-
-if [ -d /etc/X11/xinit/xinitrc.d ]; then
-  for f in /etc/X11/xinit/xinitrc.d/*; do
-    [ -x "$f" ] && . "$f"
-  done
-  unset f
+# start x session &essentials
+eval "$(gpg-agent --enable-ssh-support --daemon) --write-env-file ${HOME}/.gpg-agent-info"
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+  . "${HOME}/.gpg-agent-info"
+  export GPG_AGENT_INFO
+  export SSH_AUTH_SOCK
 fi
+export VDPAU_DRIVER=va_gl
 
-# exec gnome-session
-# exec startkde
-# exec startxfce4
-# ...or the Window Manager of your choice
-PATH=~/bin:${PATH}
-export LANG=en_GB.UTF-8
-alias c=chromium
-alias chro=chromium
+xset r rate 200 50
+xset b 0
+xcompmgr &
+tabbed -c urxvt -sl 600 -bw 0 -bg black -fg green -cr darkgreen  -fn "9x15bold,xft:Bitstream Vera Sans Mono" -embed &
 
-/usr/lib/notification-daemon-1.0/notification-daemon &
+setxkbmap -option compose:caps us
+stalonetray -t --sticky &
+#pypanel &
+redshift-gtk &
+gzbatt &
+sbxkb &
+dunst &
 
-xrdb -merge ~/.Xresources
-urxvtd -q -f -o
-xmonad &
-#xrandr-auto; ~/.fehbg
-setxkbmap -option compose:caps
-compton -cCGfb &
-bin/cyclewallpaper ~/Downloads/wallpapers &
-urxvtc &
+syndaemon -i 1.0 -d -K -R
 
-#exec openbox
-gnome-keyring-daemon
-exec xfce4-session --disable-tcp
+(sleep 1 && hsetroot -fill ~/cat.jpg ) &
+openbox-session
