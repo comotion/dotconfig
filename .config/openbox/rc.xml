@@ -61,7 +61,7 @@ my own preferences and Clay's vi-like spatial bindings -->
       <!-- font size in points -->
       <weight>bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>italic</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
@@ -110,21 +110,15 @@ my own preferences and Clay's vi-like spatial bindings -->
       <name>Delta (4)</name>
       <name>Epsilon (5)</name>
       <name>Zeta (6)</name>
+      <!--
       <name>Eta (7)</name>
       <name>Theta (8)</name>
       <name>Iota (9)</name>
       <name>Kappa (10)</name>
       <name>Lambda (11)</name>
       <name>Mu (12)</name>
+      -->
     </names>
-    <!--
-  <number>4</number>
-  <firstdesk>1</firstdesk>
-  <names>
-    <name>desktop 1</name>
-    <name>desktop 2</name>
-  </names>
-  -->
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
@@ -147,7 +141,7 @@ my own preferences and Clay's vi-like spatial bindings -->
     <right>0</right>
   </margins>
   <dock>
-    <position>Right</position>
+    <position>TopLeft</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
@@ -165,143 +159,6 @@ my own preferences and Clay's vi-like spatial bindings -->
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
-    <chainQuitKey>W-g</chainQuitKey>
-    <!-- Clay's bindings
-  http://icculus.org/openbox/index.php/Help:ClaysViStyleSpatial
-  -->
-    <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
-    <!--XXXX              (Almost) One-handed Control Prototype              XXXX-->
-    <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
-    <!--Movement Layer-->
-    <keybind key="W-C-KP_7">
-      <action name="MoveToEdgeNorth"/>
-      <action name="MoveToEdgeWest"/>
-    </keybind>
-    <keybind key="W-C-KP_9">
-      <action name="MoveToEdgeNorth"/>
-      <action name="MoveToEdgeEast"/>
-    </keybind>
-    <keybind key="W-C-KP_1">
-      <action name="MoveToEdgeSouth"/>
-      <action name="MoveToEdgeWest"/>
-    </keybind>
-    <keybind key="W-C-KP_3">
-      <action name="MoveToEdgeSouth"/>
-      <action name="MoveToEdgeEast"/>
-    </keybind>
-    <keybind key="W-C-U">
-      <action name="MoveToEdgeNorth"/>
-      <action name="MoveToEdgeWest"/>
-    </keybind>
-    <keybind key="W-C-I">
-      <action name="MoveToEdgeNorth"/>
-      <action name="MoveToEdgeEast"/>
-    </keybind>
-    <keybind key="W-C-N">
-      <action name="MoveToEdgeSouth"/>
-      <action name="MoveToEdgeWest"/>
-    </keybind>
-    <keybind key="W-C-M">
-      <action name="MoveToEdgeSouth"/>
-      <action name="MoveToEdgeEast"/>
-    </keybind>
-    <keybind key="W-C-KP_8">
-      <action name="MoveToEdgeNorth"/>
-    </keybind>
-    <keybind key="W-C-K">
-      <action name="MoveToEdgeNorth"/>
-    </keybind>
-    <keybind key="W-C-KP_4">
-      <action name="MoveToEdgeWest"/>
-    </keybind>
-    <keybind key="W-C-H">
-      <action name="MoveToEdgeWest"/>
-    </keybind>
-    <keybind key="W-C-KP_5">
-      <action name="MoveToCenter"/>
-    </keybind>
-    <keybind key="W-C-semicolon">
-      <action name="MoveToCenter"/>
-    </keybind>
-    <keybind key="W-C-KP_6">
-      <action name="MoveToEdgeEast"/>
-    </keybind>
-    <keybind key="W-C-L">
-      <action name="MoveToEdgeEast"/>
-    </keybind>
-    <keybind key="W-C-KP_2">
-      <action name="MoveToEdgeSouth"/>
-    </keybind>
-    <keybind key="W-C-J">
-      <action name="MoveToEdgeSouth"/>
-    </keybind>
-    <keybind key="W-C-KP_0">
-      <action name="SendToDesktopPrevious">
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-C-comma">
-      <action name="SendToDesktopPrevious">
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-C-KP_Decimal">
-      <action name="SendToDesktopNext">
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-C-period">
-      <action name="SendToDesktopNext">
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-C-KP_Divide">
-      <action name="MoveRelative">
-        <x>-20</x>
-      </action>
-    </keybind>
-    <keybind key="W-C-O">
-      <action name="MoveRelative">
-        <x>-20</x>
-      </action>
-    </keybind>
-    <keybind key="W-C-KP_Multiply">
-      <action name="MoveRelative">
-        <x>20</x>
-      </action>
-    </keybind>
-    <keybind key="W-C-P">
-      <action name="MoveRelative">
-        <x>20</x>
-      </action>
-    </keybind>
-    <keybind key="W-C-KP_Subtract">
-      <action name="MoveRelative">
-        <y>-20</y>
-      </action>
-    </keybind>
-    <keybind key="W-C-bracketleft">
-      <action name="MoveRelative">
-        <y>-20</y>
-      </action>
-    </keybind>
-    <keybind key="W-C-KP_Add">
-      <action name="MoveRelative">
-        <y>20</y>
-      </action>
-    </keybind>
-    <keybind key="W-C-apostrophe">
-      <action name="MoveRelative">
-        <y>20</y>
-      </action>
-    </keybind>
-    <keybind key="W-C-KP_Enter">
-      <action name="Iconify"/>
-    </keybind>
-    <keybind key="W-C-slash">
-      <action name="Iconify"/>
-    </keybind>
-    <!--END of Movement Layer-->
     <!--Focus Layer-->
     <keybind key="W-KP_7">
       <action name="DirectionalFocusNorthWest"/>
@@ -315,25 +172,10 @@ my own preferences and Clay's vi-like spatial bindings -->
     <keybind key="W-KP_3">
       <action name="DirectionalFocusSouthEast"/>
     </keybind>
-    <keybind key="W-U">
-      <action name="DirectionalFocusNorthWest"/>
-    </keybind>
-    <keybind key="W-I">
-      <action name="DirectionalFocusNorthEast"/>
-    </keybind>
-    <keybind key="W-N">
-      <action name="DirectionalFocusSouthWest"/>
-    </keybind>
-    <keybind key="W-M">
-      <action name="DirectionalFocusSouthEast"/>
-    </keybind>
     <keybind key="W-S-KP_5">
       <action name="PreviousWindow"/>
     </keybind>
     <keybind key="W-KP_8">
-      <action name="DirectionalFocusNorth"/>
-    </keybind>
-    <keybind key="W-K">
       <action name="DirectionalFocusNorth"/>
     </keybind>
     <keybind key="W-KP_4">
@@ -345,25 +187,10 @@ my own preferences and Clay's vi-like spatial bindings -->
     <keybind key="W-KP_5">
       <action name="NextWindow"/>
     </keybind>
-    <keybind key="W-semicolon">
-      <action name="NextWindow"/>
-    </keybind>
-    <keybind key="W-S-KP_5">
-      <action name="PreviousWindow"/>
-    </keybind>
-    <keybind key="W-S-semicolon">
-      <action name="PreviousWindow"/>
-    </keybind>
     <keybind key="W-KP_6">
       <action name="DirectionalFocusEast"/>
     </keybind>
-    <keybind key="W-ø">
-      <action name="DirectionalFocusEast"/>
-    </keybind>
     <keybind key="W-KP_2">
-      <action name="DirectionalFocusSouth"/>
-    </keybind>
-    <keybind key="W-J">
       <action name="DirectionalFocusSouth"/>
     </keybind>
     <keybind key="W-KP_0">
@@ -371,27 +198,14 @@ my own preferences and Clay's vi-like spatial bindings -->
         <wrap>yes</wrap>
       </action>
     </keybind>
-    <keybind key="W-comma">
-      <action name="DesktopPrevious">
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
+    <!--
     <keybind key="W-KP_Decimal">
       <action name="DesktopNext">
         <wrap>yes</wrap>
       </action>
     </keybind>
-    <keybind key="W-period">
-      <action name="DesktopNext">
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
+    -->
     <keybind key="W-KP_Divide">
-      <action name="Execute">
-        <execute>gmrun</execute>
-      </action>
-    </keybind>
-    <keybind key="W-O">
       <action name="Execute">
         <execute>gmrun</execute>
       </action>
@@ -399,25 +213,13 @@ my own preferences and Clay's vi-like spatial bindings -->
     <keybind key="W-KP_Multiply">
       <action name="ToggleOmnipresent"/>
     </keybind>
-    <keybind key="W-P">
-      <action name="ToggleOmnipresent"/>
-    </keybind>
     <keybind key="W-KP_Subtract">
-      <action name="Raise"/>
-    </keybind>
-    <keybind key="W-bracketleft">
       <action name="Raise"/>
     </keybind>
     <keybind key="W-KP_Add">
       <action name="Lower"/>
     </keybind>
-    <keybind key="W-apostrophe">
-      <action name="Lower"/>
-    </keybind>
     <keybind key="W-KP_Enter">
-      <action name="ToggleDecorations"/>
-    </keybind>
-    <keybind key="W-slash">
       <action name="ToggleDecorations"/>
     </keybind>
     <!--END Focus Layer-->
@@ -438,58 +240,22 @@ my own preferences and Clay's vi-like spatial bindings -->
       <action name="GrowToEdgeSouth"/>
       <action name="GrowToEdgeEast"/>
     </keybind>
-    <keybind key="W-A-U">
-      <action name="GrowToEdgeNorth"/>
-      <action name="GrowToEdgeWest"/>
-    </keybind>
-    <keybind key="W-A-I">
-      <action name="GrowToEdgeNorth"/>
-      <action name="GrowToEdgeEast"/>
-    </keybind>
-    <keybind key="W-A-N">
-      <action name="GrowToEdgeSouth"/>
-      <action name="GrowToEdgeWest"/>
-    </keybind>
-    <keybind key="W-A-M">
-      <action name="GrowToEdgeSouth"/>
-      <action name="GrowToEdgeEast"/>
-    </keybind>
     <keybind key="W-A-KP_8">
-      <action name="GrowToEdgeNorth"/>
-    </keybind>
-    <keybind key="W-A-K">
       <action name="GrowToEdgeNorth"/>
     </keybind>
     <keybind key="W-A-KP_4">
       <action name="GrowToEdgeWest"/>
     </keybind>
-    <keybind key="W-A-H">
-      <action name="GrowToEdgeWest"/>
-    </keybind>
     <keybind key="W-A-KP_5">
-      <action name="Close"/>
-    </keybind>
-    <keybind key="W-A-semicolon">
       <action name="Close"/>
     </keybind>
     <keybind key="W-A-KP_6">
       <action name="GrowToEdgeEast"/>
     </keybind>
-    <keybind key="W-A-L">
-      <action name="GrowToEdgeEast"/>
-    </keybind>
     <keybind key="W-A-KP_2">
       <action name="GrowToEdgeSouth"/>
     </keybind>
-    <keybind key="W-A-J">
-      <action name="GrowToEdgeSouth"/>
-    </keybind>
     <keybind key="W-A-KP_Divide">
-      <action name="ResizeRelative">
-        <x>-20</x>
-      </action>
-    </keybind>
-    <keybind key="W-A-O">
       <action name="ResizeRelative">
         <x>-20</x>
       </action>
@@ -499,17 +265,7 @@ my own preferences and Clay's vi-like spatial bindings -->
         <x>20</x>
       </action>
     </keybind>
-    <keybind key="W-A-P">
-      <action name="ResizeRelative">
-        <x>20</x>
-      </action>
-    </keybind>
     <keybind key="W-A-KP_Subtract">
-      <action name="ResizeRelative">
-        <y>-20</y>
-      </action>
-    </keybind>
-    <keybind key="W-A-bracketleft">
       <action name="ResizeRelative">
         <y>-20</y>
       </action>
@@ -519,27 +275,15 @@ my own preferences and Clay's vi-like spatial bindings -->
         <y>20</y>
       </action>
     </keybind>
-    <keybind key="W-A-apostrophe">
-      <action name="ResizeRelative">
-        <y>20</y>
-      </action>
-    </keybind>
     <keybind key="W-A-KP_0">
       <action name="ToggleMaximizeHorz"/>
     </keybind>
-    <keybind key="W-A-comma">
-      <action name="ToggleMaximizeHorz"/>
-    </keybind>
+    <!--
     <keybind key="W-A-KP_Decimal">
       <action name="ToggleShade"/>
     </keybind>
-    <keybind key="W-A-period">
-      <action name="ToggleShade"/>
-    </keybind>
+    -->
     <keybind key="W-A-KP_Enter">
-      <action name="ToggleMaximizeVert"/>
-    </keybind>
-    <keybind key="W-A-slash">
       <action name="ToggleMaximizeVert"/>
     </keybind>
     <!--END of Size Layer-->
@@ -619,7 +363,6 @@ my own preferences and Clay's vi-like spatial bindings -->
       </action>
     </keybind>
       -->
- <!--
     <keybind key="W-F1">
       <action name="Desktop">
         <desktop>1</desktop>
@@ -656,156 +399,100 @@ my own preferences and Clay's vi-like spatial bindings -->
         <dialog>yes</dialog>
       </action>
     </keybind>
-    <keybind key="W-F7">
-      <action name="Desktop">
-        <desktop>7</desktop>
-        <dialog>yes</dialog>
-      </action>
-    </keybind>
-    <keybind key="W-F8">
-      <action name="Desktop">
-        <desktop>8</desktop>
-        <dialog>yes</dialog>
-      </action>
-    </keybind>
-    <keybind key="W-F9">
-      <action name="Desktop">
-        <desktop>9</desktop>
-        <dialog>yes</dialog>
-      </action>
-    </keybind>
-    <keybind key="W-F10">
-      <action name="Desktop">
-        <desktop>10</desktop>
-        <dialog>yes</dialog>
-      </action>
-    </keybind>
-    <keybind key="W-F11">
-      <action name="Desktop">
-        <desktop>11</desktop>
-        <dialog>yes</dialog>
-      </action>
-    </keybind>
-    <keybind key="W-F12">
-      <action name="Desktop">
-        <desktop>12</desktop>
-        <dialog>yes</dialog>
-      </action>
-    </keybind>
- -->
-    <keybind key="W-F1">
+    <keybind key="W-A-F1">
       <action name="SendToDesktop">
         <desktop>1</desktop>
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="W-F2">
+    <keybind key="W-A-F2">
       <action name="SendToDesktop">
         <desktop>2</desktop>
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="W-F3">
+    <keybind key="W-A-F3">
       <action name="SendToDesktop">
         <desktop>3</desktop>
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="W-F4">
+    <keybind key="W-A-F4">
       <action name="SendToDesktop">
         <desktop>4</desktop>
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="W-F5">
+    <keybind key="W-A-F5">
       <action name="SendToDesktop">
         <desktop>5</desktop>
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="W-F6">
+    <keybind key="W-A-F6">
       <action name="SendToDesktop">
         <desktop>6</desktop>
         <follow>no</follow>
       </action>
     </keybind>
-    <!--
-    <keybind key="W-A-F7">
-      <action name="SendToDesktop">
-        <desktop>7</desktop>
-        <follow>no</follow>
+    <!-- END of Workspace Switch Bindings -->
+    <!-- Application Switch Bindings -->
+    <keybind key="W-Tab">
+      <action name="NextWindow"/>
+    </keybind>
+    <keybind key="W-S-Tab">
+      <action name="PreviousWindow"/>
+    </keybind>
+    <!-- END of Application Switch Bindings -->
+    <!--Show Menu Bindings-->
+    <keybind key="W-Menu">
+      <action name="ShowMenu">
+        <menu>client-menu</menu>
       </action>
     </keybind>
-    <keybind key="W-A-F8">
-      <action name="SendToDesktop">
-        <desktop>8</desktop>
-        <follow>no</follow>
-      </action>
-    </keybind>
-    <keybind key="W-A-F9">
-      <action name="SendToDesktop">
-        <desktop>9</desktop>
-        <follow>no</follow>
-      </action>
-    </keybind>
-    <keybind key="W-A-F10">
-      <action name="SendToDesktop">
-        <desktop>10</desktop>
-        <follow>no</follow>
-      </action>
-    </keybind>
-    <keybind key="W-A-F11">
-      <action name="SendToDesktop">
-        <desktop>11</desktop>
-        <follow>no</follow>
-      </action>
-    </keybind>
-    <keybind key="W-A-F12">
-      <action name="SendToDesktop">
-        <desktop>12</desktop>
-        <follow>no</follow>
-      </action>
-    </keybind>
-    -->
-    <keybind key="XF86MonBrightnessUp">
-      <action name="Execute">
-      <execute>bright +</execute>
-      </action>
-    </keybind>
-    <keybind key="XF86MonBrightnessDown">
-      <action name="Execute">
-      <execute>bright -</execute>
+    <keybind key="W-grave">
+      <action name="ShowMenu">
+        <menu>client-list-combined-menu</menu>
       </action>
     </keybind>
     <!--
-    <keybind key="XF86WakeUp">
-      <action name="Execute">
-      <execute>sudo batforce</execute>
+    <keybind key="XF86Go">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
+    <keybind key="XF86Back">
+      <action name="ShowMenu">
+        <menu>client-list-menu</menu>
       </action>
     </keybind>
     -->
+    <!--END of Show Menu Bindings-->
+    <keybind key="W-Print">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
+    <keybind key="W-Scroll_Lock">
+      <action name="ShowMenu">
+        <menu>client-list-menu</menu>
+      </action>
+    </keybind>
+    <keybind key="W-l">
+      <action name="Execute">
+        <execute>xtrlock</execute>
+      </action>
+    </keybind>
     <keybind key="XF86Battery">
       <action name="Execute">
       <execute>sudo ~/bin/batforce</execute>
       </action>
     </keybind>
-    <keybind key="XF86ScreenSaver">
+    <keybind key="W-Pause">
       <action name="Execute">
-      <execute>xtrlock</execute>
+        <execute>xscreensaver-command -l</execute>
       </action>
     </keybind>
-    <!--
-    <keybind key="XF86Sleep">
-      <action name="Execute">
-      <execute>volume -5</execute>
-      </action>
-    </keybind>
-    <keybind key="XF86Wakeup">
-      <action name="Execute">
-      <execute>volume -5</execute>
-      </action>
-    </keybind>
-    -->
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
       <execute>volume -5</execute>
@@ -836,69 +523,6 @@ my own preferences and Clay's vi-like spatial bindings -->
       <execute>hiber</execute>
       </action>
     </keybind>
-
-    <!-- Workspace Switch Bindings -->
-    <keybind key="W-backslash">
-      <action name="DesktopNext">
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-backslash">
-      <action name="DesktopPrevious">
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <!-- END of Workspace Switch Bindings -->
-    <!-- Application Switch Bindings -->
-    <keybind key="W-Tab">
-      <action name="NextWindow"/>
-    </keybind>
-    <keybind key="W-S-Tab">
-      <action name="PreviousWindow"/>
-    </keybind>
-    <!-- END of Application Switch Bindings -->
-    <!--Show Menu Bindings-->
-    <keybind key="W-Menu">
-      <action name="ShowMenu">
-        <menu>client-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="W-grave">
-      <action name="ShowMenu">
-        <menu>client-list-combined-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="XF86Go">
-      <action name="ShowMenu">
-        <menu>root-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="XF86Back">
-      <action name="ShowMenu">
-        <menu>client-list-menu</menu>
-      </action>
-    </keybind>
-    <!--END of Show Menu Bindings-->
-    <keybind key="W-Print">
-      <action name="ShowMenu">
-        <menu>root-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="W-Scroll_Lock">
-      <action name="ShowMenu">
-        <menu>client-list-menu</menu>
-      </action>
-    </keybind>
-    <keybind key="W-l">
-      <action name="Execute">
-        <execute>xtrlock</execute>
-      </action>
-    </keybind>
-    <keybind key="W-Pause">
-      <action name="Execute">
-        <execute>xscreensaver-command -l</execute>
-      </action>
-    </keybind>
     <keybind key="XF86UserPB">
       <action name="Execute">
         <execute>xscreensaver-command -l</execute>
@@ -911,10 +535,9 @@ my own preferences and Clay's vi-like spatial bindings -->
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <execute>urxvt -tn xterm -bg black -fg white +sb -sl 1024</execute>
+        <execute>rxvt-unicode -bg black -fg white +sb -sl 1024</execute>
       </action>
     </keybind>
-    <!-- #### END Clay's bindings #### -->
     <!-- Keybindings for windows 1 through 9
   this particular coolness requires the irssi-focus app
   http://icculus.org/openbox/index.php/Help:IrssiStyleFocus
@@ -965,9 +588,14 @@ my own preferences and Clay's vi-like spatial bindings -->
       </action>
     </keybind>
     <!-- Keybindings for commands -->
+    <keybind key="C-A-l">
+      <action name="Execute">
+        <execute>xtrlock</execute>
+      </action>
+    </keybind>
     <keybind key="C-A-e">
       <action name="Execute">
-        <execute>transset</execute>
+        <execute>transset-df -a</execute>
       </action>
     </keybind>
     <keybind key="C-A-r">
@@ -975,7 +603,7 @@ my own preferences and Clay's vi-like spatial bindings -->
         <execute>gmrun</execute>
       </action>
     </keybind>
-    <!--
+    <!-- which keys are these now?
     <keybind key="0xDF">
       <action name="Execute">
         <execute>xset dpms force off</execute>
@@ -1071,7 +699,7 @@ my own preferences and Clay's vi-like spatial bindings -->
     </keybind>
     <keybind key="C-A-n">
       <action name="Execute">
-        <execute>setxkbmap no -option compose:caps</execute>
+        <execute>setxkbmap no</execute>
       </action>
     </keybind>
     <keybind key="C-A-c">
@@ -1081,12 +709,12 @@ my own preferences and Clay's vi-like spatial bindings -->
     </keybind>
     <keybind key="C-A-s">
       <action name="Execute">
-        <execute>urxvtcd -tn xterm -sl 600 -bw 0 -bg black -fg green -cr darkgreen -e screen -D -R</execute>
+        <execute>aterm -sl 600 -bw 0 -bg black -fg green -cr darkgreen -e screen -D -R</execute>
       </action>
     </keybind>
     <keybind key="C-A-t">
       <action name="Execute">
-        <execute>urxvtcd -tn xterm -sl 600 -bw 0 -bg black -fg green -cr darkgreen</execute>
+        <execute>rxvt-unicode -sl 600 -bw 0 -bg black -fg green -cr darkgreen</execute>
       </action>
     </keybind>
     <keybind key="C-A-g">
@@ -1196,34 +824,24 @@ my own preferences and Clay's vi-like spatial bindings -->
         <wrap>yes</wrap>
       </action>
     </keybind>
-    <keybind key="W-1">
+    <keybind key="W-F1">
       <action name="Desktop">
         <desktop>1</desktop>
       </action>
     </keybind>
-    <keybind key="W-2">
+    <keybind key="W-F2">
       <action name="Desktop">
         <desktop>2</desktop>
       </action>
     </keybind>
-    <keybind key="W-3">
+    <keybind key="W-F3">
       <action name="Desktop">
         <desktop>3</desktop>
       </action>
     </keybind>
-    <keybind key="W-4">
+    <keybind key="W-F4">
       <action name="Desktop">
         <desktop>4</desktop>
-      </action>
-    </keybind>
-    <keybind key="W-5">
-      <action name="Desktop">
-        <desktop>5</desktop>
-      </action>
-    </keybind>
-    <keybind key="W-6">
-      <action name="Desktop">
-        <desktop>6</desktop>
       </action>
     </keybind>
     <keybind key="W-d">
@@ -1279,7 +897,7 @@ my own preferences and Clay's vi-like spatial bindings -->
     <context name="Frame">
       <mousebind button="W-Left" action="Click">
         <action name="Execute">
-          <execute>transset-df</execute>
+          <execute>transset-df -p</execute>
         </action>
       </mousebind>
       <mousebind button="A-Left" action="Press">
@@ -1311,27 +929,27 @@ my own preferences and Clay's vi-like spatial bindings -->
       <action name="Unfocus"/>
     </mousebind>
     -->
-      <mousebind button="A-Up" action="Press">
+      <mousebind button="A-Up" action="Click">
         <action name="DesktopPrevious"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="A-Down" action="Press">
+      <mousebind button="A-Down" action="Click">
         <action name="DesktopNext"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="C-A-Up" action="Press">
+      <mousebind button="C-A-Up" action="Click">
         <action name="DesktopPrevious"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="C-A-Down" action="Press">
+      <mousebind button="C-A-Down" action="Click">
         <action name="DesktopNext"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="A-S-Up" action="Press">
+      <mousebind button="A-S-Up" action="Click">
         <action name="SendToDesktopPrevious"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="A-S-Down" action="Press">
+      <mousebind button="A-S-Down" action="Click">
         <action name="SendToDesktopNext"/>
         <wrap>yes</wrap>
       </mousebind>
@@ -1563,27 +1181,27 @@ my own preferences and Clay's vi-like spatial bindings -->
       </mousebind>
     </context>
     <context name="Desktop">
-      <mousebind button="Up" action="Press">
+      <mousebind button="Up" action="Click">
         <action name="DesktopPrevious"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="Down" action="Press">
+      <mousebind button="Down" action="Click">
         <action name="DesktopNext"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="A-Up" action="Press">
+      <mousebind button="A-Up" action="Click">
         <action name="DesktopPrevious"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="A-Down" action="Press">
+      <mousebind button="A-Down" action="Click">
         <action name="DesktopNext"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="C-A-Up" action="Press">
+      <mousebind button="C-A-Up" action="Click">
         <action name="DesktopPrevious"/>
         <wrap>yes</wrap>
       </mousebind>
-      <mousebind button="C-A-Down" action="Press">
+      <mousebind button="C-A-Down" action="Click">
         <action name="DesktopNext"/>
         <wrap>yes</wrap>
       </mousebind>
@@ -1687,82 +1305,12 @@ my own preferences and Clay's vi-like spatial bindings -->
       <skip_taskbar>yes</skip_taskbar>
       <desktop>all</desktop>
     </application>
+
     <application name="dclock">
       <decor>no</decor>
     </application>
     <application name="Navigator" class="Iceweasel" role="browser">
       <focus>no</focus>
     </application>
-    <!--
-  # this is an example with comments through out. use these to make your
-  # own rules, but without the comments of course.
-
-  <application name="first element of window's WM_CLASS property (see xprop)"
-              class="second element of window's WM_CLASS property (see xprop)"
-               role="the window's WM_WINDOW_ROLE property (see xprop)">
-  # the name or the class can be set, or both. this is used to match
-  # windows when they appear. role can optionally be set as well, to
-  # further restrict your matches.
-
-  # the name, class, and role use simple wildcard matching such as those
-  # used by a shell. you can use * to match any characters and ? to match
-  # any single character.
-
-  # when multiple rules match a window, they will all be applied, in the
-  # order that they appear in this list
-
-
-    # each element can be left out or set to 'default' to specify to not
-    # change that attribute of the window
-
-    <decor>yes</decor>
-    # enable or disable window decorations
-
-    <shade>no</shade>
-    # make the window shaded when it appears, or not
-
-    <position>
-      # the position is only used if both an x and y coordinate are provided
-      # (and not set to 'default')
-      <x>center</x>
-      # a number like 50, or 'center' to center on screen. use a negative number
-      # to start from the right (or bottom for <y>), ie -50 is 50 pixels from the
-      # right edge (or bottom).
-      <y>200</y>
-      <monitor>1</monitor>
-      # specifies the monitor in a xinerama setup.
-      # 1 is the first head, or 'mouse' for wherever the mouse is
-    </position>
-
-    <focus>yes</focus>
-    # if the window should try be given focus when it appears. if this is set
-    # to yes it doesn't guarantee the window will be given focus. some
-    # restrictions may apply, but Openbox will try to
-
-    <desktop>1</desktop>
-    # 1 is the first desktop, 'all' for all desktops
-
-    <layer>normal</layer>
-    # 'above', 'normal', or 'below'
-
-    <iconic>no</iconic>
-    # make the window iconified when it appears, or not
-
-    <skip_pager>no</skip_pager>
-    # asks to not be shown in pagers
-
-    <skip_taskbar>no</skip_taskbar>
-    # asks to not be shown in taskbars. window cycling actions will also
-    # skip past such windows
-
-    <fullscreen>yes</fullscreen>
-    # make the window in fullscreen mode when it appears
-
-    <maximized>true</maximized>
-    # 'Horizontal', 'Vertical' or boolean (yes/no)
-  </application>
-
-  # end of the example
--->
   </applications>
 </openbox_config>
