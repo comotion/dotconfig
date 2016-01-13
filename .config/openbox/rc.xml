@@ -9,13 +9,14 @@
 <focus>
   <focusNew>yes</focusNew>
   <followMouse>yes</followMouse>
-  <focusDelay>0</focusDelay>
+  <focusDelay>100</focusDelay>
   <raiseOnFocus>no</raiseOnFocus>
 </focus>
 
 <theme>
-  <name>Allegro</name>
+  <name>Om4Ob</name>
   <titlelayout>NLIMC</titlelayout>
+  <keepBorder>no</keepBorder>
 </theme>
 
 <placement>
@@ -50,17 +51,41 @@
 <keyboard>
   <chainQuitKey>C-g</chainQuitKey>
 
-  <keybind key="C-A-s">
-    <action name="Execute"><execute>scrot '%Y-%m-%d_%T_$wx$h.jpg' -e 'mv $f ~/archive/shots/'</execute>
-    </action></keybind>
-  <keybind key="F12">
-    <action name="Execute"><execute>~/bin/insertcdr</execute></action>
+  <keybind key="0x82">
+    <action name="Execute"><execute>rox</execute></action>
   </keybind>
+  <keybind key="0xE8">
+    <action name="Execute"><execute>qalculate</execute></action>
+  </keybind>
+  <keybind key="0xEC">
+    <action name="Execute"><execute>balsa</execute></action>
+  </keybind>
+  <keybind key="0xAE">
+    <action name="Execute"><execute>aumix -v -2</execute></action>
+  </keybind>
+  <keybind key="0xB0">
+    <action name="Execute"><execute>aumix -v +2</execute></action>
+  </keybind>
+  <keybind key="0xA0">
+    <action name="Execute"><execute>mute</execute></action>
+  </keybind>
+  <keybind key="0x7A">
+    <action name="Execute"><execute>galeon -n http://www.google.ca</execute></action>
+  </keybind>
+  <keybind key="0x6F">
+    <action name="Execute"><execute>scrot '%Y-%m-%d_%T_$wx$h.jpg' -e 'mv $f ~/archive/shots/'</execute>
+    </action>
+  </keybind>
+  <keybind key="0xDE">
+    <action name="Execute">
+      <execute>
+        /uri/0install/rox.sourceforge.net/apps/ROX-Session/AppRun
+      </execute>
+    </action>
+  </keybind>
+  
   <keybind key="C-F11">
     <action name="Execute"><execute>~/bin/ejectdvd</execute></action>
-  </keybind>
-  <keybind key="C-F12">
-    <action name="Execute"><execute>~/bin/ejectcdr</execute></action>
   </keybind>
   <keybind key="C-A-p">
     <action name="Execute"><execute>~/bin/plkey</execute></action>
@@ -75,7 +100,8 @@
     <action name="Execute"><execute>Eterm -e screen -aRRq</execute></action>
   </keybind>
   <keybind key="C-A-t">
-    <action name="Execute"><execute>aterm -bg black -fg green -cr darkgreen -fn 6x10 -tr -sh 99</execute></action>
+    <action name="Execute"><execute>aterm -bw 0 -trsb -bg black -fg green
+-cr darkgreen -fn 7x14 -tr -sh 50</execute></action>
   </keybind>
   <keybind key="C-A-g">
     <action name="Execute"><execute>galeon</execute></action>
@@ -94,8 +120,8 @@
   <keybind key="A-F5">
     <action name="UnmaximizeFull"/>
   </keybind>
-  <keybind key="A-F12">
-    <action name="ToggleShade"/>
+<!--  <keybind key="A-F12">
+    <action name="ToggleShade"/> -->
   </keybind>
   <keybind key="C-A-Left">
     <action name="DesktopLeft"/>
