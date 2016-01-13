@@ -1,0 +1,1390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Automatically generated file. Do not edit (see /usr/share/doc/menu/html) -->
+
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+
+<menu id='Debian' label='Debian'>
+  <menu id='Apps' label='Apps'>
+    <menu id='Databases' label='Databases'>
+      <item label='HSQLDB Database Manager'>
+        <action name='Execute'><execute>/usr/bin/hsqldb-databasemanager</execute></action>
+      </item>
+      <item label='HSQLDB Database Manager (Swing)'>
+        <action name='Execute'><execute>/usr/bin/hsqldb-databasemanagerswing</execute></action>
+      </item>
+      <item label='HSQLDB Query Tool'>
+        <action name='Execute'><execute>/usr/bin/hsqldb-querytool</execute></action>
+      </item>
+      <item label='HSQLDB Transfer Tool'>
+        <action name='Execute'><execute>/usr/bin/hsqldb-transfer</execute></action>
+      </item>
+      <item label='OpenOffice.org Base'>
+        <action name='Execute'><execute>/usr/bin/oobase</execute></action>
+      </item>
+    </menu>
+    <menu id='Editors' label='Editors'>
+      <item label='AbiWord Word Processor'>
+        <action name='Execute'><execute>/usr/bin/abiword</execute></action>
+      </item>
+      <item label='GVIM'>
+        <action name='Execute'><execute>/usr/bin/gvim -f</execute></action>
+      </item>
+      <item label='hexedit'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;hexedit&quot; -e sh -c &quot;/usr/bin/hexedit&quot;</execute></action>
+      </item>
+      <item label='Nano'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Nano&quot; -e sh -c &quot;/bin/nano&quot;</execute></action>
+      </item>
+      <item label='OpenOffice.org Writer'>
+        <action name='Execute'><execute>/usr/bin/oowriter</execute></action>
+      </item>
+    </menu>
+    <menu id='Education' label='Education'>
+      <item label='Arithmetic Quiz'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Arithmetic Quiz&quot; -e sh -c &quot;sh -c &apos;/usr/games/arithmetic;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='GNU Typist'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;GNU Typist&quot; -e sh -c &quot;/usr/bin/gtypist&quot;</execute></action>
+      </item>
+      <item label='Typefortune (long)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Typefortune (long)&quot; -e sh -c &quot;/usr/bin/typefortune -l -n 10&quot;</execute></action>
+      </item>
+      <item label='Typefortune (short)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Typefortune (short)&quot; -e sh -c &quot;/usr/bin/typefortune -s -n 10&quot;</execute></action>
+      </item>
+    </menu>
+    <menu id='Emulators' label='Emulators'>
+      <item label='Dos Emulator'>
+        <action name='Execute'><execute>/usr/bin/xdosemu</execute></action>
+      </item>
+      <item label='DOSBox'>
+        <action name='Execute'><execute>/usr/bin/dosbox</execute></action>
+      </item>
+    </menu>
+    <menu id='Graphics' label='Graphics'>
+      <item label='avidemux'>
+        <action name='Execute'><execute>/usr/bin/avidemux</execute></action>
+      </item>
+      <item label='Blender (full screen)'>
+        <action name='Execute'><execute>/usr/bin/blender</execute></action>
+      </item>
+      <item label='Blender (windowed)'>
+        <action name='Execute'><execute>/usr/bin/blender -w</execute></action>
+      </item>
+      <item label='Dia'>
+        <action name='Execute'><execute>/usr/bin/dia-normal</execute></action>
+      </item>
+      <item label='dotty'>
+        <action name='Execute'><execute>/usr/bin/dotty</execute></action>
+      </item>
+      <item label='Electric Sheep'>
+        <action name='Execute'><execute>/usr/bin/electricsheep</execute></action>
+      </item>
+      <item label='FontForge'>
+        <action name='Execute'><execute>/usr/bin/fontforge</execute></action>
+      </item>
+      <item label='lefty'>
+        <action name='Execute'><execute>/usr/bin/lefty</execute></action>
+      </item>
+      <item label='Mensis'>
+        <action name='Execute'><execute>/usr/bin/mensis</execute></action>
+      </item>
+      <item label='OpenOffice.org Draw'>
+        <action name='Execute'><execute>/usr/bin/oodraw</execute></action>
+      </item>
+      <item label='OpenOffice.org Impress'>
+        <action name='Execute'><execute>/usr/bin/ooimpress</execute></action>
+      </item>
+      <item label='Sodipodi'>
+        <action name='Execute'><execute>/usr/bin/sodipodi</execute></action>
+      </item>
+      <item label='Text Xaos'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Text Xaos&quot; -e sh -c &quot;sh -c &apos;cd &amp;&amp; xaos -driver aa&apos;&quot;</execute></action>
+      </item>
+      <item label='The GIMP'>
+        <action name='Execute'><execute>/usr/bin/gimp-2.2</execute></action>
+      </item>
+      <item label='Xaos'>
+        <action name='Execute'><execute>sh -c &apos;cd &amp;&amp; xaos -driver x11&apos;</execute></action>
+      </item>
+      <item label='xfig'>
+        <action name='Execute'><execute>/usr/bin/xfig</execute></action>
+      </item>
+    </menu>
+    <menu id='Hamradio' label='Hamradio'>
+      <item label='gworldclock'>
+        <action name='Execute'><execute>/usr/bin/gworldclock</execute></action>
+      </item>
+    </menu>
+    <menu id='Math' label='Math'>
+      <item label='Bc'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Bc&quot; -e sh -c &quot;/usr/bin/bc&quot;</execute></action>
+      </item>
+      <item label='Dc'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Dc&quot; -e sh -c &quot;/usr/bin/dc&quot;</execute></action>
+      </item>
+      <item label='galculator'>
+        <action name='Execute'><execute>/usr/bin/galculator</execute></action>
+      </item>
+      <item label='GAP'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;GAP&quot; -e sh -c &quot;/usr/bin/gap&quot;</execute></action>
+      </item>
+      <item label='gnumeric'>
+        <action name='Execute'><execute>/usr/bin/gnumeric</execute></action>
+      </item>
+      <item label='Gnuplot'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Gnuplot&quot; -e sh -c &quot;/usr/bin/gnuplot&quot;</execute></action>
+      </item>
+      <item label='grpn'>
+        <action name='Execute'><execute>/usr/bin/grpn</execute></action>
+      </item>
+      <item label='Octave (2.1)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Octave (2.1)&quot; -e sh -c &quot;/usr/bin/octave-2.1.73&quot;</execute></action>
+      </item>
+      <item label='Octave (2.9)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Octave (2.9)&quot; -e sh -c &quot;/usr/bin/octave-2.9.12&quot;</execute></action>
+      </item>
+      <item label='Oleo'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Oleo&quot; -e sh -c &quot;/usr/bin/oleo&quot;</execute></action>
+      </item>
+      <item label='OpenOffice.org Calc'>
+        <action name='Execute'><execute>/usr/bin/oocalc</execute></action>
+      </item>
+      <item label='OpenOffice.org Math'>
+        <action name='Execute'><execute>/usr/bin/oomath</execute></action>
+      </item>
+    </menu>
+    <menu id='Net' label='Net'>
+      <item label='amsn'>
+        <action name='Execute'><execute>/usr/bin/amsn</execute></action>
+      </item>
+      <item label='Balsa'>
+        <action name='Execute'><execute>/usr/bin/balsa</execute></action>
+      </item>
+      <item label='BitchX'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;BitchX&quot; -e sh -c &quot;bitchx&quot;</execute></action>
+      </item>
+      <item label='DC-GUI'>
+        <action name='Execute'><execute>/usr/bin/dcgui</execute></action>
+      </item>
+      <item label='Dillo'>
+        <action name='Execute'><execute>/usr/bin/dillo</execute></action>
+      </item>
+      <item label='ELinks'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;ELinks&quot; -e sh -c &quot;/usr/bin/elinks&quot;</execute></action>
+      </item>
+      <item label='Gaim'>
+        <action name='Execute'><execute>/usr/bin/gaim</execute></action>
+      </item>
+      <item label='Galeon'>
+        <action name='Execute'><execute>/usr/bin/galeon</execute></action>
+      </item>
+      <item label='gFTP'>
+        <action name='Execute'><execute>/usr/bin/gftp-gtk</execute></action>
+      </item>
+      <item label='grdesktop'>
+        <action name='Execute'><execute>/usr/bin/grdesktop</execute></action>
+      </item>
+      <item label='gtk-gnutella'>
+        <action name='Execute'><execute>/usr/bin/gtk-gnutella</execute></action>
+      </item>
+      <item label='gtkBitchX'>
+        <action name='Execute'><execute>gtkBitchX</execute></action>
+      </item>
+      <menu id='Iceape Components' label='Iceape Components'>
+        <item label='Iceape Addressbook'>
+          <action name='Execute'><execute>/usr/bin/iceape -addressbook</execute></action>
+        </item>
+        <item label='Iceape Browser'>
+          <action name='Execute'><execute>/usr/bin/iceape</execute></action>
+        </item>
+        <item label='Iceape Composer'>
+          <action name='Execute'><execute>/usr/bin/iceape -edit</execute></action>
+        </item>
+        <item label='Iceape Mail &amp; Newsgroups'>
+          <action name='Execute'><execute>/usr/bin/iceape -mail</execute></action>
+        </item>
+        <item label='Iceape Mail Composer'>
+          <action name='Execute'><execute>/usr/bin/iceape -compose</execute></action>
+        </item>
+      </menu>
+      <item label='Iceape Navigator'>
+        <action name='Execute'><execute>/usr/bin/iceape</execute></action>
+      </item>
+      <item label='Icedove Mail'>
+        <action name='Execute'><execute>icedove</execute></action>
+      </item>
+      <item label='Iceweasel'>
+        <action name='Execute'><execute>iceweasel</execute></action>
+      </item>
+      <item label='IPTraf'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;IPTraf&quot; -e sh -c &quot;/usr/bin/su-to-root -c /usr/sbin/iptraf&quot;</execute></action>
+      </item>
+      <item label='Konqueror'>
+        <action name='Execute'><execute>/usr/bin/konqueror --profile webbrowsing</execute></action>
+      </item>
+      <item label='Links'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Links&quot; -e sh -c &quot;/usr/bin/links.main&quot;</execute></action>
+      </item>
+      <item label='Lynx'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Lynx&quot; -e sh -c &quot;/usr/bin/lynx&quot;</execute></action>
+      </item>
+      <item label='Manhole Twisted Client'>
+        <action name='Execute'><execute>/usr/bin/manhole</execute></action>
+      </item>
+      <item label='Minicom'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Minicom&quot; -e sh -c &quot;/usr/bin/minicom&quot;</execute></action>
+      </item>
+      <item label='Minicom (X11)'>
+        <action name='Execute'><execute>/usr/bin/xminicom</execute></action>
+      </item>
+      <item label='Mtr'>
+        <action name='Execute'><execute>mtr</execute></action>
+      </item>
+      <item label='Mutt'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Mutt&quot; -e sh -c &quot;/usr/bin/mutt&quot;</execute></action>
+      </item>
+      <item label='ncftp'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;ncftp&quot; -e sh -c &quot;/usr/bin/ncftp3&quot;</execute></action>
+      </item>
+      <item label='Nicotine-Plus'>
+        <action name='Execute'><execute>/usr/bin/nicotine</execute></action>
+      </item>
+      <item label='Opera'>
+        <action name='Execute'><execute>/usr/bin/opera</execute></action>
+      </item>
+      <item label='Pan'>
+        <action name='Execute'><execute>/usr/bin/pan</execute></action>
+      </item>
+      <item label='Telnet-SSL'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Telnet-SSL&quot; -e sh -c &quot;/usr/bin/telnet-ssl&quot;</execute></action>
+      </item>
+      <item label='Transmission'>
+        <action name='Execute'><execute>/usr/bin/transmission-gtk</execute></action>
+      </item>
+      <item label='Twisted Application Generator'>
+        <action name='Execute'><execute>/usr/bin/tkmktap</execute></action>
+      </item>
+      <item label='Twisted Instance Messenger'>
+        <action name='Execute'><execute>/usr/bin/im</execute></action>
+      </item>
+      <item label='Twisted SSH Client'>
+        <action name='Execute'><execute>/usr/bin/tkconch</execute></action>
+      </item>
+      <item label='VNC Viewer'>
+        <action name='Execute'><execute>xvnc4viewer</execute></action>
+      </item>
+      <item label='w3m'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;w3m&quot; -e sh -c &quot;/usr/bin/w3m /usr/share/doc/w3m/MANUAL.html&quot;</execute></action>
+      </item>
+      <item label='WaveMon'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;WaveMon&quot; -e sh -c &quot;/usr/bin/wavemon&quot;</execute></action>
+      </item>
+      <item label='Wireshark'>
+        <action name='Execute'><execute>/usr/bin/wireshark</execute></action>
+      </item>
+      <item label='X Chat'>
+        <action name='Execute'><execute>/usr/bin/xchat</execute></action>
+      </item>
+      <item label='XBitchX'>
+        <action name='Execute'><execute>xbitchx</execute></action>
+      </item>
+      <item label='xSMBrowser'>
+        <action name='Execute'><execute>/usr/bin/xsmbrowser</execute></action>
+      </item>
+      <item label='xtightvncviewer'>
+        <action name='Execute'><execute>/usr/bin/xtightvncviewer</execute></action>
+      </item>
+      <item label='yarssr'>
+        <action name='Execute'><execute>/usr/bin/yarssr</execute></action>
+      </item>
+      <item label='Yet Another FTP Client'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Yet Another FTP Client&quot; -e sh -c &quot;/usr/bin/yafc&quot;</execute></action>
+      </item>
+    </menu>
+    <menu id='Programming' label='Programming'>
+      <item label='BeanShell (text)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;BeanShell (text)&quot; -e sh -c &quot;/usr/bin/bsh&quot;</execute></action>
+      </item>
+      <item label='BeanShell (windowed)'>
+        <action name='Execute'><execute>/usr/bin/xbsh</execute></action>
+      </item>
+      <item label='Data Display Debugger'>
+        <action name='Execute'><execute>/usr/bin/ddd</execute></action>
+      </item>
+      <item label='distccmon-gnome'>
+        <action name='Execute'><execute>/usr/bin/distccmon-gnome</execute></action>
+      </item>
+      <item label='Erlang'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Erlang&quot; -e sh -c &quot;/usr/bin/erl&quot;</execute></action>
+      </item>
+      <item label='Erlang Toolbar'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Erlang Toolbar&quot; -e sh -c &quot;/usr/bin/erl -s toolbar&quot;</execute></action>
+      </item>
+      <item label='GDB'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;GDB&quot; -e sh -c &quot;/usr/bin/gdb&quot;</execute></action>
+      </item>
+      <item label='HT Editor'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;HT Editor&quot; -e sh -c &quot;/usr/bin/hte&quot;</execute></action>
+      </item>
+      <item label='Meld'>
+        <action name='Execute'><execute>/usr/bin/meld</execute></action>
+      </item>
+      <item label='Ocaml'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Ocaml&quot; -e sh -c &quot;/usr/bin/ocaml&quot;</execute></action>
+      </item>
+      <item label='pydb'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;pydb&quot; -e sh -c &quot;/usr/bin/pydb&quot;</execute></action>
+      </item>
+      <item label='Python (v2.3)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Python (v2.3)&quot; -e sh -c &quot;/usr/bin/python2.3&quot;</execute></action>
+      </item>
+      <item label='Python (v2.4)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Python (v2.4)&quot; -e sh -c &quot;/usr/bin/python2.4&quot;</execute></action>
+      </item>
+      <item label='Python (v2.5)'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Python (v2.5)&quot; -e sh -c &quot;/usr/bin/python2.5&quot;</execute></action>
+      </item>
+      <item label='Tclsh8.3'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Tclsh8.3&quot; -e sh -c &quot;/usr/bin/tclsh8.3&quot;</execute></action>
+      </item>
+      <item label='Tclsh8.4'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Tclsh8.4&quot; -e sh -c &quot;/usr/bin/tclsh8.4&quot;</execute></action>
+      </item>
+      <item label='TkWish8.3'>
+        <action name='Execute'><execute>x-terminal-emulator -e /usr/bin/wish8.3</execute></action>
+      </item>
+      <item label='TkWish8.4'>
+        <action name='Execute'><execute>x-terminal-emulator -e /usr/bin/wish8.4</execute></action>
+      </item>
+    </menu>
+    <menu id='Science' label='Science'>
+      <item label='Praat'>
+        <action name='Execute'><execute>/usr/bin/praat</execute></action>
+      </item>
+    </menu>
+    <menu id='Shells' label='Shells'>
+      <item label='Bash'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Bash&quot; -e sh -c &quot;/bin/bash --login&quot;</execute></action>
+      </item>
+      <item label='Csh'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Csh&quot; -e sh -c &quot;/bin/bsd-csh -l&quot;</execute></action>
+      </item>
+      <item label='Dash'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Dash&quot; -e sh -c &quot;/bin/dash -i&quot;</execute></action>
+      </item>
+      <item label='Pdmenu'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Pdmenu&quot; -e sh -c &quot;/usr/bin/pdmenu&quot;</execute></action>
+      </item>
+      <item label='Sash'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Sash&quot; -e sh -c &quot;/bin/sash&quot;</execute></action>
+      </item>
+      <item label='Sh'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Sh&quot; -e sh -c &quot;/bin/sh --login&quot;</execute></action>
+      </item>
+    </menu>
+    <menu id='Sound' label='Sound'>
+      <item label='Alsamixergui'>
+        <action name='Execute'><execute>/usr/bin/alsamixergui</execute></action>
+      </item>
+      <item label='Amarok'>
+        <action name='Execute'><execute>/usr/bin/amarok</execute></action>
+      </item>
+      <item label='Audacity'>
+        <action name='Execute'><execute>/usr/bin/audacity</execute></action>
+      </item>
+      <item label='aumix'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;aumix&quot; -e sh -c &quot;/usr/bin/aumix&quot;</execute></action>
+      </item>
+      <item label='Beep Media Player'>
+        <action name='Execute'><execute>/usr/bin/beep-media-player</execute></action>
+      </item>
+      <item label='creox'>
+        <action name='Execute'><execute>/usr/bin/creox</execute></action>
+      </item>
+      <item label='easytag'>
+        <action name='Execute'><execute>/usr/bin/easytag</execute></action>
+      </item>
+      <item label='Exaile'>
+        <action name='Execute'><execute>/usr/bin/exaile</execute></action>
+      </item>
+      <item label='gmpc'>
+        <action name='Execute'><execute>/usr/bin/gmpc</execute></action>
+      </item>
+      <item label='GNOME ALSA Mixer'>
+        <action name='Execute'><execute>/usr/bin/gnome-alsamixer</execute></action>
+      </item>
+      <item label='Grip'>
+        <action name='Execute'><execute>/usr/bin/grip</execute></action>
+      </item>
+      <item label='gtick'>
+        <action name='Execute'><execute>/usr/bin/gtick</execute></action>
+      </item>
+      <item label='gtkGuitune'>
+        <action name='Execute'><execute>gtkguitune</execute></action>
+      </item>
+      <item label='jack'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;jack&quot; -e sh -c &quot;/usr/bin/jack -Q -D --wait&quot;</execute></action>
+      </item>
+      <item label='lingot'>
+        <action name='Execute'><execute>/usr/bin/lingot</execute></action>
+      </item>
+      <item label='MIDI Virtual Keyboard'>
+        <action name='Execute'><execute>/usr/bin/vkeybd</execute></action>
+      </item>
+      <item label='MP3 info'>
+        <action name='Execute'><execute>/usr/bin/gmp3info</execute></action>
+      </item>
+      <item label='mp3blaster'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;mp3blaster&quot; -e sh -c &quot;/usr/bin/mp3blaster&quot;</execute></action>
+      </item>
+      <item label='ncmpc'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;ncmpc&quot; -e sh -c &quot;/usr/bin/ncmpc&quot;</execute></action>
+      </item>
+      <item label='ripperX'>
+        <action name='Execute'><execute>/usr/bin/ripperX</execute></action>
+      </item>
+      <item label='Sonata'>
+        <action name='Execute'><execute>/usr/bin/sonata</execute></action>
+      </item>
+      <item label='TiMidity++'>
+        <action name='Execute'><execute>timidity -ia</execute></action>
+      </item>
+      <item label='wmXMMS'>
+        <action name='Execute'><execute>/usr/bin/wmxmms</execute></action>
+      </item>
+      <item label='XMMS'>
+        <action name='Execute'><execute>/usr/bin/xmms</execute></action>
+      </item>
+    </menu>
+    <menu id='System' label='System'>
+      <menu id='Admin' label='Admin'>
+        <item label='alsaconf'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;alsaconf&quot; -e sh -c &quot;su-to-root -p root -c /usr/sbin/alsaconf&quot;</execute></action>
+        </item>
+        <item label='Lilo-config'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Lilo-config&quot; -e sh -c &quot;/usr/sbin/su-to-root -p root -c /usr/sbin/liloconfig&quot;</execute></action>
+        </item>
+        <item label='Orphaner (all)'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Orphaner (all)&quot; -e sh -c &quot;su-to-root -c &apos;/usr/sbin/orphaner -a&apos;&quot;</execute></action>
+        </item>
+        <item label='Orphaner (libs)'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Orphaner (libs)&quot; -e sh -c &quot;su-to-root -c /usr/sbin/orphaner&quot;</execute></action>
+        </item>
+        <item label='Orphaner - editkeep'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Orphaner - editkeep&quot; -e sh -c &quot;su-to-root -c &apos;/usr/sbin/editkeep&apos;&quot;</execute></action>
+        </item>
+      </menu>
+      <item label='apt-spy'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;apt-spy&quot; -e sh -c &quot;/usr/bin/apt-spy&quot;</execute></action>
+      </item>
+      <item label='GDM flexiserver'>
+        <action name='Execute'><execute>gdmflexiserver</execute></action>
+      </item>
+      <item label='GDM flexiserver in Xnest'>
+        <action name='Execute'><execute>gdmflexiserver -n</execute></action>
+      </item>
+      <item label='GDM Photo Setup'>
+        <action name='Execute'><execute>gdmphotosetup</execute></action>
+      </item>
+      <item label='GDM Setup'>
+        <action name='Execute'><execute>su-to-root -X -p root -c /usr/sbin/gdmsetup</execute></action>
+      </item>
+      <item label='GKrellM'>
+        <action name='Execute'><execute>/usr/bin/gkrellm</execute></action>
+      </item>
+      <item label='Gmemusage'>
+        <action name='Execute'><execute>/usr/bin/gmemusage</execute></action>
+      </item>
+      <menu id='Gnome' label='Gnome'>
+        <item label='Gnome Control Center'>
+          <action name='Execute'><execute>/usr/bin/gnome-control-center</execute></action>
+        </item>
+      </menu>
+      <item label='GNOME CUPS Manager'>
+        <action name='Execute'><execute>/usr/bin/gnome-cups-manager</execute></action>
+      </item>
+      <item label='KControl'>
+        <action name='Execute'><execute>/usr/bin/kcontrol</execute></action>
+      </item>
+      <item label='KDCOP'>
+        <action name='Execute'><execute>/usr/bin/kdcop</execute></action>
+      </item>
+      <item label='KDebugDialog'>
+        <action name='Execute'><execute>/usr/bin/kdebugdialog</execute></action>
+      </item>
+      <item label='KDEPrintFax'>
+        <action name='Execute'><execute>/usr/bin/kdeprintfax</execute></action>
+      </item>
+      <item label='KEditBookmarks'>
+        <action name='Execute'><execute>/usr/bin/keditbookmarks</execute></action>
+      </item>
+      <item label='KFind'>
+        <action name='Execute'><execute>/usr/bin/kfind</execute></action>
+      </item>
+      <item label='Kicker'>
+        <action name='Execute'><execute>/usr/bin/kicker</execute></action>
+      </item>
+      <item label='KInfoCenter'>
+        <action name='Execute'><execute>/usr/bin/kinfocenter</execute></action>
+      </item>
+      <item label='KJobViewer'>
+        <action name='Execute'><execute>/usr/bin/kjobviewer --show --all</execute></action>
+      </item>
+      <item label='Konqueror'>
+        <action name='Execute'><execute>/usr/bin/konqueror --profile filemanagement</execute></action>
+      </item>
+      <item label='KPrinter'>
+        <action name='Execute'><execute>/usr/bin/kprinter</execute></action>
+      </item>
+      <item label='Nautilus'>
+        <action name='Execute'><execute>/usr/bin/nautilus</execute></action>
+      </item>
+      <item label='Print Notification Icon'>
+        <action name='Execute'><execute>/usr/bin/gnome-cups-icon</execute></action>
+      </item>
+      <item label='Pstree'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Pstree&quot; -e sh -c &quot;/usr/bin/pstree.x11&quot;</execute></action>
+      </item>
+      <item label='Synaptic Package Manager'>
+        <action name='Execute'><execute>/usr/bin/su-to-root -X -c /usr/sbin/synaptic</execute></action>
+      </item>
+      <item label='TeXconfig'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;TeXconfig&quot; -e sh -c &quot;/usr/bin/texconfig&quot;</execute></action>
+      </item>
+      <item label='Top'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Top&quot; -e sh -c &quot;/usr/bin/top&quot;</execute></action>
+      </item>
+      <item label='X-Terminal as root (GKsu)'>
+        <action name='Execute'><execute>/usr/bin/gksu -u root /usr/bin/x-terminal-emulator</execute></action>
+      </item>
+    </menu>
+    <menu id='Technical' label='Technical'>
+      <item label='SPIM'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;SPIM&quot; -e sh -c &quot;/usr/bin/spim&quot;</execute></action>
+      </item>
+      <item label='XSPIM'>
+        <action name='Execute'><execute>/usr/bin/xspim</execute></action>
+      </item>
+    </menu>
+    <menu id='Text' label='Text'>
+      <item label='Dhammapada'>
+        <action name='Execute'><execute>xdhamma</execute></action>
+      </item>
+      <item label='ding'>
+        <action name='Execute'><execute>/usr/bin/ding</execute></action>
+      </item>
+      <item label='Fortune'>
+        <action name='Execute'><execute>sh -c &apos;while /usr/games/fortune | col -x | xmessage -center -buttons OK:1,Another:0 -default OK -file - ; do :; done&apos;</execute></action>
+      </item>
+      <item label='Info Browser'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Info Browser&quot; -e sh -c &quot;pinfo&quot;</execute></action>
+      </item>
+      <item label='xdialog'>
+        <action name='Execute'><execute>/usr/bin/Xdialog</execute></action>
+      </item>
+    </menu>
+    <menu id='Tools' label='Tools'>
+      <item label='Abook'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Abook&quot; -e sh -c &quot;/usr/bin/abook&quot;</execute></action>
+      </item>
+      <item label='ccal'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;ccal&quot; -e sh -c &quot;/usr/bin/ccal -p&quot;</execute></action>
+      </item>
+      <item label='cdrbq'>
+        <action name='Execute'><execute>/usr/bin/cdrbq</execute></action>
+      </item>
+      <item label='Conky'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Conky&quot; -e sh -c &quot;/usr/bin/conky&quot;</execute></action>
+      </item>
+      <item label='dclock'>
+        <action name='Execute'><execute>/usr/bin/dclock</execute></action>
+      </item>
+      <item label='docker'>
+        <action name='Execute'><execute>/usr/bin/docker</execute></action>
+      </item>
+      <item label='Driconf'>
+        <action name='Execute'><execute>/usr/bin/driconf</execute></action>
+      </item>
+      <item label='File-Roller'>
+        <action name='Execute'><execute>/usr/bin/file-roller</execute></action>
+      </item>
+      <item label='gdesklets'>
+        <action name='Execute'><execute>/usr/bin/gdesklets</execute></action>
+      </item>
+      <item label='gmrun'>
+        <action name='Execute'><execute>/usr/bin/gmrun</execute></action>
+      </item>
+      <item label='GNOME Toaster'>
+        <action name='Execute'><execute>/usr/bin/gtoaster</execute></action>
+      </item>
+      <item label='GnomePGP'>
+        <action name='Execute'><execute>/usr/bin/gpgp</execute></action>
+      </item>
+      <item label='GTK+ 1.2 Theme Switch'>
+        <action name='Execute'><execute>/usr/bin/switch</execute></action>
+      </item>
+      <item label='GTK+ 2.0 Theme Switch'>
+        <action name='Execute'><execute>/usr/bin/switch2</execute></action>
+      </item>
+      <item label='HPLIP Fax address book'>
+        <action name='Execute'><execute>/usr/bin/hp-fab</execute></action>
+      </item>
+      <item label='HPLIP Fax utility'>
+        <action name='Execute'><execute>/usr/bin/hp-sendfax</execute></action>
+      </item>
+      <item label='HPLIP File printing'>
+        <action name='Execute'><execute>/usr/bin/hp-print</execute></action>
+      </item>
+      <item label='HPLIP Toolbox'>
+        <action name='Execute'><execute>/usr/bin/hp-toolbox</execute></action>
+      </item>
+      <item label='Joystick Calibration'>
+        <action name='Execute'><execute>/usr/bin/jscalibrator</execute></action>
+      </item>
+      <item label='k3b'>
+        <action name='Execute'><execute>/usr/bin/k3b</execute></action>
+      </item>
+      <item label='KMobileTools'>
+        <action name='Execute'><execute>/usr/bin/kmobiletools</execute></action>
+      </item>
+      <item label='mc'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;mc&quot; -e sh -c &quot;/usr/bin/mc&quot;</execute></action>
+      </item>
+      <item label='MoviXMaker-2'>
+        <action name='Execute'><execute>/usr/bin/movixmaker-2</execute></action>
+      </item>
+      <item label='Mtink'>
+        <action name='Execute'><execute>/usr/bin/mtink</execute></action>
+      </item>
+      <item label='Mtinkc'>
+        <action name='Execute'><execute>/usr/bin/mtinkc</execute></action>
+      </item>
+      <item label='osdsh'>
+        <action name='Execute'><execute>/usr/bin/osdsh</execute></action>
+      </item>
+      <item label='osdshconfig'>
+        <action name='Execute'><execute>/usr/bin/osdshconfig</execute></action>
+      </item>
+      <item label='Rclock'>
+        <action name='Execute'><execute>rclock</execute></action>
+      </item>
+      <item label='sanduhr'>
+        <action name='Execute'><execute>/usr/bin/sanduhr</execute></action>
+      </item>
+      <item label='txt2regex'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;txt2regex&quot; -e sh -c &quot;/usr/bin/txt2regex&quot;</execute></action>
+      </item>
+      <item label='USB View'>
+        <action name='Execute'><execute>/usr/bin/usbview</execute></action>
+      </item>
+      <item label='Wammu'>
+        <action name='Execute'><execute>/usr/bin/wammu</execute></action>
+      </item>
+      <item label='X cd-roast'>
+        <action name='Execute'><execute>/usr/bin/xcdroast</execute></action>
+      </item>
+      <item label='xkeycaps'>
+        <action name='Execute'><execute>/usr/bin/xkeycaps</execute></action>
+      </item>
+      <item label='xnc'>
+        <action name='Execute'><execute>/usr/bin/xnc</execute></action>
+      </item>
+      <item label='ytree'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;ytree&quot; -e sh -c &quot;/usr/bin/ytree&quot;</execute></action>
+      </item>
+    </menu>
+    <menu id='Viewers' label='Viewers'>
+      <item label='Adobe Reader'>
+        <action name='Execute'><execute>/usr/bin/acroread</execute></action>
+      </item>
+      <item label='comix'>
+        <action name='Execute'><execute>/usr/bin/comix</execute></action>
+      </item>
+      <item label='dvilx'>
+        <action name='Execute'><execute>/usr/bin/dvilx</execute></action>
+      </item>
+      <item label='gfontview'>
+        <action name='Execute'><execute>gfontview</execute></action>
+      </item>
+      <item label='GImageView'>
+        <action name='Execute'><execute>/usr/bin/gimv</execute></action>
+      </item>
+      <item label='GQview'>
+        <action name='Execute'><execute>/usr/bin/gqview</execute></action>
+      </item>
+      <item label='GV'>
+        <action name='Execute'><execute>/usr/bin/gv</execute></action>
+      </item>
+      <item label='ImageMagick'>
+        <action name='Execute'><execute>/usr/bin/display</execute></action>
+      </item>
+      <item label='KGhostView'>
+        <action name='Execute'><execute>/usr/bin/kghostview</execute></action>
+      </item>
+      <item label='MPlayer'>
+        <action name='Execute'><execute>/usr/bin/gmplayer</execute></action>
+      </item>
+      <item label='VLC media player'>
+        <action name='Execute'><execute>/usr/bin/wxvlc</execute></action>
+      </item>
+      <item label='XDvi'>
+        <action name='Execute'><execute>/usr/bin/xdvi</execute></action>
+      </item>
+      <item label='xine Media Player'>
+        <action name='Execute'><execute>/usr/bin/xine</execute></action>
+      </item>
+      <item label='Xpdf'>
+        <action name='Execute'><execute>/usr/bin/xpdf</execute></action>
+      </item>
+    </menu>
+  </menu>
+  <menu id='Games' label='Games'>
+    <menu id='Adventure' label='Adventure'>
+      <item label='Adventure'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Adventure&quot; -e sh -c &quot;/usr/games/adventure&quot;</execute></action>
+      </item>
+      <item label='Battlestar'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Battlestar&quot; -e sh -c &quot;sh -c &apos;/usr/games/battlestar;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='Beneath A Steel Sky'>
+        <action name='Execute'><execute>/usr/games/scummvm -p /usr/share/scummvm/beneath-a-steel-sky sky</execute></action>
+      </item>
+      <item label='Flight of the Amazon Queen'>
+        <action name='Execute'><execute>/usr/games/scummvm -p /usr/share/scummvm/flight-of-the-amazon-queen queen</execute></action>
+      </item>
+      <item label='Hack'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Hack&quot; -e sh -c &quot;/usr/games/hack&quot;</execute></action>
+      </item>
+      <item label='Hunt the Wumpus'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Hunt the Wumpus&quot; -e sh -c &quot;/usr/games/wump&quot;</execute></action>
+      </item>
+      <item label='KQ'>
+        <action name='Execute'><execute>/usr/games/kq</execute></action>
+      </item>
+      <item label='NetHack'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;NetHack&quot; -e sh -c &quot;/usr/games/nethack&quot;</execute></action>
+      </item>
+      <item label='Phantasia'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Phantasia&quot; -e sh -c &quot;/usr/games/phantasia&quot;</execute></action>
+      </item>
+      <item label='ScummVM'>
+        <action name='Execute'><execute>/usr/games/scummvm</execute></action>
+      </item>
+      <item label='X NetHack'>
+        <action name='Execute'><execute>/usr/games/xnethack</execute></action>
+      </item>
+    </menu>
+    <menu id='Arcade' label='Arcade'>
+      <item label='Airstrike'>
+        <action name='Execute'><execute>/usr/games/airstrike</execute></action>
+      </item>
+      <item label='Amphetamine'>
+        <action name='Execute'><execute>/usr/games/amph</execute></action>
+      </item>
+      <item label='Arcade Volleyball'>
+        <action name='Execute'><execute>/usr/games/gav</execute></action>
+      </item>
+      <item label='Armagetron Advanced'>
+        <action name='Execute'><execute>/usr/games/armagetronad</execute></action>
+      </item>
+      <item label='Blobwars'>
+        <action name='Execute'><execute>/usr/games/blobwars</execute></action>
+      </item>
+      <item label='BomberClone'>
+        <action name='Execute'><execute>/usr/games/bomberclone</execute></action>
+      </item>
+      <item label='Bumprace'>
+        <action name='Execute'><execute>/usr/games/bumprace</execute></action>
+      </item>
+      <item label='Bumprace no sound'>
+        <action name='Execute'><execute>/usr/games/bumprace --nosound</execute></action>
+      </item>
+      <item label='Chromium'>
+        <action name='Execute'><execute>/usr/games/chromium</execute></action>
+      </item>
+      <item label='ClanBomber (fullscreen)'>
+        <action name='Execute'><execute>/usr/games/clanbomber -fullscreen</execute></action>
+      </item>
+      <item label='ClanBomber (window)'>
+        <action name='Execute'><execute>/usr/games/clanbomber</execute></action>
+      </item>
+      <item label='conquest'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;conquest&quot; -e sh -c &quot;/usr/games/conquest&quot;</execute></action>
+      </item>
+      <item label='Critical Mass'>
+        <action name='Execute'><execute>/usr/games/critter</execute></action>
+      </item>
+      <item label='FreeDroid'>
+        <action name='Execute'><execute>/usr/games/freedroid</execute></action>
+      </item>
+      <item label='Galaga'>
+        <action name='Execute'><execute>/usr/games/xgalaga</execute></action>
+      </item>
+      <item label='Galaga:Hyperspace'>
+        <action name='Execute'><execute>/usr/games/xgalaga-hyperspace</execute></action>
+      </item>
+      <item label='Geki 2'>
+        <action name='Execute'><execute>/usr/games/geki2</execute></action>
+      </item>
+      <item label='Geki 3'>
+        <action name='Execute'><execute>/usr/games/geki3</execute></action>
+      </item>
+      <item label='Gem Drop X'>
+        <action name='Execute'><execute>/usr/games/gemdropx</execute></action>
+      </item>
+      <item label='gl-117'>
+        <action name='Execute'><execute>/usr/games/gl-117</execute></action>
+      </item>
+      <item label='glTron'>
+        <action name='Execute'><execute>/usr/games/gltron</execute></action>
+      </item>
+      <item label='Grande'>
+        <action name='Execute'><execute>/usr/games/grande</execute></action>
+      </item>
+      <item label='Gravity Wars'>
+        <action name='Execute'><execute>/usr/games/gravitywars</execute></action>
+      </item>
+      <item label='Heroes (SDL version)'>
+        <action name='Execute'><execute>/usr/games/heroes-sdl</execute></action>
+      </item>
+      <item label='Holotz Castle'>
+        <action name='Execute'><execute>/usr/games/holotz-castle</execute></action>
+      </item>
+      <item label='Jump&apos;n&apos;Bump'>
+        <action name='Execute'><execute>/usr/games/jumpnbump-menu</execute></action>
+      </item>
+      <item label='Komi'>
+        <action name='Execute'><execute>/usr/games/komi</execute></action>
+      </item>
+      <item label='koules'>
+        <action name='Execute'><execute>/usr/games/xkoules</execute></action>
+      </item>
+      <item label='Late'>
+        <action name='Execute'><execute>/usr/games/late</execute></action>
+      </item>
+      <item label='luola'>
+        <action name='Execute'><execute>/usr/games/luola --fullscreen</execute></action>
+      </item>
+      <item label='Mad Bomber'>
+        <action name='Execute'><execute>/usr/games/madbomber --fullscreen</execute></action>
+      </item>
+      <item label='moon-buggy'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;moon-buggy&quot; -e sh -c &quot;/usr/games/moon-buggy&quot;</execute></action>
+      </item>
+      <item label='noiz2sa'>
+        <action name='Execute'><execute>/usr/bin/noiz2sa</execute></action>
+      </item>
+      <item label='Orbit'>
+        <action name='Execute'><execute>/usr/games/orbit</execute></action>
+      </item>
+      <item label='Overgod'>
+        <action name='Execute'><execute>/usr/games/overgod</execute></action>
+      </item>
+      <item label='pong2'>
+        <action name='Execute'><execute>/usr/games/pong2</execute></action>
+      </item>
+      <item label='Powermanga'>
+        <action name='Execute'><execute>/usr/games/powermanga</execute></action>
+      </item>
+      <item label='ppracer'>
+        <action name='Execute'><execute>/usr/games/ppracer</execute></action>
+      </item>
+      <item label='Rafkill'>
+        <action name='Execute'><execute>/usr/games/rafkill</execute></action>
+      </item>
+      <item label='Robots'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Robots&quot; -e sh -c &quot;/usr/games/robots&quot;</execute></action>
+      </item>
+      <item label='Rock Dodger'>
+        <action name='Execute'><execute>/usr/games/rockdodger -w</execute></action>
+      </item>
+      <item label='Rock Dodger (full screen)'>
+        <action name='Execute'><execute>/usr/games/rockdodger</execute></action>
+      </item>
+      <item label='rrootage'>
+        <action name='Execute'><execute>/usr/games/rrootage</execute></action>
+      </item>
+      <item label='Sabre'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Sabre&quot; -e sh -c &quot;/usr/games/XRunSabre&quot;</execute></action>
+      </item>
+      <item label='Search and Rescue'>
+        <action name='Execute'><execute>/usr/games/SearchAndRescue</execute></action>
+      </item>
+      <item label='Slune'>
+        <action name='Execute'><execute>/usr/games/slune</execute></action>
+      </item>
+      <item label='Snake'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Snake&quot; -e sh -c &quot;sh -c &apos;/usr/games/snake;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='Space Aryarya'>
+        <action name='Execute'><execute>/usr/games/spacearyarya</execute></action>
+      </item>
+      <item label='Star Trek'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Star Trek&quot; -e sh -c &quot;/usr/games/trek&quot;</execute></action>
+      </item>
+      <item label='Star Voyager'>
+        <action name='Execute'><execute>/usr/games/starvoyager</execute></action>
+      </item>
+      <item label='Starfighter'>
+        <action name='Execute'><execute>/usr/games/starfighter</execute></action>
+      </item>
+      <item label='Super Transball 2'>
+        <action name='Execute'><execute>/usr/games/supertransball2</execute></action>
+      </item>
+      <item label='tenmado'>
+        <action name='Execute'><execute>/usr/games/tenmado</execute></action>
+      </item>
+      <item label='Toppler'>
+        <action name='Execute'><execute>/usr/games/toppler</execute></action>
+      </item>
+      <item label='Ur-Quan Masters'>
+        <action name='Execute'><execute>/usr/games/uqm</execute></action>
+      </item>
+      <item label='Worm'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Worm&quot; -e sh -c &quot;sh -c &apos;/usr/games/worm;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='Xboing'>
+        <action name='Execute'><execute>/usr/games/xboing</execute></action>
+      </item>
+      <item label='XEvil'>
+        <action name='Execute'><execute>/usr/games/xevil</execute></action>
+      </item>
+      <item label='Xonix'>
+        <action name='Execute'><execute>/usr/games/xonix</execute></action>
+      </item>
+      <item label='XPilot NG'>
+        <action name='Execute'><execute>xpngcc</execute></action>
+      </item>
+      <item label='XScavenger'>
+        <action name='Execute'><execute>/usr/games/xscavenger</execute></action>
+      </item>
+      <item label='Xscorch'>
+        <action name='Execute'><execute>xscorch</execute></action>
+      </item>
+      <item label='ZBlast'>
+        <action name='Execute'><execute>xzb</execute></action>
+      </item>
+    </menu>
+    <menu id='Board' label='Board'>
+      <item label='Backgammon'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Backgammon&quot; -e sh -c &quot;/usr/games/backgammon -pb&quot;</execute></action>
+      </item>
+      <item label='GnuChess'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;GnuChess&quot; -e sh -c &quot;/usr/games/gnuchess&quot;</execute></action>
+      </item>
+      <item label='Gomoku'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Gomoku&quot; -e sh -c &quot;/usr/games/gomoku&quot;</execute></action>
+      </item>
+      <item label='Monopoly'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Monopoly&quot; -e sh -c &quot;/usr/games/monop&quot;</execute></action>
+      </item>
+      <item label='Penguin Taipei'>
+        <action name='Execute'><execute>/usr/games/ace_taipei</execute></action>
+      </item>
+      <item label='Penguin Taipei-Editor'>
+        <action name='Execute'><execute>/usr/games/ace_taipedit</execute></action>
+      </item>
+      <item label='Pioneers'>
+        <action name='Execute'><execute>/usr/games/pioneers</execute></action>
+      </item>
+      <item label='Pioneers Server'>
+        <action name='Execute'><execute>/usr/games/pioneers-server-gtk</execute></action>
+      </item>
+      <item label='XBoard'>
+        <action name='Execute'><execute>/usr/games/xboard -xncp</execute></action>
+      </item>
+      <item label='XBoard (passive chessboard)'>
+        <action name='Execute'><execute>/usr/games/xboard -ncp</execute></action>
+      </item>
+      <menu id='XBoard-ICS' label='XBoard-ICS'>
+        <item label='Chess Net'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Chess Net&quot; -e sh -c &quot;/usr/games/xboard -ics -icshost chess.net&quot;</execute></action>
+        </item>
+        <item label='Default'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Default&quot; -e sh -c &quot;/usr/games/xboard -ics&quot;</execute></action>
+        </item>
+        <item label='Free I.C.S.'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Free I.C.S.&quot; -e sh -c &quot;/usr/games/xboard -ics -icshost freechess.org&quot;</execute></action>
+        </item>
+        <item label='Internet Chess Club'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Internet Chess Club&quot; -e sh -c &quot;/usr/games/xboard -ics -icshost chessclub.com&quot;</execute></action>
+        </item>
+      </menu>
+    </menu>
+    <menu id='Card' label='Card'>
+      <item label='Canfield'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Canfield&quot; -e sh -c &quot;/usr/games/canfield&quot;</execute></action>
+      </item>
+      <item label='Cribbage'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Cribbage&quot; -e sh -c &quot;/usr/games/cribbage&quot;</execute></action>
+      </item>
+      <item label='Go Fish'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Go Fish&quot; -e sh -c &quot;sh -c &apos;/usr/games/go-fish;echo;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='Mille Bornes'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Mille Bornes&quot; -e sh -c &quot;/usr/games/mille&quot;</execute></action>
+      </item>
+      <item label='Penguin Canfield'>
+        <action name='Execute'><execute>/usr/games/ace_canfield</execute></action>
+      </item>
+      <item label='Penguin Freecell'>
+        <action name='Execute'><execute>/usr/games/ace_freecell</execute></action>
+      </item>
+      <item label='Penguin Golf'>
+        <action name='Execute'><execute>/usr/games/ace_golf</execute></action>
+      </item>
+      <item label='Penguin Solitaire'>
+        <action name='Execute'><execute>/usr/games/ace_solitaire</execute></action>
+      </item>
+      <item label='Penguin Thornq'>
+        <action name='Execute'><execute>/usr/games/ace_thornq</execute></action>
+      </item>
+      <item label='XSkat'>
+        <action name='Execute'><execute>/usr/games/xskat</execute></action>
+      </item>
+      <item label='XSkat via IRC'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;XSkat via IRC&quot; -e sh -c &quot;/usr/games/xskat -irc&quot;</execute></action>
+      </item>
+    </menu>
+    <menu id='Puzzles' label='Puzzles'>
+      <item label='Atomix'>
+        <action name='Execute'><execute>/usr/games/atomix</execute></action>
+      </item>
+      <item label='Black-Box'>
+        <action name='Execute'><execute>/usr/games/black-box</execute></action>
+      </item>
+      <item label='Boggle'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Boggle&quot; -e sh -c &quot;/usr/games/boggle&quot;</execute></action>
+      </item>
+      <item label='Enigma'>
+        <action name='Execute'><execute>/usr/games/enigma</execute></action>
+      </item>
+      <item label='Gtans'>
+        <action name='Execute'><execute>/usr/games/gtans</execute></action>
+      </item>
+      <item label='Hangman'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Hangman&quot; -e sh -c &quot;/usr/games/hangman&quot;</execute></action>
+      </item>
+      <item label='Penguin Mastermind'>
+        <action name='Execute'><execute>/usr/games/ace_mastermind</execute></action>
+      </item>
+      <item label='Penguin Merlin'>
+        <action name='Execute'><execute>/usr/games/ace_merlin</execute></action>
+      </item>
+      <item label='Penguin Minesweeper'>
+        <action name='Execute'><execute>/usr/games/ace_minesweeper</execute></action>
+      </item>
+      <item label='Penguin Pegged'>
+        <action name='Execute'><execute>/usr/games/ace_pegged</execute></action>
+      </item>
+      <item label='XBomb'>
+        <action name='Execute'><execute>/usr/games/xbomb</execute></action>
+      </item>
+    </menu>
+    <item label='quake3'>
+      <action name='Execute'><execute>/usr/games/quake3/quake3-smp</execute></action>
+    </item>
+    <menu id='Simulation' label='Simulation'>
+      <item label='Flight Gear'>
+        <action name='Execute'><execute>/usr/games/fgfs</execute></action>
+      </item>
+    </menu>
+    <menu id='Sports' label='Sports'>
+      <item label='Battleball'>
+        <action name='Execute'><execute>/bin/sh -c &apos;exec /usr/games/battleball $DISPLAY comp&apos;</execute></action>
+      </item>
+      <item label='CannonSmash'>
+        <action name='Execute'><execute>/usr/games/csmash</execute></action>
+      </item>
+      <item label='Foobillard'>
+        <action name='Execute'><execute>/usr/games/foobillard</execute></action>
+      </item>
+    </menu>
+    <menu id='Strategy' label='Strategy'>
+      <item label='Air Traffic Controller'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Air Traffic Controller&quot; -e sh -c &quot;sh -c &apos;/usr/games/atc ; echo;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='Battle for Wesnoth'>
+        <action name='Execute'><execute>/usr/games/wesnoth-nolog</execute></action>
+      </item>
+      <item label='Castle Combat'>
+        <action name='Execute'><execute>/usr/games/castle-combat</execute></action>
+      </item>
+      <item label='Craft'>
+        <action name='Execute'><execute>/usr/games/craft</execute></action>
+      </item>
+      <item label='Freeciv client (GTK version)'>
+        <action name='Execute'><execute>/usr/games/civclient-gtk</execute></action>
+      </item>
+      <item label='Freeciv server'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Freeciv server&quot; -e sh -c &quot;/usr/games/civserver&quot;</execute></action>
+      </item>
+      <item label='Globulation 2'>
+        <action name='Execute'><execute>/usr/games/glob2</execute></action>
+      </item>
+      <item label='GNU Robbo'>
+        <action name='Execute'><execute>/usr/games/gnurobbo</execute></action>
+      </item>
+      <item label='Lincity (X)'>
+        <action name='Execute'><execute>/usr/games/xlincity</execute></action>
+      </item>
+      <item label='liquidwar'>
+        <action name='Execute'><execute>/usr/games/liquidwar</execute></action>
+      </item>
+      <item label='netPanzer'>
+        <action name='Execute'><execute>/usr/games/netpanzer</execute></action>
+      </item>
+      <item label='Pingus - Enhanced Lemmings'>
+        <action name='Execute'><execute>/usr/games/pingus</execute></action>
+      </item>
+      <item label='Sail'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Sail&quot; -e sh -c &quot;/usr/games/sail&quot;</execute></action>
+      </item>
+      <item label='spellcast'>
+        <action name='Execute'><execute>/usr/games/spellcast</execute></action>
+      </item>
+      <item label='Stratagus'>
+        <action name='Execute'><execute>/usr/games/stratagus</execute></action>
+      </item>
+      <item label='vegastrike'>
+        <action name='Execute'><execute>/usr/games/vegastrike</execute></action>
+      </item>
+      <item label='widelands'>
+        <action name='Execute'><execute>/usr/games/widelands</execute></action>
+      </item>
+      <item label='Xconq'>
+        <action name='Execute'><execute>/usr/games/xconq -x</execute></action>
+      </item>
+    </menu>
+    <menu id='Tetris-like' label='Tetris-like'>
+      <item label='Bsd Tetris'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Bsd Tetris&quot; -e sh -c &quot;sh -c &apos;/usr/games/tetris-bsd;echo;echo PRESS ENTER;read line&apos;&quot;</execute></action>
+      </item>
+      <item label='Emeraldia'>
+        <action name='Execute'><execute>/usr/games/xemeraldia</execute></action>
+      </item>
+      <item label='flobopuyo'>
+        <action name='Execute'><execute>/usr/games/flobopuyo</execute></action>
+      </item>
+      <item label='Frozen-Bubble'>
+        <action name='Execute'><execute>/usr/games/frozen-bubble</execute></action>
+      </item>
+      <item label='GTetrinet'>
+        <action name='Execute'><execute>/usr/games/gtetrinet</execute></action>
+      </item>
+      <item label='Netris'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Netris&quot; -e sh -c &quot;/usr/games/netris&quot;</execute></action>
+      </item>
+      <item label='XWelltris'>
+        <action name='Execute'><execute>/usr/games/xwelltris</execute></action>
+      </item>
+    </menu>
+    <menu id='Toys' label='Toys'>
+      <item label='bb'>
+        <action name='Execute'><execute>/usr/games/bb</execute></action>
+      </item>
+      <item label='Blast holes in windows'>
+        <action name='Execute'><execute>blast</execute></action>
+      </item>
+      <item label='cappuccino'>
+        <action name='Execute'><execute>/usr/bin/cappuccino</execute></action>
+      </item>
+      <item label='Flip Screen'>
+        <action name='Execute'><execute>/usr/games/xflip</execute></action>
+      </item>
+      <item label='Groach (default theme)'>
+        <action name='Execute'><execute>/usr/games/groach</execute></action>
+      </item>
+      <item label='Meltdown'>
+        <action name='Execute'><execute>/usr/games/meltdown</execute></action>
+      </item>
+      <item label='oneko/cat'>
+        <action name='Execute'><execute>oneko -fg black -bg white</execute></action>
+      </item>
+      <item label='oneko/dog'>
+        <action name='Execute'><execute>oneko -dog -fg black -bg white</execute></action>
+      </item>
+      <item label='oneko/stop'>
+        <action name='Execute'><execute>killall -TERM oneko</execute></action>
+      </item>
+      <item label='purity'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;purity&quot; -e sh -c &quot;/usr/games/purity hacker&quot;</execute></action>
+      </item>
+      <item label='pyChing'>
+        <action name='Execute'><execute>/usr/bin/pyching</execute></action>
+      </item>
+      <item label='Rain'>
+        <action name='Execute'><execute>x-terminal-emulator  -T &quot;Rain&quot; -e sh -c &quot;/usr/games/rain&quot;</execute></action>
+      </item>
+      <menu id='Teddies' label='Teddies'>
+        <item label='Teddy'>
+          <action name='Execute'><execute>/usr/games/teddy</execute></action>
+        </item>
+        <item label='XAlex'>
+          <action name='Execute'><execute>/usr/games/xalex</execute></action>
+        </item>
+        <item label='XBobo'>
+          <action name='Execute'><execute>/usr/games/xbobo</execute></action>
+        </item>
+        <item label='XBrummi'>
+          <action name='Execute'><execute>/usr/games/xbrummi</execute></action>
+        </item>
+        <item label='XCherubino'>
+          <action name='Execute'><execute>/usr/games/xcherubino</execute></action>
+        </item>
+        <item label='XDuck'>
+          <action name='Execute'><execute>/usr/games/xduck</execute></action>
+        </item>
+        <item label='XHedgehog'>
+          <action name='Execute'><execute>/usr/games/xhedgehog</execute></action>
+        </item>
+        <item label='XKlitze'>
+          <action name='Execute'><execute>/usr/games/xklitze</execute></action>
+        </item>
+        <item label='XNamu'>
+          <action name='Execute'><execute>/usr/games/xnamu</execute></action>
+        </item>
+        <item label='XOrca'>
+          <action name='Execute'><execute>/usr/games/xorca</execute></action>
+        </item>
+        <item label='XPenguin'>
+          <action name='Execute'><execute>/usr/games/xpenguin</execute></action>
+        </item>
+        <item label='XPuppy'>
+          <action name='Execute'><execute>/usr/games/xpuppy</execute></action>
+        </item>
+        <item label='XRuessel'>
+          <action name='Execute'><execute>/usr/games/xruessel</execute></action>
+        </item>
+        <item label='XTeddy'>
+          <action name='Execute'><execute>/usr/games/xteddy</execute></action>
+        </item>
+        <item label='XTrouble'>
+          <action name='Execute'><execute>/usr/games/xtrouble</execute></action>
+        </item>
+        <item label='XTuxxy'>
+          <action name='Execute'><execute>/usr/games/xtuxxy</execute></action>
+        </item>
+      </menu>
+      <item label='xcruiser'>
+        <action name='Execute'><execute>/usr/games/xcruiser</execute></action>
+      </item>
+      <item label='xdesktopwaves - start'>
+        <action name='Execute'><execute>xdesktopwaves -rain 7</execute></action>
+      </item>
+      <item label='xdesktopwaves - stop'>
+        <action name='Execute'><execute>xdesktopwaves -end</execute></action>
+      </item>
+      <item label='Xmountains'>
+        <action name='Execute'><execute>/usr/bin/xmountains</execute></action>
+      </item>
+    </menu>
+    <item label='UFO: Alien Invasion'>
+      <action name='Execute'><execute>/home/comotion/ufoai//ufoai</execute></action>
+    </item>
+    <item label='wolfenstein'>
+      <action name='Execute'><execute>/usr/games/wolfenstein/wolfmp</execute></action>
+    </item>
+  </menu>
+  <menu id='Help' label='Help'>
+    <item label='Info'>
+      <action name='Execute'><execute>x-terminal-emulator  -T &quot;Info&quot; -e sh -c &quot;info&quot;</execute></action>
+    </item>
+    <item label='TeXdoctk'>
+      <action name='Execute'><execute>/usr/bin/texdoctk</execute></action>
+    </item>
+    <item label='yelp'>
+      <action name='Execute'><execute>/usr/bin/yelp</execute></action>
+    </item>
+  </menu>
+  <menu id='Screen' label='Screen'>
+    <menu id='Lock' label='Lock'>
+      <item label='Lock Screen (XScreenSaver)'>
+        <action name='Execute'><execute>/usr/bin/xscreensaver-command -lock</execute></action>
+      </item>
+    </menu>
+    <menu id='Root-window' label='Root-window'>
+      <item label='ChBg'>
+        <action name='Execute'><execute>/usr/bin/chbg</execute></action>
+      </item>
+      <item label='xplanet'>
+        <action name='Execute'><execute>/usr/bin/xplanet</execute></action>
+      </item>
+    </menu>
+    <menu id='Save' label='Save'>
+      <item label='Activate ScreenSaver (Next)'>
+        <action name='Execute'><execute>/usr/bin/xscreensaver-command -next</execute></action>
+      </item>
+      <item label='Activate ScreenSaver (Previous)'>
+        <action name='Execute'><execute>/usr/bin/xscreensaver-command -prev</execute></action>
+      </item>
+      <item label='Activate ScreenSaver (Random)'>
+        <action name='Execute'><execute>/usr/bin/xscreensaver-command -activate</execute></action>
+      </item>
+      <item label='Demo Screen Hacks'>
+        <action name='Execute'><execute>/usr/bin/xscreensaver-command -demo</execute></action>
+      </item>
+      <item label='Disable XScreenSaver'>
+        <action name='Execute'><execute>/usr/bin/xscreensaver-command -exit</execute></action>
+      </item>
+      <item label='Enable XScreenSaver'>
+        <action name='Execute'><execute>/usr/bin/xscreensaver</execute></action>
+      </item>
+      <item label='Reinitialize XScreenSaver'>
+        <action name='Execute'><execute>/usr/bin/xscreensaver-command -restart</execute></action>
+      </item>
+      <item label='ScreenSaver Preferences'>
+        <action name='Execute'><execute>/usr/bin/xscreensaver-command -prefs</execute></action>
+      </item>
+      <menu id='Text' label='Text'>
+        <item label='Console Matrix (Text)'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Console Matrix (Text)&quot; -e sh -c &quot;/usr/bin/cmatrix&quot;</execute></action>
+        </item>
+        <item label='Console Matrix (Virtual Console)'>
+          <action name='Execute'><execute>x-terminal-emulator  -T &quot;Console Matrix (Virtual Console)&quot; -e sh -c &quot;/usr/bin/cmatrix -l&quot;</execute></action>
+        </item>
+        <item label='Console Matrix (X11)'>
+          <action name='Execute'><execute>/usr/bin/cmatrix -x</execute></action>
+        </item>
+      </menu>
+    </menu>
+  </menu>
+  <menu id='WindowManagers' label='WindowManagers'>
+    <item label='FluxBox'>
+      <action name='Restart'><execute>/usr/bin/startfluxbox</execute></action>
+    </item>
+    <item label='Metacity'>
+      <action name='Restart'><execute>/usr/bin/metacity</execute></action>
+    </item>
+    <item label='Openbox'>
+      <action name='Restart'><execute>/usr/bin/openbox</execute></action>
+    </item>
+    <item label='Twm'>
+      <action name='Restart'><execute>twm</execute></action>
+    </item>
+  </menu>
+  <menu id='XShells' label='XShells'>
+    <item label='Aterm'>
+      <action name='Execute'><execute>/usr/bin/aterm</execute></action>
+    </item>
+    <item label='Eterm'>
+      <action name='Execute'><execute>/usr/bin/Eterm</execute></action>
+    </item>
+    <item label='Rxvt'>
+      <action name='Execute'><execute>rxvt-2.7.10</execute></action>
+    </item>
+    <item label='XTerm'>
+      <action name='Execute'><execute>xterm</execute></action>
+    </item>
+    <item label='XTerm (Unicode)'>
+      <action name='Execute'><execute>uxterm</execute></action>
+    </item>
+  </menu>
+</menu>
+
+</openbox_menu>
