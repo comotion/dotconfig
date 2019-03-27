@@ -537,6 +537,11 @@ my own preferences and Clay's vi-like spatial bindings -->
 		  <execute>~/bin/volume mute</execute>
       </action>
     </keybind>
+    <keybind key="XF86AudioMicMute">
+      <action name="Execute">
+		  <execute>~/bin/volume mic</execute>
+      </action>
+    </keybind>
     <keybind key="XF86WLAN">
       <action name="Execute">
       <execute>sudo bin/wifi</execute>
@@ -776,7 +781,7 @@ my own preferences and Clay's vi-like spatial bindings -->
     </keybind>
     <keybind key="C-A-g">
       <action name="Execute">
-        <execute>chromium</execute>
+        <execute>firefox</execute>
       </action>
     </keybind>
     <keybind key="C-A-x">
@@ -982,6 +987,7 @@ my own preferences and Clay's vi-like spatial bindings -->
       <!-- mac style fullscreen -->
       <mousebind button="A-Left" action="DoubleClick">
          <action name="ToggleMaximizeFull"/>
+				 <action name="ToggleDecorations"/>
       </mousebind>
       <!--
     <mousebind button="A-Middle" action="Press">
